@@ -2,6 +2,7 @@ import { Box, Grid, Link, Stack, Typography } from '@mui/material';
 import { Navbar } from '../components/navbar/navbar';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import Image from 'next/image';
+import { Footer } from '../components/footer/footer';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         display='flex'
         justifyContent='center'
         alignItems='center'
+        paddingBottom={14.75}
       >
         <Grid item xs={10}>
           <Stack>
@@ -204,6 +206,7 @@ const Home = () => {
           </Grid>
         </Grid>
       </Grid>
+      <Footer />
     </Box>
   );
 };
