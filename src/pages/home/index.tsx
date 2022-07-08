@@ -158,8 +158,8 @@ const Home = () => {
               direction='row'
               display='flex'
               alignItems='center'
-              spacing={1}
-              pt={2.5}
+              // pt={2.5}
+              pb={5}
             >
               <Link
                 underline='always'
@@ -172,7 +172,7 @@ const Home = () => {
                 {'Comenzar'}
               </Link>
               <ArrowForwardRoundedIcon
-                sx={{ width: 200, height: 100 }}
+                sx={{ width: 150, height: 100 }}
                 color='primary'
               />
             </Stack>

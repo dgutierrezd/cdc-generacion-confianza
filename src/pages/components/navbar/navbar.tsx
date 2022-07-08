@@ -22,6 +22,7 @@ export const Navbar = () => {
       <Stack direction="row" spacing={10} alignItems="center">
         <Link
           // href={'#course'}
+          href={"/generacion-confianza"}
           underline="hover"
           color="secondary"
           fontSize={21.19}
