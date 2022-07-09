@@ -395,6 +395,254 @@ const GeneracionResultados = () => {
             </Grid>
           </Grid>
         </Grid>
+
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            backgroundColor: (theme) => theme.palette.primary.main,
+            justifyContent: 'center',
+          }}
+        >
+          <Grid item container justifyContent='center'>
+            <Grid item xs={10} pt={10}>
+              <Typography
+                fontSize={64.58}
+                lineHeight={'94.67px'}
+                fontWeight={800}
+                color='secondary.light'
+                textAlign='center'
+              >
+                Temas Discutidos
+              </Typography>
+              <Typography
+                fontSize={25}
+                lineHeight={'33.96px'}
+                fontFamily='Open Sans'
+                color='black'
+                textAlign='center'
+                pt={5}
+              >
+                En CHEC propiciamos el desarrollo con equidad de territorios
+                sostenibles, con una mirada integral a partir de las siguientes
+                dimensiones:
+              </Typography>
+            </Grid>
+
+            <Grid item container xs={10} justifyContent='space-between' pt={5}>
+              <Grid item container xs={5.5}>
+                <Grid item xs={12}>
+                  <Typography
+                    fontSize={25}
+                    lineHeight={'33.96px'}
+                    fontWeight={800}
+                    color='primary.dark'
+                    textAlign='left'
+                  >
+                    Competitividad del territorio:
+                  </Typography>
+                  <Typography
+                    fontSize={25}
+                    lineHeight={'33.96px'}
+                    fontFamily='Open Sans'
+                    color='black'
+                    textAlign='justify'
+                  >
+                    Propiciar el desarrollo de la competitividad económica,
+                    ambiental, social y global de los territorios donde
+                    actuamos.
+                  </Typography>
+                </Grid>
+
+                <Grid item xs={12} pt={5}>
+                  <Typography
+                    fontSize={25}
+                    lineHeight={'33.96px'}
+                    fontWeight={800}
+                    color='primary.dark'
+                    textAlign='left'
+                  >
+                    Servicios públicos integrados y eficientes:
+                  </Typography>
+                  <Typography
+                    fontSize={25}
+                    lineHeight={'33.96px'}
+                    fontFamily='Open Sans'
+                    color='black'
+                    textAlign='justify'
+                  >
+                    Visión integral de los clientes y mercados en la provisión
+                    de soluciones eficientes y competitivas en electricidad,
+                    gas, agua, aseo y tecnología de la información y las
+                    comunicaciones – TIC.
+                  </Typography>
+                </Grid>
+              </Grid>
+
+              <Grid item container xs={5.5}>
+                <Grid item xs={12}>
+                  <Typography
+                    fontSize={25}
+                    lineHeight={'33.96px'}
+                    fontWeight={800}
+                    color='primary.dark'
+                    textAlign='left'
+                  >
+                    Comprabilidad por tarifas y cobertura:
+                  </Typography>
+                  <Typography
+                    fontSize={25}
+                    lineHeight={'33.96px'}
+                    fontFamily='Open Sans'
+                    color='black'
+                    textAlign='justify'
+                  >
+                    Propiciar la universalización del servicio y el desarrollo
+                    de tarifas competitivas que faciliten la comprabilidad.
+                    Fortalecer la cultura del uso eficiente y racional de los
+                    servicios públicos.
+                  </Typography>
+                </Grid>
+
+                <Grid item xs={12} pt={5}>
+                  <Typography
+                    fontSize={25}
+                    lineHeight={'33.96px'}
+                    fontWeight={800}
+                    color='primary.dark'
+                    textAlign='left'
+                  >
+                    Mejoramiento de calidad de vida de las personas:
+                  </Typography>
+                  <Typography
+                    fontSize={25}
+                    lineHeight={'33.96px'}
+                    fontFamily='Open Sans'
+                    color='black'
+                    textAlign='justify'
+                  >
+                    Propiciar el mejoramiento de la calidad de vida de las
+                    personas y el índice de desarrollo humano.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Grid item xs={10} pt={10}>
+              <Typography
+                fontSize={64.58}
+                lineHeight={'94.67px'}
+                fontWeight={800}
+                color='secondary.light'
+                textAlign='center'
+              >
+                Fundamentos Teóricos
+              </Typography>
+              <Grid item xs={12} pt={5}>
+                <Typography
+                  fontSize={25}
+                  lineHeight={'33.96px'}
+                  fontWeight={800}
+                  color='primary.dark'
+                  textAlign='left'
+                >
+                  Teoría del Cambio Social:
+                </Typography>
+                <Typography
+                  fontSize={25}
+                  lineHeight={'33.96px'}
+                  fontFamily='Open Sans'
+                  color='black'
+                  textAlign='justify'
+                >
+                  Desde los planteamientos de Kurt Lewin un elemento social es
+                  mantenido en equilibrio por la interacción de dos grupos que
+                  generan fuerzas opuestas; unas que intentan promover el cambio
+                  (Fuerzas impulsoras) y otras que intentan mantener el “status
+                  quo” (Fuerzas que refrenan). Las organizaciones son sistemas
+                  en los cuales la situación actual no es un patrón estático
+                  sino un equilibrio dinámico de fuerzas que trabajan en
+                  direcciones opuestas, en este sentido, para que ocurra un
+                  cambio las fuerzas impulsoras deben exceder las fuerzas que
+                  refrenan, cambiando así el equilibrio.
+                </Typography>
+              </Grid>
+            </Grid>
+
+            <Grid item container xs={10} justifyContent='space-between' pt={5}>
+              <Grid item container xs={5.5}>
+                <Box
+                  sx={{
+                    borderRadius: 10,
+                    backgroundColor: 'secondary.light',
+                    width: '100%',
+                    height: 400,
+                  }}
+                />
+              </Grid>
+              <Grid item container xs={5.5}>
+                <Box
+                  sx={{
+                    borderRadius: 10,
+                    backgroundColor: 'secondary.light',
+                    width: '100%',
+                    height: 400,
+                  }}
+                />
+              </Grid>
+            </Grid>
+
+            <Grid item xs={10} pt={5} pb={10}>
+              <Typography
+                fontSize={25}
+                lineHeight={'33.96px'}
+                fontFamily='Open Sans'
+                color='black'
+                textAlign='justify'
+              >
+                En esta lógica, CHEC grupo EPM emprende una apuesta empresarial
+                desde la cual se hace prioritario, desarrollar cambios que
+                permitan superar los factores que movilizan las fuerzas que
+                refrenan; es a partir del reconocimiento que realiza CHEC grupo
+                EPM de estas dinámicas de orden social, que se da inicio a la
+                elaboración del proyecto en mención, así, se parte de la
+                premisa, que intervenir una serie de variables asociadas a los
+                hábitos, controles, normas y dinámicas sociales, permitirán
+                paulatinamente, obtener los objetivos empresariales propuestos.
+                Este ejercicio de reconocimiento se ha constituido para la
+                empresa en un gran paso hacia el futuro, reconociendo que los
+                procedimientos técnicos requieren para su sostenibilidad ser
+                abordados desde el componente social.
+              </Typography>
+            </Grid>
+          </Grid>
+        </Box>
+
+        <Grid item container justifyContent='center'>
+          <Grid item xs={6} pt={10}>
+            <Typography
+              fontSize={64.58}
+              lineHeight={'63.42px'}
+              fontWeight={800}
+              color='primary.main'
+              textAlign='center'
+            >
+              Cómo surge el proyecto generación de confianza
+            </Typography>
+          </Grid>
+
+          <Grid item container xs={12} pt={5}>
+            <Typography
+              fontSize={64.58}
+              lineHeight={'63.42px'}
+              fontWeight={800}
+              color='primary.main'
+              textAlign='center'
+            >
+              Cómo surge el proyecto generación de confianza
+            </Typography>
+          </Grid>
+        </Grid>
       </Grid>
       <Footer />
     </Box>
