@@ -1,5 +1,6 @@
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
+import Image from "next/image";
 
 export const Footer = () => {
   return (
@@ -241,9 +242,10 @@ export const Footer = () => {
       </Box>
       <Box
         display="flex"
-        sx={{ flexDirection: "row" }}
+        sx={{ flexDirection: "row", justifyContent: 'space-between' }}
         pt={28.25}
         paddingLeft={13.5}
+        pr={5}
         paddingBottom={6}
       >
         <Typography
@@ -254,6 +256,9 @@ export const Footer = () => {
         >
           Design by Atmos Agencia Digital
         </Typography>
+
+        <Image src={"/imgs/chec-logo.png"} width={88} height={83} />
+
       </Box>
     </Box>
   );
