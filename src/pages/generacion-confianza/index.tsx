@@ -1124,7 +1124,7 @@ const GeneracionResultados = () => {
               </Grid>
             </Grid>
             <Grid item pt={10}>
-              <Image src={"/imgs/time-line.png"} width={1343} height={789} />
+              <Image src={"/imgs/GC-line-time.png"} width={1343} height={789} />
             </Grid>
           </Grid>
         </Box>

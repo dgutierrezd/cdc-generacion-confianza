@@ -162,12 +162,17 @@ const Home = () => {
               pb={5}
             >
               <Link
-                underline='always'
                 color='secondary'
                 fontSize={70.73}
                 fontFamily='VAGROUNDEDSTD'
                 lineHeight={'67.05px'}
                 fontWeight={800}
+                sx={{
+                  textDecoration: 'none',
+                  '&:hover':{
+                    color: 'primary.main'
+                  }
+                }}
               >
                 {'Comenzar'}
               </Link>
