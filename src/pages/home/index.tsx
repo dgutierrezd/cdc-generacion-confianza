@@ -59,6 +59,7 @@ const Home = () => {
               fontSize={21.19}
               fontFamily='Open Sans'
               lineHeight={'23.5px'}
+              fontWeight={500}
             >
               {'ACERCA DE'}
             </Link>
@@ -77,7 +78,7 @@ const Home = () => {
           justifyContent='space-between'
         >
           <Grid item xs={6} display='flex' alignItems='end'>
-            <Image src={'/imgs/gc.png'} width={770} height={450}></Image>
+            <Image alt="GC" src={'/imgs/gc.png'} width={770} height={450}></Image>
           </Grid>
           <Grid item xs={5.5}>
             <Stack spacing={6}>

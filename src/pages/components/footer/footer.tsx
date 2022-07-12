@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Container, Grid, Link, Stack, Typography } from "@mui/material";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import Image from "next/image";
 
@@ -42,14 +42,22 @@ const Footer = () => {
                 sx={{ width: 40, height: 20 }}
                 color="primary"
               />
-              <Typography
+              <Link
+                href={"/generacion-confianza"}
+                fontWeight={500}
                 color="secondary"
                 fontSize={21.19}
                 lineHeight={"23.5px"}
                 fontFamily="Open Sans"
+                sx={{
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "primary.main",
+                  },
+                }}
               >
                 Generación de Confianza
-              </Typography>
+              </Link>
             </Box>
             <Box
               display="flex"
@@ -60,14 +68,22 @@ const Footer = () => {
                 sx={{ width: 40, height: 20 }}
                 color="primary"
               />
-              <Typography
+              <Link
+                href={"/metodologia"}
+                fontWeight={500}
                 color="secondary"
                 fontSize={21.19}
                 lineHeight={"23.5px"}
                 fontFamily="Open Sans"
+                sx={{
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "primary.main",
+                  },
+                }}
               >
                 Metodología
-              </Typography>
+              </Link>
             </Box>
             <Box
               display="flex"
@@ -78,14 +94,22 @@ const Footer = () => {
                 sx={{ width: 40, height: 20 }}
                 color="primary"
               />
-              <Typography
+              <Link
+                href={"/evolucion-resultados"}
+                fontWeight={500}
                 color="secondary"
                 fontSize={21.19}
                 lineHeight={"23.5px"}
                 fontFamily="Open Sans"
+                sx={{
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "primary.main",
+                  },
+                }}
               >
                 Evolución y Resultados
-              </Typography>
+              </Link>
             </Box>
             <Box
               display="flex"
@@ -96,14 +120,22 @@ const Footer = () => {
                 sx={{ width: 40, height: 20 }}
                 color="primary"
               />
-              <Typography
+              <Link
+                href={"/medios"}
+                fontWeight={500}
                 color="secondary"
                 fontSize={21.19}
                 lineHeight={"23.5px"}
                 fontFamily="Open Sans"
+                sx={{
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "primary.main",
+                  },
+                }}
               >
                 Medios
-              </Typography>
+              </Link>
             </Box>
           </Stack>
         </Box>
@@ -118,14 +150,22 @@ const Footer = () => {
             Consultas Generales
           </Typography>
           <Stack pt={2.75}>
-            <Typography
+            <Link
+              href={"mailto:info@generaciondeconfianza.com.co"}
+              fontWeight={500}
               color="secondary"
               fontSize={21.19}
               lineHeight={"23.5px"}
               fontFamily="Open Sans"
+              sx={{
+                textDecoration: "none",
+                "&:hover": {
+                  color: "primary.main",
+                },
+              }}
             >
               info@generaciondeconfianza.com.co
-            </Typography>
+            </Link>
           </Stack>
           <Typography
             color="primary"
@@ -143,6 +183,7 @@ const Footer = () => {
               fontSize={21.19}
               lineHeight={"23.5px"}
               fontFamily="Open Sans"
+              fontWeight={500}
             >
               +57 312 286 0613
             </Typography>
@@ -161,6 +202,7 @@ const Footer = () => {
           <Stack pt={2.75}>
             <Typography
               color="secondary"
+              fontWeight={500}
               fontSize={21.19}
               lineHeight={"23.5px"}
               fontFamily="Open Sans"
@@ -170,6 +212,7 @@ const Footer = () => {
             <Box display="flex" pt={2.75}>
               <Typography
                 color="secondary"
+                fontWeight={500}
                 fontSize={21.19}
                 lineHeight={"23.5px"}
                 fontFamily="Open Sans"
@@ -181,6 +224,7 @@ const Footer = () => {
               <Typography
                 color="secondary"
                 fontSize={21.19}
+                fontWeight={500}
                 lineHeight={"23.5px"}
                 fontFamily="Open Sans"
               >
@@ -191,6 +235,7 @@ const Footer = () => {
               <Typography
                 color="secondary"
                 fontSize={21.19}
+                fontWeight={500}
                 lineHeight={"23.5px"}
                 fontFamily="Open Sans"
               >
@@ -213,6 +258,7 @@ const Footer = () => {
             <Typography
               color="secondary"
               fontSize={21.19}
+              fontWeight={500}
               lineHeight={"23.5px"}
               fontFamily="Open Sans"
             >
@@ -236,6 +282,7 @@ const Footer = () => {
           fontSize={21.19}
           lineHeight={"23.5px"}
           fontFamily="Open Sans"
+          fontWeight={500}
         >
           Política de Privacidad
         </Typography>
@@ -247,17 +294,24 @@ const Footer = () => {
         paddingLeft={13.5}
         pr={5}
         paddingBottom={6}
+        paddingRight={25.5}
       >
         <Typography
           color="secondary"
           fontSize={21.19}
           lineHeight={"23.5px"}
+          fontWeight={500}
           fontFamily="Open Sans"
         >
           Design by Atmos Agencia Digital
         </Typography>
 
-        <Image src={"/imgs/chec-logo.png"} width={88} height={83} />
+        <Image
+          alt="Chec logo"
+          src={"/imgs/chec-logo.png"}
+          width={88}
+          height={83}
+        />
       </Box>
     </Box>
   );
