@@ -12,7 +12,7 @@ const Evaluacion = () => {
           color='secondary.light'
           textAlign='center'
         >
-          Evaluacion
+          Evaluacion, Cierre y Finalización
         </Typography>
       </Grid>
       <Grid item container xs={11} justifyContent='space-between'>
@@ -25,20 +25,14 @@ const Evaluacion = () => {
             pt={5}
             textAlign='justify'
           >
-            En esta etapa se busca realizar un ejercicio de diagnóstico del
-            territorio, los nodos asociados a clientes reincidentes y
-            comunidades afectadas por esta problemática social, contrastando la
-            información de fuentes primarias y secundarias establecidas como
-            base para la problematización, construcción y sustentación del
-            proyecto; así como de realizar una identificación de iniciativas
-            sociales, comunitarias y de acercamiento con actores claves (líderes
-            comunitarios, líderes sociales, grupos Juveniles, ONG, entre otros)
-            que inciden en la movilización de las mismas.
-            <br /> <br />A partir de esta identificación, se aplica una
-            evaluación de entrada en la que se evidencian las percepciones de
-            los habitantes sobre confianza, transparencia y nivel de
-            conocimiento de la empresa, enmarcado en la prestación del servicio
-            y comportamientos en torno a la cultura de la legalidad.
+            En esta etapa se hace cierre responsable de las iniciativas y
+            proyectos establecidos de manera conjunta entre empresa y comunidad,
+            se realiza la última medición de impacto , para identificar cambios
+            de comportamiento en el marco de la cultura de la legalidad,
+            reducción de los niveles de reincidencia en clientes residenciales,
+            impactos del proyecto en las organizaciones y el territorio, y se
+            establecen las acciones de información y comunicación con los
+            actores involucrados sobre los resultados del proyecto.
           </Typography>
           <Box
             sx={{
@@ -78,7 +72,7 @@ const Evaluacion = () => {
             pt={5}
             textAlign='justify'
           >
-            Identificar y seleccionar comunidades objetivo:
+            Seguimiento y Monitoreo:
           </Typography>
 
           <Stack direction='row' spacing={2}>
@@ -93,7 +87,8 @@ const Evaluacion = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Análisis y selección de nodos
+              Establecer estándares, criterios e indicadores de seguimiento y
+              monitoreo.
             </Typography>
           </Stack>
           <Stack direction='row' spacing={2}>
@@ -108,8 +103,7 @@ const Evaluacion = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Análisis y selección con comunidades a intervenir (Requisitos:
-              presentar altas pérdidas y comportamiento reincidente).
+              Observación y medición del desempeño y ejecución del proyecto.
             </Typography>
           </Stack>
           <Stack direction='row' spacing={2}>
@@ -124,8 +118,23 @@ const Evaluacion = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Revisión de fuentes primarias y secundarias que aportan
-              información complementaria para el análisis.
+              Definir e implementar acciones correctivas.
+            </Typography>
+          </Stack>
+
+          <Stack direction='row' spacing={2}>
+            <ArrowForwardRoundedIcon
+              sx={{ fontSize: 40, pt: 0.5 }}
+              color='secondary'
+            />
+            <Typography
+              color='primary.main'
+              fontSize={25}
+              lineHeight={"50px"}
+              fontFamily='Open Sans'
+              textAlign='justify'
+            >
+              Elaboración de informes.
             </Typography>
           </Stack>
 
@@ -137,7 +146,7 @@ const Evaluacion = () => {
             pt={5}
             textAlign='justify'
           >
-            Acercamiento a las comunidades y caracterización:
+            Evaluación:
           </Typography>
 
           <Stack direction='row' spacing={2}>
@@ -152,9 +161,7 @@ const Evaluacion = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Gestionar encuentros con actores claves (organizaciones sociales e
-              institucionales presentes en el territorio, JAC, JAL, ONGs,
-              aliados estratégicos).
+              Establecer estándares, criterios e indicadores de evaluación.
             </Typography>
           </Stack>
           <Stack direction='row' spacing={2}>
@@ -169,7 +176,7 @@ const Evaluacion = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Reconocimiento de experiencias.
+              Revisión y análisis de información de indicadores.
             </Typography>
           </Stack>
           <Stack direction='row' spacing={2}>
@@ -184,7 +191,7 @@ const Evaluacion = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Consolidación de información.
+              Consolidación de información
             </Typography>
           </Stack>
           <Stack direction='row' spacing={2}>
@@ -199,7 +206,7 @@ const Evaluacion = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Levantamiento de línea base
+              Elaboración de informe final del proyecto.
             </Typography>
           </Stack>
           <Typography
@@ -210,7 +217,7 @@ const Evaluacion = () => {
             pt={5}
             textAlign='justify'
           >
-            Acercamiento a las comunidades y caracterización:
+            Cierre:
           </Typography>
 
           <Stack direction='row' spacing={2}>
@@ -225,9 +232,7 @@ const Evaluacion = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Gestionar encuentros con actores claves (organizaciones sociales e
-              institucionales presentes en el territorio, JAC, JAL, ONGs,
-              aliados estratégicos).
+              Validación de resultados
             </Typography>
           </Stack>
           <Stack direction='row' spacing={2}>
@@ -242,7 +247,22 @@ const Evaluacion = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Reconocimiento de experiencias.
+              Socialización de resultados
+            </Typography>
+          </Stack>
+          <Stack direction='row' spacing={2}>
+            <ArrowForwardRoundedIcon
+              sx={{ fontSize: 40, pt: 0.5 }}
+              color='secondary'
+            />
+            <Typography
+              color='primary.main'
+              fontSize={25}
+              lineHeight={"50px"}
+              fontFamily='Open Sans'
+              textAlign='justify'
+            >
+              Retroalimentación
             </Typography>
           </Stack>
         </Grid>

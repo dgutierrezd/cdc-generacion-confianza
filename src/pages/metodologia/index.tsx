@@ -386,6 +386,7 @@ const Metodologia = () => {
             display: "flex",
             backgroundColor: "primary.A200",
             justifyContent: "center",
+            pb: 10
           }}
         >
           <Grid item container justifyContent='center'>

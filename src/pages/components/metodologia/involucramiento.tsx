@@ -25,20 +25,19 @@ const Involucramiento = () => {
             pt={5}
             textAlign='justify'
           >
-            En esta etapa se busca realizar un ejercicio de diagnóstico del
-            territorio, los nodos asociados a clientes reincidentes y
-            comunidades afectadas por esta problemática social, contrastando la
-            información de fuentes primarias y secundarias establecidas como
-            base para la problematización, construcción y sustentación del
-            proyecto; así como de realizar una identificación de iniciativas
-            sociales, comunitarias y de acercamiento con actores claves (líderes
-            comunitarios, líderes sociales, grupos Juveniles, ONG, entre otros)
-            que inciden en la movilización de las mismas.
-            <br /> <br />A partir de esta identificación, se aplica una
-            evaluación de entrada en la que se evidencian las percepciones de
-            los habitantes sobre confianza, transparencia y nivel de
-            conocimiento de la empresa, enmarcado en la prestación del servicio
-            y comportamientos en torno a la cultura de la legalidad.
+            En esta fase se busca dar respuesta rápida a partir de capacidades
+            ya instaladas, a la generación de expectativas creadas por el
+            proceso de acercamiento realizado por la empresa (fase 1). Lo
+            anterior, con el fin de validar las intenciones de la empresa frente
+            al involucramiento y generar confianza.
+            <br /> <br />
+            En la fase de Involucramiento, se implementan desde el nivel
+            empresarial una serie de ofertas y recursos iniciales para el apoyo
+            a acciones o iniciativas comunitarias que se vengan desarrollando en
+            el territorio y que logren conectar intereses empresariales,
+            organizacionales y sociales en relación con la cultura de la
+            legalidad. Las acciones necesarias para consolidar esta fase se
+            presentan a continuación:
           </Typography>
           <Box
             sx={{
@@ -78,7 +77,7 @@ const Involucramiento = () => {
             pt={5}
             textAlign='justify'
           >
-            Identificar y seleccionar comunidades objetivo:
+            Validar propuesta para proceso de involucramiento
           </Typography>
 
           <Stack direction='row' spacing={2}>
@@ -93,7 +92,7 @@ const Involucramiento = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Análisis y selección de nodos
+              Socializar propuesta con los encargados de validar el proyecto.
             </Typography>
           </Stack>
           <Stack direction='row' spacing={2}>
@@ -108,8 +107,7 @@ const Involucramiento = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Análisis y selección con comunidades a intervenir (Requisitos:
-              presentar altas pérdidas y comportamiento reincidente).
+              Realizar ajustes y mejoras.
             </Typography>
           </Stack>
           <Stack direction='row' spacing={2}>
@@ -124,8 +122,9 @@ const Involucramiento = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Revisión de fuentes primarias y secundarias que aportan
-              información complementaria para el análisis.
+              Elaborar acta de acuerdo, como aceptación de la participación en
+              el proyecto, por parte de las instituciones y/o actores presentes
+              en el territorio y de la empresa CHEC.
             </Typography>
           </Stack>
 
@@ -137,7 +136,7 @@ const Involucramiento = () => {
             pt={5}
             textAlign='justify'
           >
-            Acercamiento a las comunidades y caracterización:
+            Elaborar plan de comunicación para etapa de involucramiento
           </Typography>
 
           <Stack direction='row' spacing={2}>
@@ -152,9 +151,8 @@ const Involucramiento = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Gestionar encuentros con actores claves (organizaciones sociales e
-              institucionales presentes en el territorio, JAC, JAL, ONGs,
-              aliados estratégicos).
+              Analizar necesidades comunicativas y capacidades instaladas en el
+              territorio
             </Typography>
           </Stack>
           <Stack direction='row' spacing={2}>
@@ -169,7 +167,7 @@ const Involucramiento = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Reconocimiento de experiencias.
+              Diseñar plan de comunicaciones para el desarrollo de la fase de involucramiento.
             </Typography>
           </Stack>
           <Stack direction='row' spacing={2}>
@@ -184,22 +182,7 @@ const Involucramiento = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Consolidación de información.
-            </Typography>
-          </Stack>
-          <Stack direction='row' spacing={2}>
-            <ArrowForwardRoundedIcon
-              sx={{ fontSize: 40, pt: 0.5 }}
-              color='secondary'
-            />
-            <Typography
-              color='primary.main'
-              fontSize={25}
-              lineHeight={"50px"}
-              fontFamily='Open Sans'
-              textAlign='justify'
-            >
-              Levantamiento de línea base
+              Validar y aprobar plan de comunicación para el desarrollo del proyecto
             </Typography>
           </Stack>
           <Typography
@@ -210,7 +193,7 @@ const Involucramiento = () => {
             pt={5}
             textAlign='justify'
           >
-            Acercamiento a las comunidades y caracterización:
+            Implementar estrategia de involucramiento:
           </Typography>
 
           <Stack direction='row' spacing={2}>
@@ -225,9 +208,7 @@ const Involucramiento = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Gestionar encuentros con actores claves (organizaciones sociales e
-              institucionales presentes en el territorio, JAC, JAL, ONGs,
-              aliados estratégicos).
+              Socializar con actores claves los alcances del apoyo. 
             </Typography>
           </Stack>
           <Stack direction='row' spacing={2}>
@@ -242,7 +223,7 @@ const Involucramiento = () => {
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Reconocimiento de experiencias.
+              Implementar estrategias y acciones programadas.
             </Typography>
           </Stack>
         </Grid>
