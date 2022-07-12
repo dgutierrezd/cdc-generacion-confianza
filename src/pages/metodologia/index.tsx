@@ -35,22 +35,22 @@ const Metodologia = () => {
       }}
     >
       <Navbar />
-      <Grid container justifyContent='center'>
+      <Grid container justifyContent="center">
         <Grid
           item
           container
-          justifyContent='space-between'
+          justifyContent="space-between"
           //   alignItems='center'
           py={10}
           xs={10.5}
         >
           <Grid item xs={6.5}>
             <Typography
-              color='secondary.main'
+              color="secondary.main"
               fontSize={25}
               lineHeight={"33.96px"}
-              fontFamily='Open Sans'
-              textAlign='justify'
+              fontFamily="Open Sans"
+              textAlign="justify"
             >
               Para el desarrollo del proyecto se planteó una estrategia de
               intervención a partir de los factores que permiten promover el
@@ -64,11 +64,11 @@ const Metodologia = () => {
           </Grid>
           <Grid item xs={4.7}>
             <Typography
-              color='primary.main'
+              color="primary.main"
               fontSize={25}
               lineHeight={"32.17px"}
               fontWeight={800}
-              textAlign='justify'
+              textAlign="justify"
             >
               Lo anterior, condujo a la elaboración de una propuesta, a partir
               de la cual se logró conjugar diversas metodologías presentes en
@@ -87,23 +87,24 @@ const Metodologia = () => {
             justifyContent: "center",
           }}
         >
-          <Grid item container justifyContent='center'>
+          <Grid item container justifyContent="center">
             <Grid item xs={8} pt={10}>
               <Typography
                 fontSize={56.47}
                 lineHeight={"57.3px"}
                 fontWeight={800}
-                color='secondary.light'
-                textAlign='center'
+                color="secondary.light"
+                textAlign="center"
               >
                 ENFOQUE <br /> SOCIOCULTURAL
               </Typography>
               <Typography
                 fontSize={25}
                 lineHeight={"33.96px"}
-                fontFamily='Open Sans'
-                color='black'
+                fontFamily="Open Sans"
+                color="black"
                 pt={5}
+                align="justify"
               >
                 Este enfoque se apalanca metodológicamente en los aspectos
                 propuestos por: la animación sociocultural, alianzas
@@ -112,24 +113,24 @@ const Metodologia = () => {
               </Typography>
             </Grid>
 
-            <Grid item container xs={10} justifyContent='space-between' py={10}>
+            <Grid item container xs={10} justifyContent="space-between" py={10}>
               <Grid item container xs={5.5}>
                 <Grid item xs={12}>
                   <Typography
                     fontSize={25}
                     lineHeight={"33.96px"}
                     fontWeight={800}
-                    color='primary.dark'
-                    textAlign='left'
+                    color="primary.dark"
+                    textAlign="left"
                   >
                     Animación Sociocultural
                   </Typography>
                   <Typography
                     fontSize={25}
                     lineHeight={"33.96px"}
-                    fontFamily='Open Sans'
-                    color='black'
-                    textAlign='justify'
+                    fontFamily="Open Sans"
+                    color="black"
+                    textAlign="justify"
                   >
                     Es una estrategia de trabajo comunitario, que busca animar,
                     motivar y empoderar a los integrantes de una comunidad para
@@ -154,17 +155,17 @@ const Metodologia = () => {
                     fontSize={25}
                     lineHeight={"33.96px"}
                     fontWeight={800}
-                    color='primary.dark'
-                    textAlign='left'
+                    color="primary.dark"
+                    textAlign="left"
                   >
                     Acción sin daño
                   </Typography>
                   <Typography
                     fontSize={25}
                     lineHeight={"33.96px"}
-                    fontFamily='Open Sans'
-                    color='black'
-                    textAlign='justify'
+                    fontFamily="Open Sans"
+                    color="black"
+                    textAlign="justify"
                   >
                     Este enfoque parte de la premisa de que ninguna intervención
                     externa realizada por diferentes actores ya sean
@@ -194,17 +195,17 @@ const Metodologia = () => {
                     fontSize={25}
                     lineHeight={"33.96px"}
                     fontWeight={800}
-                    color='primary.dark'
-                    textAlign='left'
+                    color="primary.dark"
+                    textAlign="left"
                   >
                     Alianzas Público- Privadas
                   </Typography>
                   <Typography
                     fontSize={25}
                     lineHeight={"33.96px"}
-                    fontFamily='Open Sans'
-                    color='black'
-                    textAlign='justify'
+                    fontFamily="Open Sans"
+                    color="black"
+                    textAlign="justify"
                   >
                     Contar con alianzas público- privadas permite dejar
                     capacidades instaladas en las comunidades y por este medio
@@ -229,17 +230,17 @@ const Metodologia = () => {
                     fontSize={25}
                     lineHeight={"33.96px"}
                     fontWeight={800}
-                    color='primary.dark'
-                    textAlign='left'
+                    color="primary.dark"
+                    textAlign="left"
                   >
                     Investigación acción participación (IAP)
                   </Typography>
                   <Typography
                     fontSize={25}
                     lineHeight={"33.96px"}
-                    fontFamily='Open Sans'
-                    color='black'
-                    textAlign='justify'
+                    fontFamily="Open Sans"
+                    color="black"
+                    textAlign="justify"
                   >
                     “La investigación acción participativa es una metodología
                     que apunta a la producción de un conocimiento propositivo y
@@ -268,41 +269,35 @@ const Metodologia = () => {
             justifyContent: "center",
           }}
         >
-          <Grid item container justifyContent='center' py={10} xs={10}>
-            <Grid item xs={10} justifyContent='center'>
+          <Grid item container justifyContent="center" py={10} xs={10}>
+            <Grid item xs={10} justifyContent="center">
               <Typography
                 fontSize={56.47}
                 lineHeight={"57.3px"}
                 fontWeight={800}
-                color='primary.dark'
-                textAlign='center'
+                color="primary.dark"
+                textAlign="center"
               >
                 ENFOQUE <br /> PEDAGÓGICO
               </Typography>
               <Typography
                 fontSize={25}
                 lineHeight={"33.96px"}
-                fontFamily='Open Sans'
-                color='black'
+                fontFamily="Open Sans"
+                color="black"
                 pt={5}
-                textAlign='justify'
+                textAlign="justify"
               >
-                Con el fin de movilizar cambios de comportamientos en relación
-                con la cultura ciudadana y de la legalidad, se tomó como base el
-                enfoque de desarrollo de competencias para las acciones que
-                involucran a los diferentes actores del proyecto (Empresa,
-                comunidad, clientes y contratistas), y que parten desde la
-                sensibilización interpersonal, la información y educación;
-                involucrando el quehacer en el desarrollo de acciones e
-                iniciativas empresa – comunidad, promoviendo la implementación
-                de estrategias comunicativas.
+                {
+                  "Con el fin de movilizar cambios de comportamientos en relación con la cultura ciudadana y de la legalidad, se tomó como base el enfoque de desarrollo de competencias para las acciones que involucran a los diferentes actores del proyecto (Empresa, comunidad, clientes y contratistas), y que parten desde la sensibilización interpersonal, la información y educación; involucrando el quehacer en el desarrollo de acciones e iniciativas empresa – comunidad, promoviendo la implementación de estrategias comunicativas."
+                }
               </Typography>
               <Typography
                 fontSize={25}
                 lineHeight={"33.96px"}
                 fontWeight={800}
-                color='primary.dark'
-                textAlign='center'
+                color="primary.dark"
+                textAlign="center"
                 pt={10}
               >
                 ¿Cómo se lleva a la práctica un proyecto como el de Generación
@@ -310,7 +305,12 @@ const Metodologia = () => {
               </Typography>
             </Grid>
             <Grid item container xs={10} pt={5}>
-              <Image src={"/imgs/metodologia2.png"} width={1324} height={495} />
+              <Image
+                alt="metodologia"
+                src={"/imgs/metodologia2.png"}
+                width={1324}
+                height={495}
+              />
             </Grid>
           </Grid>
         </Box>
@@ -322,24 +322,24 @@ const Metodologia = () => {
             justifyContent: "center",
           }}
         >
-          <Grid item container justifyContent='center'>
+          <Grid item container justifyContent="center">
             <Grid item xs={8.5} py={10}>
               <Typography
                 fontSize={56.47}
                 lineHeight={"57.3px"}
                 fontWeight={800}
-                color='primary.dark'
-                textAlign='center'
+                color="primary.dark"
+                textAlign="center"
               >
                 SEGUIMIENTO Y <br /> EVALUACIÓN
               </Typography>
               <Typography
                 fontSize={25}
                 lineHeight={"33.96px"}
-                fontFamily='Open Sans'
-                color='black'
+                fontFamily="Open Sans"
+                color="black"
                 pt={5}
-                textAlign='justify'
+                textAlign="justify"
               >
                 El proyecto “Generación de Confianza” a nivel metodológico
                 articula diferentes aspectos técnicos y operativos en lo que se
@@ -349,10 +349,10 @@ const Metodologia = () => {
               <Typography
                 fontSize={25}
                 lineHeight={"33.96px"}
-                fontFamily='Open Sans'
-                color='black'
+                fontFamily="Open Sans"
+                color="black"
                 pt={5}
-                textAlign='justify'
+                textAlign="justify"
               >
                 Está diseñado a partir de cuatro fases: Acercamiento e
                 Identificación, Involucramiento, Intervención, Evaluación-
@@ -363,10 +363,10 @@ const Metodologia = () => {
               <Typography
                 fontSize={25}
                 lineHeight={"33.96px"}
-                fontFamily='Open Sans'
-                color='black'
+                fontFamily="Open Sans"
+                color="black"
                 pt={5}
-                textAlign='justify'
+                textAlign="justify"
               >
                 Es importante señalar que si bien dichas fases, ofrecen
                 claridades en cuanto al diseño metodológico a tener en cuenta
@@ -389,20 +389,20 @@ const Metodologia = () => {
             pb: 10,
           }}
         >
-          <Grid item container justifyContent='center'>
+          <Grid item container justifyContent="center">
             <Grid
               item
               container
               xs={10}
               pt={10}
-              alignItems='center'
-              justifyContent='space-around'
+              alignItems="center"
+              justifyContent="space-around"
             >
               <Typography
                 fontSize={82.04}
                 lineHeight={"75.92px"}
                 fontWeight={800}
-                color='primary.main'
+                color="primary.main"
               >
                 Fases del <br /> proyecto
               </Typography>
@@ -411,11 +411,10 @@ const Metodologia = () => {
                 // color='secondary'
                 fontSize={21.19}
                 lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                textAlign='center'
+                fontFamily="VAGROUNDEDSTD"
+                textAlign="center"
                 sx={{
                   color: slide === 0 ? "primary.main" : "secondary.light",
-                  textDecoration: "none",
                   "&:hover": {
                     color: "primary.main",
                   },
@@ -431,11 +430,10 @@ const Metodologia = () => {
                 fontWeight={800}
                 fontSize={21.19}
                 lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                textAlign='center'
+                fontFamily="VAGROUNDEDSTD"
+                textAlign="center"
                 sx={{
                   color: slide === 1 ? "primary.main" : "secondary.light",
-                  textDecoration: "none",
                   "&:hover": {
                     color: "primary.main",
                   },
@@ -451,11 +449,10 @@ const Metodologia = () => {
                 fontWeight={800}
                 fontSize={21.19}
                 lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                textAlign='center'
+                fontFamily="VAGROUNDEDSTD"
+                textAlign="center"
                 sx={{
                   color: slide === 2 ? "primary.main" : "secondary.light",
-                  textDecoration: "none",
                   "&:hover": {
                     color: "primary.main",
                   },
@@ -471,11 +468,10 @@ const Metodologia = () => {
                 fontWeight={800}
                 fontSize={21.19}
                 lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                textAlign='center'
+                fontFamily="VAGROUNDEDSTD"
+                textAlign="center"
                 sx={{
                   color: slide === 3 ? "primary.main" : "secondary.light",
-                  textDecoration: "none",
                   "&:hover": {
                     color: "primary.main",
                   },
@@ -488,22 +484,27 @@ const Metodologia = () => {
               </Typography>
             </Grid>
             <Box
-              width='90%'
+              width="90%"
               height={5}
               sx={{ backgroundColor: "secondary.light" }}
               my={5}
             />
             <Stack
-              direction='row'
-              justifyContent='space-around'
-              alignItems='center'
+              direction="row"
+              justifyContent="space-around"
+              alignItems="center"
               width={"95%"}
             >
               <IconButton
                 sx={{ p: 2, backgroundColor: "primary.main" }}
                 onClick={onPrevSlide}
               >
-                <Image src={"/icons/LeftIcon.png"} width={31} height={27} />
+                <Image
+                  alt={"leftIcon"}
+                  src={"/icons/LeftIcon.png"}
+                  width={31}
+                  height={27}
+                />
               </IconButton>
 
               {slide === 0 ? (
@@ -520,64 +521,69 @@ const Metodologia = () => {
                 sx={{ p: 2, backgroundColor: "primary.main" }}
                 onClick={onNextSlide}
               >
-                <Image src={"/icons/RightIcon.png"} width={31} height={27} />
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/RightIcon.png"}
+                  width={31}
+                  height={27}
+                />
               </IconButton>
             </Stack>
           </Grid>
         </Box>
-        <Grid item container xs={10} justifyContent='space-between' pt={10}>
+        <Grid item container xs={10} justifyContent="space-between" pt={10}>
           <Grid item container xs={5}>
             <Grid item xs={12}>
               <Typography
                 fontSize={33.33}
                 lineHeight={"57.3px"}
                 fontWeight={800}
-                color='primary.light'
-                textAlign='left'
+                color="primary.light"
+                textAlign="left"
               >
                 Temas Transversales al Proceso
               </Typography>
-              <Stack direction='row' spacing={2}>
+              <Stack direction="row" spacing={2}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='secondary'
+                  color="secondary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={25}
                   lineHeight={"33.96px"}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Formulación y gestión de proyectos
                 </Typography>
               </Stack>
-              <Stack direction='row' spacing={2}>
+              <Stack direction="row" spacing={2}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='secondary'
+                  color="secondary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={25}
                   lineHeight={"33.96px"}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Cultura Ciudadana y Cultura de la Legalidad
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2}>
+              <Stack direction="row" spacing={2}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='secondary'
+                  color="secondary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={25}
                   lineHeight={"33.96px"}
-                  fontFamily='Open Sans'
+                  fontFamily="Open Sans"
                   // textAlign='justify'
                 >
                   Temas empresariales - CHEC (riesgos eléctricos, líneas de
@@ -586,49 +592,49 @@ const Metodologia = () => {
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2}>
+              <Stack direction="row" spacing={2}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='secondary'
+                  color="secondary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={25}
                   lineHeight={"33.96px"}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Procesos de Réplica
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2}>
+              <Stack direction="row" spacing={2}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='secondary'
+                  color="secondary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={25}
                   lineHeight={"33.96px"}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Relacionamiento basado en conocimiento mutuo
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2}>
+              <Stack direction="row" spacing={2}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='secondary'
+                  color="secondary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={25}
                   lineHeight={"33.96px"}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Desarrollo Humano
                 </Typography>
@@ -636,7 +642,7 @@ const Metodologia = () => {
             </Grid>
 
             <Grid item xs={12} pt={5}>
-              <Image src='/imgs/GC-3.png' width={668} height={441} />
+              <Image alt="gc" src="/imgs/GC-3.png" width={668} height={441} />
             </Grid>
           </Grid>
 
@@ -646,17 +652,17 @@ const Metodologia = () => {
                 fontSize={33.33}
                 lineHeight={"57.3px"}
                 fontWeight={800}
-                color='primary.light'
-                textAlign='left'
+                color="primary.light"
+                textAlign="left"
               >
                 Aspectos a considerar
               </Typography>
               <Typography
                 fontSize={25}
                 lineHeight={"33.96px"}
-                fontFamily='Open Sans'
-                color='secondary.light'
-                textAlign='justify'
+                fontFamily="Open Sans"
+                color="secondary.light"
+                textAlign="justify"
               >
                 En términos generales y teniendo en cuenta las posibles
                 variaciones en cuanto a seguimiento, evaluación y
@@ -668,84 +674,84 @@ const Metodologia = () => {
                 réplica:
               </Typography>
 
-              <Stack direction='row' spacing={2} pt={10}>
+              <Stack direction="row" spacing={2} pt={10}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='secondary'
+                  color="secondary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={25}
                   lineHeight={"33.96px"}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Diseños metodológicos de seguimiento, intervención y
                   evaluación.
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2}>
+              <Stack direction="row" spacing={2}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='secondary'
+                  color="secondary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={25}
                   lineHeight={"33.96px"}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Levantamiento de línea base
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2}>
+              <Stack direction="row" spacing={2}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='secondary'
+                  color="secondary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={25}
                   lineHeight={"33.96px"}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Indicadores sociales y técnicos e instrumentos para utilizar
                   en el proyecto.
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2}>
+              <Stack direction="row" spacing={2}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='secondary'
+                  color="secondary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={25}
                   lineHeight={"33.96px"}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Sistematización del proyecto una vez se realice cierre en los
                   territorios en donde sea ejecutado.
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2}>
+              <Stack direction="row" spacing={2}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='secondary'
+                  color="secondary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={25}
                   lineHeight={"33.96px"}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Análisis de impacto que describa de manera cualitativa y
                   cuantitativa, los impactos en el mediano y largo plazo de las
@@ -755,17 +761,17 @@ const Metodologia = () => {
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2}>
+              <Stack direction="row" spacing={2}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='secondary'
+                  color="secondary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={25}
                   lineHeight={"33.96px"}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Proceso de sistematización, tanto a nivel empresarial como
                   comunitario.
@@ -774,8 +780,15 @@ const Metodologia = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={2.1} justifyContent='center' alignItems='center' pt={5} pb={10}>
-          <Image src='/imgs/gc.png' width={284} height={165} />
+        <Grid
+          item
+          xs={2.1}
+          justifyContent="center"
+          alignItems="center"
+          pt={5}
+          pb={10}
+        >
+          <Image alt="gc" src="/imgs/gc.png" width={284} height={165} />
         </Grid>
       </Grid>
       <Footer />

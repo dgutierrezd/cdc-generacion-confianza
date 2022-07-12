@@ -296,15 +296,23 @@ const Footer = () => {
         paddingBottom={6}
         paddingRight={25.5}
       >
-        <Typography
+        <Link
+          href="https://www.instagram.com/atmosagenciadigital/"
+          target="_blank"
           color="secondary"
           fontSize={21.19}
           lineHeight={"23.5px"}
           fontWeight={800}
           fontFamily="Open Sans"
+          sx={{
+            textDecoration: "none",
+            "&:hover": {
+              color: "primary.main",
+            },
+          }}
         >
           Design by Atmos Agencia Digital
-        </Typography>
+        </Link>
         <Link href="https://www.chec.com.co/" target="_blank">
           <Image
             alt="Chec logo"
