@@ -39,12 +39,14 @@ const Navbar = () => {
         </Stack>
         <Image alt="logo" src={"/imgs/line-navbar.png"} width={2} height={64} />
         <Stack paddingLeft={3.5}>
-          <Image
-            alt="logo"
-            src={"/imgs/navbar-logo.png"}
-            width={96}
-            height={64}
-          />
+          <Link href="https://www.chec.com.co/" target="_blank">
+            <Image
+              alt="logo"
+              src={"/imgs/navbar-logo.png"}
+              width={96}
+              height={64}
+            />
+          </Link>
         </Stack>
       </Stack>
       <Stack direction="row" spacing={10} alignItems="center">
@@ -52,7 +54,7 @@ const Navbar = () => {
           // href={'#course'}
           href={"/generacion-confianza"}
           underline="hover"
-          fontWeight={500}
+          fontWeight={800}
           color="secondary"
           fontSize={21.19}
           fontFamily="Open Sans"
@@ -66,7 +68,7 @@ const Navbar = () => {
           underline="hover"
           color="secondary"
           fontSize={21.19}
-          fontWeight={500}
+          fontWeight={800}
           lineHeight={"23.5px"}
           fontFamily="Open Sans"
           alignItems="center"
@@ -78,7 +80,7 @@ const Navbar = () => {
           underline="hover"
           color="secondary"
           fontSize={21.19}
-          fontWeight={500}
+          fontWeight={800}
           lineHeight={"23.5px"}
           fontFamily="Open Sans"
           alignItems="center"
@@ -91,7 +93,7 @@ const Navbar = () => {
           underline="hover"
           color="secondary"
           fontSize={21.19}
-          fontWeight={500}
+          fontWeight={800}
           lineHeight={"23.5px"}
           fontFamily="Open Sans"
           alignItems="center"

@@ -59,7 +59,7 @@ const Home = () => {
               fontSize={21.19}
               fontFamily='Open Sans'
               lineHeight={'23.5px'}
-              fontWeight={500}
+              fontWeight={800}
             >
               {'ACERCA DE'}
             </Link>
