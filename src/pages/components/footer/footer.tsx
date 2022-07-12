@@ -2,7 +2,7 @@ import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import Image from "next/image";
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <Box sx={{ backgroundColor: (theme) => theme.palette.background.paper }}>
       <Typography
@@ -242,7 +242,7 @@ export const Footer = () => {
       </Box>
       <Box
         display="flex"
-        sx={{ flexDirection: "row", justifyContent: 'space-between' }}
+        sx={{ flexDirection: "row", justifyContent: "space-between" }}
         pt={28.25}
         paddingLeft={13.5}
         pr={5}
@@ -258,8 +258,9 @@ export const Footer = () => {
         </Typography>
 
         <Image src={"/imgs/chec-logo.png"} width={88} height={83} />
-
       </Box>
     </Box>
   );
 };
+
+export default Footer;

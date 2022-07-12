@@ -1,7 +1,7 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import Image from "next/image";
-import { Footer } from "../components/footer/footer";
-import { Navbar } from "../components/navbar/navbar";
+import Footer from "../components/footer/footer";
+import Navbar from "../components/navbar/navbar";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 
 const GeneracionResultados = () => {

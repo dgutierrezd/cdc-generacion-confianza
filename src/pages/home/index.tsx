@@ -1,8 +1,8 @@
 import { Box, Grid, Link, Stack, Typography } from '@mui/material';
-import { Navbar } from '../components/navbar/navbar';
+import  Navbar from '../components/navbar/navbar';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import Image from 'next/image';
-import { Footer } from '../components/footer/footer';
+import Footer from '../components/footer/footer';
 
 const Home = () => {
   return (

@@ -1,7 +1,7 @@
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
 // import Link from 'next/link';
 
-export const Navbar = () => {
+const Navbar = () => {
   return (
     <Box
       sx={{
@@ -80,3 +80,5 @@ export const Navbar = () => {
     </Box>
   );
 };
+
+export default Navbar;
