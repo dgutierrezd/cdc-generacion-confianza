@@ -181,33 +181,6 @@ const Home = () => {
                 color='primary'
               />
             </Stack>
-            {/* <Stack>
-              <Typography
-                color='secondary'
-                fontSize={33}
-                lineHeight={'33.96px'}
-                textAlign='justify'
-                fontWeight={800}
-              >
-                CHEC grupo EPM le apuesta a la Generación de Confianza
-              </Typography>
-              <Typography
-                color='secondary'
-                fontSize={23}
-                lineHeight={'33.96px'}
-                fontFamily='Open Sans'
-                textAlign='justify'
-              >
-                {`El Proyecto Social para la "Generación de Confianza y promoción
-                de la cultura de la legalidad", conocido actualmente a nivel
-                comunitario y empresarial como '"Generación de Confianza", se
-                orienta a generar un cambio de postura en todos los actors
-                implicados (empresa-comunidad y demás instituciones vinculadas
-                al proyecto) frente a su papel activo y transformador en la
-                viabilización de acciones sociales y técnicas, cuyo fundamento
-                se soporta en la promoción de la Cultura de la Legalidad.`}
-              </Typography>
-            </Stack> */}
           </Grid>
         </Grid>
       </Grid>

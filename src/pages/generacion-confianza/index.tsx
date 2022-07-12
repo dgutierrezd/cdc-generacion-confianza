@@ -1,10 +1,21 @@
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, IconButton, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Footer from "../components/footer/footer";
 import Navbar from "../components/navbar/navbar";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
+import { useState } from "react";
 
 const GeneracionResultados = () => {
+  const [slide, setSlide] = useState<number>(0);
+
+  const onNextSlide = () => {
+    setSlide((prev) => (prev === 1 ? 0 : 1));
+  };
+
+  const onPrevSlide = () => {
+    setSlide((prev) => (prev === 0 ? 1 : 0));
+  };
+
   return (
     <Box
       sx={{
@@ -387,13 +398,38 @@ const GeneracionResultados = () => {
           </Grid>
         </Grid>
         <Grid item container justifyContent='center'>
-          <Grid item container xs={10} justifyContent='space-between' pb={10}>
+          <Grid item container xs={10} justifyContent='space-between'>
             <Grid item xs={5.8}>
-              <Image src={"/imgs/Slider3.png"} width={835} height={478} />
+              {slide === 0 ? (
+                <Image src={"/imgs/Slider1.png"} width={835} height={478} />
+              ) : (
+                <Image src={"/imgs/Slider3.png"} width={835} height={478} />
+              )}
             </Grid>
             <Grid item xs={5.8}>
-              <Image src={"/imgs/Slider4.png"} width={835} height={478} />
+              {slide === 0 ? (
+                <Image src={"/imgs/Slider2.png"} width={835} height={478} />
+              ) : (
+                <Image src={"/imgs/Slider4.png"} width={835} height={478} />
+              )}
             </Grid>
+          </Grid>
+
+          <Grid item xs={3} py={5}>
+            <Stack direction='row' justifyContent='center' spacing={3}>
+              <IconButton
+                sx={{ p: 2, backgroundColor: "primary.main" }}
+                onClick={onPrevSlide}
+              >
+                <Image src={"/icons/LeftIcon.png"} width={31} height={27} />
+              </IconButton>
+              <IconButton
+                sx={{ p: 2, backgroundColor: "primary.main" }}
+                onClick={onNextSlide}
+              >
+                <Image src={"/icons/RightIcon.png"} width={31} height={27} />
+              </IconButton>
+            </Stack>
           </Grid>
         </Grid>
 
@@ -1022,9 +1058,22 @@ const GeneracionResultados = () => {
               </Typography>
             </Grid>
 
-            <Grid item container xs={12} justifyContent='space-between' pt={8}>
-              <Grid item xs={4}>
-                <Stack direction='row' spacing={3}>
+            <Grid
+              item
+              container
+              xs={12}
+              justifyContent='space-between'
+              alignItems='center'
+              pt={8}
+            >
+              <Grid
+                item
+                container
+                xs={4}
+                justifyContent='space-between'
+                alignItems='center'
+              >
+                {/* <Stack direction='row' spacing={3}>
                   <Box pt={5}>
                     <Image src={"/imgs/dorada.png"} width={85} height={218} />
                   </Box>
@@ -1036,7 +1085,33 @@ const GeneracionResultados = () => {
                   >
                     La Dorada
                   </Typography>
-                </Stack>
+                </Stack> */}
+
+                <Grid item xs={1.5}>
+                  <Image src={"/imgs/dorada.png"} width={85} height={218} />
+                </Grid>
+                <Grid item xs={10}>
+                  <Typography
+                    fontSize={39.15}
+                    lineHeight={"38.44px"}
+                    fontWeight={800}
+                    color='background.default'
+                  >
+                    La Dorada
+                  </Typography>
+                  <Typography
+                    fontSize={22.96}
+                    lineHeight={"38.44px"}
+                    color='black'
+                    fontFamily='Open Sans'
+                    textAlign='justify'
+                  >
+                    Asociación de Jóvenes Emprendedores, Asociación Cimarrona
+                    Afrodoradense, Molinos de Vida, Juntas de Acción Comunal,
+                    Unidad de Juventud, I.E Renán Barco, Convite por mi Barrio y
+                    Fundación Apoyar.
+                  </Typography>
+                </Grid>
               </Grid>
               <Grid
                 item
