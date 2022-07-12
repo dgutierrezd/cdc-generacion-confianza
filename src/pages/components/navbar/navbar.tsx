@@ -64,7 +64,7 @@ const Navbar = () => {
           {"Generación de confianza"}
         </Link>
         <Link
-          // href={'#buy'}
+          href={'/metodologia'}
           underline="hover"
           color="secondary"
           fontSize={21.19}
