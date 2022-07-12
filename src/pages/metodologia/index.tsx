@@ -386,7 +386,7 @@ const Metodologia = () => {
             display: "flex",
             backgroundColor: "primary.A200",
             justifyContent: "center",
-            pb: 10
+            pb: 10,
           }}
         >
           <Grid item container justifyContent='center'>
@@ -513,7 +513,7 @@ const Metodologia = () => {
               ) : slide === 2 ? (
                 <Intervencion />
               ) : slide === 3 ? (
-                <Evaluacion/>
+                <Evaluacion />
               ) : null}
 
               <IconButton
@@ -525,6 +525,258 @@ const Metodologia = () => {
             </Stack>
           </Grid>
         </Box>
+        <Grid item container xs={10} justifyContent='space-between' pt={10}>
+          <Grid item container xs={5}>
+            <Grid item xs={12}>
+              <Typography
+                fontSize={33.33}
+                lineHeight={"57.3px"}
+                fontWeight={800}
+                color='primary.light'
+                textAlign='left'
+              >
+                Temas Transversales al Proceso
+              </Typography>
+              <Stack direction='row' spacing={2}>
+                <ArrowForwardRoundedIcon
+                  sx={{ fontSize: 40 }}
+                  color='secondary'
+                />
+                <Typography
+                  color='secondary.light'
+                  fontSize={25}
+                  lineHeight={"33.96px"}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
+                >
+                  Formulación y gestión de proyectos
+                </Typography>
+              </Stack>
+              <Stack direction='row' spacing={2}>
+                <ArrowForwardRoundedIcon
+                  sx={{ fontSize: 40 }}
+                  color='secondary'
+                />
+                <Typography
+                  color='secondary.light'
+                  fontSize={25}
+                  lineHeight={"33.96px"}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
+                >
+                  Cultura Ciudadana y Cultura de la Legalidad
+                </Typography>
+              </Stack>
+
+              <Stack direction='row' spacing={2}>
+                <ArrowForwardRoundedIcon
+                  sx={{ fontSize: 40 }}
+                  color='secondary'
+                />
+                <Typography
+                  color='secondary.light'
+                  fontSize={25}
+                  lineHeight={"33.96px"}
+                  fontFamily='Open Sans'
+                  // textAlign='justify'
+                >
+                  Temas empresariales - CHEC (riesgos eléctricos, líneas de
+                  atención, factura, trámites, servicios nuevos, conexiones
+                  legales del servicio entre otros)
+                </Typography>
+              </Stack>
+
+              <Stack direction='row' spacing={2}>
+                <ArrowForwardRoundedIcon
+                  sx={{ fontSize: 40 }}
+                  color='secondary'
+                />
+                <Typography
+                  color='secondary.light'
+                  fontSize={25}
+                  lineHeight={"33.96px"}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
+                >
+                  Procesos de Réplica
+                </Typography>
+              </Stack>
+
+              <Stack direction='row' spacing={2}>
+                <ArrowForwardRoundedIcon
+                  sx={{ fontSize: 40 }}
+                  color='secondary'
+                />
+                <Typography
+                  color='secondary.light'
+                  fontSize={25}
+                  lineHeight={"33.96px"}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
+                >
+                  Relacionamiento basado en conocimiento mutuo
+                </Typography>
+              </Stack>
+
+              <Stack direction='row' spacing={2}>
+                <ArrowForwardRoundedIcon
+                  sx={{ fontSize: 40 }}
+                  color='secondary'
+                />
+                <Typography
+                  color='secondary.light'
+                  fontSize={25}
+                  lineHeight={"33.96px"}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
+                >
+                  Desarrollo Humano
+                </Typography>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={12} pt={5}>
+              <Image src='/imgs/GC-3.png' width={668} height={441} />
+            </Grid>
+          </Grid>
+
+          <Grid item container xs={6}>
+            <Grid item xs={12} sx={{ height: "fit-content" }} pb={9}>
+              <Typography
+                fontSize={33.33}
+                lineHeight={"57.3px"}
+                fontWeight={800}
+                color='primary.light'
+                textAlign='left'
+              >
+                Aspectos a considerar
+              </Typography>
+              <Typography
+                fontSize={25}
+                lineHeight={"33.96px"}
+                fontFamily='Open Sans'
+                color='secondary.light'
+                textAlign='justify'
+              >
+                En términos generales y teniendo en cuenta las posibles
+                variaciones en cuanto a seguimiento, evaluación y
+                sistematización que puedan derivarse del proyecto, en función de
+                los diversos territorios en los cuales sea ejecutado y buscando
+                por este medio generar procesos de aprendizaje empresarial
+                basados en la experiencia, se espera contar con los siguientes
+                insumos básicos que permitan generar futuros procesos de
+                réplica:
+              </Typography>
+
+              <Stack direction='row' spacing={2} pt={10}>
+                <ArrowForwardRoundedIcon
+                  sx={{ fontSize: 40 }}
+                  color='secondary'
+                />
+                <Typography
+                  color='secondary.light'
+                  fontSize={25}
+                  lineHeight={"33.96px"}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
+                >
+                  Diseños metodológicos de seguimiento, intervención y
+                  evaluación.
+                </Typography>
+              </Stack>
+
+              <Stack direction='row' spacing={2}>
+                <ArrowForwardRoundedIcon
+                  sx={{ fontSize: 40 }}
+                  color='secondary'
+                />
+                <Typography
+                  color='secondary.light'
+                  fontSize={25}
+                  lineHeight={"33.96px"}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
+                >
+                  Levantamiento de línea base
+                </Typography>
+              </Stack>
+
+              <Stack direction='row' spacing={2}>
+                <ArrowForwardRoundedIcon
+                  sx={{ fontSize: 40 }}
+                  color='secondary'
+                />
+                <Typography
+                  color='secondary.light'
+                  fontSize={25}
+                  lineHeight={"33.96px"}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
+                >
+                  Indicadores sociales y técnicos e instrumentos para utilizar
+                  en el proyecto.
+                </Typography>
+              </Stack>
+
+              <Stack direction='row' spacing={2}>
+                <ArrowForwardRoundedIcon
+                  sx={{ fontSize: 40 }}
+                  color='secondary'
+                />
+                <Typography
+                  color='secondary.light'
+                  fontSize={25}
+                  lineHeight={"33.96px"}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
+                >
+                  Sistematización del proyecto una vez se realice cierre en los
+                  territorios en donde sea ejecutado.
+                </Typography>
+              </Stack>
+
+              <Stack direction='row' spacing={2}>
+                <ArrowForwardRoundedIcon
+                  sx={{ fontSize: 40 }}
+                  color='secondary'
+                />
+                <Typography
+                  color='secondary.light'
+                  fontSize={25}
+                  lineHeight={"33.96px"}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
+                >
+                  Análisis de impacto que describa de manera cualitativa y
+                  cuantitativa, los impactos en el mediano y largo plazo de las
+                  acciones generadas por el proyecto, con base en los
+                  indicadores estratégicos de CHEC grupo EPM y las metas e
+                  indicadores establecidos para el mismo.
+                </Typography>
+              </Stack>
+
+              <Stack direction='row' spacing={2}>
+                <ArrowForwardRoundedIcon
+                  sx={{ fontSize: 40 }}
+                  color='secondary'
+                />
+                <Typography
+                  color='secondary.light'
+                  fontSize={25}
+                  lineHeight={"33.96px"}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
+                >
+                  Proceso de sistematización, tanto a nivel empresarial como
+                  comunitario.
+                </Typography>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={2.1} justifyContent='center' alignItems='center' pt={5} pb={10}>
+          <Image src='/imgs/gc.png' width={284} height={165} />
+        </Grid>
       </Grid>
       <Footer />
     </Box>
