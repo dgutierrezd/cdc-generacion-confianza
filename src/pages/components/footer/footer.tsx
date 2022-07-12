@@ -44,7 +44,7 @@ const Footer = () => {
               />
               <Link
                 href={"/generacion-confianza"}
-                fontWeight={500}
+                fontWeight={800}
                 color="secondary"
                 fontSize={21.19}
                 lineHeight={"23.5px"}
@@ -70,7 +70,7 @@ const Footer = () => {
               />
               <Link
                 href={"/metodologia"}
-                fontWeight={500}
+                fontWeight={800}
                 color="secondary"
                 fontSize={21.19}
                 lineHeight={"23.5px"}
@@ -96,7 +96,7 @@ const Footer = () => {
               />
               <Link
                 href={"/evolucion-resultados"}
-                fontWeight={500}
+                fontWeight={800}
                 color="secondary"
                 fontSize={21.19}
                 lineHeight={"23.5px"}
@@ -122,7 +122,7 @@ const Footer = () => {
               />
               <Link
                 href={"/medios"}
-                fontWeight={500}
+                fontWeight={800}
                 color="secondary"
                 fontSize={21.19}
                 lineHeight={"23.5px"}
@@ -152,7 +152,7 @@ const Footer = () => {
           <Stack pt={2.75}>
             <Link
               href={"mailto:info@generaciondeconfianza.com.co"}
-              fontWeight={500}
+              fontWeight={800}
               color="secondary"
               fontSize={21.19}
               lineHeight={"23.5px"}
@@ -183,7 +183,7 @@ const Footer = () => {
               fontSize={21.19}
               lineHeight={"23.5px"}
               fontFamily="Open Sans"
-              fontWeight={500}
+              fontWeight={800}
             >
               +57 312 286 0613
             </Typography>
@@ -202,7 +202,7 @@ const Footer = () => {
           <Stack pt={2.75}>
             <Typography
               color="secondary"
-              fontWeight={500}
+              fontWeight={800}
               fontSize={21.19}
               lineHeight={"23.5px"}
               fontFamily="Open Sans"
@@ -212,7 +212,7 @@ const Footer = () => {
             <Box display="flex" pt={2.75}>
               <Typography
                 color="secondary"
-                fontWeight={500}
+                fontWeight={800}
                 fontSize={21.19}
                 lineHeight={"23.5px"}
                 fontFamily="Open Sans"
@@ -224,7 +224,7 @@ const Footer = () => {
               <Typography
                 color="secondary"
                 fontSize={21.19}
-                fontWeight={500}
+                fontWeight={800}
                 lineHeight={"23.5px"}
                 fontFamily="Open Sans"
               >
@@ -235,7 +235,7 @@ const Footer = () => {
               <Typography
                 color="secondary"
                 fontSize={21.19}
-                fontWeight={500}
+                fontWeight={800}
                 lineHeight={"23.5px"}
                 fontFamily="Open Sans"
               >
@@ -258,7 +258,7 @@ const Footer = () => {
             <Typography
               color="secondary"
               fontSize={21.19}
-              fontWeight={500}
+              fontWeight={800}
               lineHeight={"23.5px"}
               fontFamily="Open Sans"
             >
@@ -282,7 +282,7 @@ const Footer = () => {
           fontSize={21.19}
           lineHeight={"23.5px"}
           fontFamily="Open Sans"
-          fontWeight={500}
+          fontWeight={800}
         >
           Política de Privacidad
         </Typography>
@@ -300,18 +300,19 @@ const Footer = () => {
           color="secondary"
           fontSize={21.19}
           lineHeight={"23.5px"}
-          fontWeight={500}
+          fontWeight={800}
           fontFamily="Open Sans"
         >
           Design by Atmos Agencia Digital
         </Typography>
-
-        <Image
-          alt="Chec logo"
-          src={"/imgs/chec-logo.png"}
-          width={88}
-          height={83}
-        />
+        <Link href="https://www.chec.com.co/" target="_blank">
+          <Image
+            alt="Chec logo"
+            src={"/imgs/chec-logo.png"}
+            width={88}
+            height={83}
+          />
+        </Link>
       </Box>
     </Box>
   );
