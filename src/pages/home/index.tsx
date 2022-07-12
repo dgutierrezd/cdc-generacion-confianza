@@ -180,6 +180,7 @@ const Home = () => {
                     color: "primary.main",
                   },
                 }}
+                href="/generacion-confianza"
               >
                 {"Comenzar"}
               </Link>
