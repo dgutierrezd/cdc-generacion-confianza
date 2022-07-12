@@ -1,10 +1,33 @@
-import { Box, Grid, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Grid,
+  IconButton,
+  Link,
+  Stack,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
 import Footer from "../components/footer/footer";
 import Navbar from "../components/navbar/navbar";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
+import Acercamiento from "../components/metodologia/acercamiento";
+import Evaluacion from "../components/metodologia/evaluacion";
+import Intervencion from "../components/metodologia/intervencion";
+import Involucramiento from "../components/metodologia/involucramiento";
+import { useState } from "react";
 
 const Metodologia = () => {
+  const [slide, setSlide] = useState<number>(0);
+
+  const onNextSlide = () => {
+    setSlide((prev) => (prev === 3 ? 0 : prev + 1));
+  };
+
+  const onPrevSlide = () => {
+    setSlide((prev) => (prev === 0 ? 3 : prev - 1));
+  };
+
   return (
     <Box
       sx={{
@@ -355,7 +378,150 @@ const Metodologia = () => {
                 decisivo para su conformación y fortalecimiento.
               </Typography>
             </Grid>
-            =
+          </Grid>
+        </Box>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            backgroundColor: "primary.A200",
+            justifyContent: "center",
+          }}
+        >
+          <Grid item container justifyContent='center'>
+            <Grid
+              item
+              container
+              xs={10}
+              pt={10}
+              alignItems='center'
+              justifyContent='space-around'
+            >
+              <Typography
+                fontSize={82.04}
+                lineHeight={"75.92px"}
+                fontWeight={800}
+                color='primary.main'
+              >
+                Fases del <br /> proyecto
+              </Typography>
+              <Typography
+                fontWeight={800}
+                // color='secondary'
+                fontSize={21.19}
+                lineHeight={"23.5px"}
+                fontFamily='VAGROUNDEDSTD'
+                textAlign='center'
+                sx={{
+                  color: slide === 0 ? "primary.main" : "secondary.light",
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "primary.main",
+                  },
+                }}
+                onClick={() => {
+                  setSlide(0);
+                }}
+              >
+                Acercamiento e <br /> identificación
+              </Typography>
+
+              <Typography
+                fontWeight={800}
+                fontSize={21.19}
+                lineHeight={"23.5px"}
+                fontFamily='VAGROUNDEDSTD'
+                textAlign='center'
+                sx={{
+                  color: slide === 1 ? "primary.main" : "secondary.light",
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "primary.main",
+                  },
+                }}
+                onClick={() => {
+                  setSlide(1);
+                }}
+              >
+                Involucramiento
+              </Typography>
+
+              <Typography
+                fontWeight={800}
+                fontSize={21.19}
+                lineHeight={"23.5px"}
+                fontFamily='VAGROUNDEDSTD'
+                textAlign='center'
+                sx={{
+                  color: slide === 2 ? "primary.main" : "secondary.light",
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "primary.main",
+                  },
+                }}
+                onClick={() => {
+                  setSlide(2);
+                }}
+              >
+                Intervención
+              </Typography>
+
+              <Typography
+                fontWeight={800}
+                fontSize={21.19}
+                lineHeight={"23.5px"}
+                fontFamily='VAGROUNDEDSTD'
+                textAlign='center'
+                sx={{
+                  color: slide === 3 ? "primary.main" : "secondary.light",
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "primary.main",
+                  },
+                }}
+                onClick={() => {
+                  setSlide(3);
+                }}
+              >
+                Evaluación, cierre <br /> y sistematización
+              </Typography>
+            </Grid>
+            <Box
+              width='90%'
+              height={5}
+              sx={{ backgroundColor: "secondary.light" }}
+              my={5}
+            />
+            <Stack
+              direction='row'
+              justifyContent='space-around'
+              alignItems='center'
+              width={"95%"}
+            >
+              <IconButton
+                sx={{ p: 2, backgroundColor: "primary.main" }}
+                onClick={onPrevSlide}
+              >
+                <Image src={"/icons/LeftIcon.png"} width={31} height={27} />
+              </IconButton>
+
+              {slide === 0 ? (
+                <Acercamiento />
+              ) : slide === 1 ? (
+                <Involucramiento />
+              ) : slide === 2 ? (
+                <Intervencion />
+              ) : slide === 3 ? (
+                <Evaluacion/>
+              ) : null}
+
+              <IconButton
+                sx={{ p: 2, backgroundColor: "primary.main" }}
+                onClick={onNextSlide}
+              >
+                <Image src={"/icons/RightIcon.png"} width={31} height={27} />
+              </IconButton>
+            </Stack>
           </Grid>
         </Box>
       </Grid>
