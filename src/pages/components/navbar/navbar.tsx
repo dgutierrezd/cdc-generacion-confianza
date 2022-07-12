@@ -1,4 +1,5 @@
 import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import Image from "next/image";
 // import Link from 'next/link';
 
 const Navbar = () => {
@@ -15,15 +16,43 @@ const Navbar = () => {
         zIndex: 999,
       }}
     >
-      <Typography color="secondary" variant="h4">
-        Chec
-      </Typography>
-
+      <Stack direction="row" alignItems="center">
+        <Stack direction="column" alignItems="flex-end" paddingRight={3.5}>
+          <Typography
+            color="secondary"
+            fontSize={32.73}
+            lineHeight={"36.3px"}
+            fontFamily="VAGROUNDEDSTD"
+            fontWeight={800}
+          >
+            Generación
+          </Typography>
+          <Typography
+            color="primary"
+            fontSize={32.73}
+            lineHeight={"36.3px"}
+            fontFamily="VAGROUNDEDSTD"
+            fontWeight={800}
+          >
+            de Confianza
+          </Typography>
+        </Stack>
+        <Image alt="logo" src={"/imgs/line-navbar.png"} width={2} height={64} />
+        <Stack paddingLeft={3.5}>
+          <Image
+            alt="logo"
+            src={"/imgs/navbar-logo.png"}
+            width={96}
+            height={64}
+          />
+        </Stack>
+      </Stack>
       <Stack direction="row" spacing={10} alignItems="center">
         <Link
           // href={'#course'}
           href={"/generacion-confianza"}
           underline="hover"
+          fontWeight={500}
           color="secondary"
           fontSize={21.19}
           fontFamily="Open Sans"
@@ -37,6 +66,7 @@ const Navbar = () => {
           underline="hover"
           color="secondary"
           fontSize={21.19}
+          fontWeight={500}
           lineHeight={"23.5px"}
           fontFamily="Open Sans"
           alignItems="center"
@@ -48,6 +78,7 @@ const Navbar = () => {
           underline="hover"
           color="secondary"
           fontSize={21.19}
+          fontWeight={500}
           lineHeight={"23.5px"}
           fontFamily="Open Sans"
           alignItems="center"
@@ -60,6 +91,7 @@ const Navbar = () => {
           underline="hover"
           color="secondary"
           fontSize={21.19}
+          fontWeight={500}
           lineHeight={"23.5px"}
           fontFamily="Open Sans"
           alignItems="center"
@@ -68,15 +100,13 @@ const Navbar = () => {
         </Link>
       </Stack>
 
-      <Button color="secondary">
-        <Typography
-          fontSize={21.19}
-          lineHeight={"23.5px"}
-          fontFamily="Open Sans"
-        >
-          Menú
-        </Typography>
-      </Button>
+      {/* <Button color="secondary"> */}
+      <Typography
+        fontSize={21.19}
+        lineHeight={"23.5px"}
+        fontFamily="Open Sans"
+      ></Typography>
+      {/* </Button> */}
     </Box>
   );
 };
