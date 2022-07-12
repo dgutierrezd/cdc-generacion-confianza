@@ -18,7 +18,7 @@ const Navbar = () => {
     >
       <Stack direction="row" alignItems="center">
         <Stack direction="column" alignItems="flex-end" paddingRight={3.5}>
-          <Link href="/" underline="none">
+          <Link href="/" underline="none" textAlign="end">
             <Typography
               color="secondary"
               fontSize={32.73}
