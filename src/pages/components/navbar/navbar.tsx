@@ -18,24 +18,26 @@ const Navbar = () => {
     >
       <Stack direction="row" alignItems="center">
         <Stack direction="column" alignItems="flex-end" paddingRight={3.5}>
-          <Typography
-            color="secondary"
-            fontSize={32.73}
-            lineHeight={"36.3px"}
-            fontFamily="VAGROUNDEDSTD"
-            fontWeight={800}
-          >
-            Generación
-          </Typography>
-          <Typography
-            color="primary"
-            fontSize={32.73}
-            lineHeight={"36.3px"}
-            fontFamily="VAGROUNDEDSTD"
-            fontWeight={800}
-          >
-            de Confianza
-          </Typography>
+          <Link href="/" underline="none" textAlign="end">
+            <Typography
+              color="secondary"
+              fontSize={32.73}
+              lineHeight={"36.3px"}
+              fontFamily="VAGROUNDEDSTD"
+              fontWeight={800}
+            >
+              Generación
+            </Typography>
+            <Typography
+              color="primary"
+              fontSize={32.73}
+              lineHeight={"36.3px"}
+              fontFamily="VAGROUNDEDSTD"
+              fontWeight={800}
+            >
+              de Confianza
+            </Typography>
+          </Link>
         </Stack>
         <Image alt="logo" src={"/imgs/line-navbar.png"} width={2} height={64} />
         <Stack paddingLeft={3.5}>
@@ -64,7 +66,7 @@ const Navbar = () => {
           {"Generación de confianza"}
         </Link>
         <Link
-          href={'/metodologia'}
+          href={"/metodologia"}
           underline="hover"
           color="secondary"
           fontSize={21.19}

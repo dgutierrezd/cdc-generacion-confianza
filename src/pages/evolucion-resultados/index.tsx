@@ -58,6 +58,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - La presencia y articulación de las iniciativas comunitarias con el
             apoyo de la empresa, aportó a la credibilidad de diferentes procesos
@@ -69,6 +70,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Se incremento y fortaleció la oferta de procesos educativos,
             culturales, lúdicos y participativos para los niños, jovenes,
@@ -79,6 +81,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Aporte al mejoramiento de la calidad de vida: en términos del
             fortalecimiento en las capacidades de actuación de la comunidad
@@ -91,6 +94,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Se logró fortalecer los niveles organizacionales e institucionales
             a nivel comunitario, frente al desarrollo de capacidades de gestión
@@ -101,6 +105,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Se aporto al mejoramiento de los process de información,
             participación social y gestión para el fortalecimiento de la calidad
@@ -111,6 +116,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Se lograron generar process de promación de la diversidad y la
             convivencia social a partir de las iniciativas organizacionales con
@@ -123,15 +129,17 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
-            - Se lograron fortalecer procesos educativos en aspectos como cultura
-            de la legalidad, URE, derechos y deberes.
+            - Se lograron fortalecer procesos educativos en aspectos como
+            cultura de la legalidad, URE, derechos y deberes.
           </Typography>
           <Typography
             color="secondary"
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Se logró mejorar la percepción de favorabilidad, familiaridad y
             construcción de conflanza empresa/comunidad a partir del apoyo e
@@ -143,6 +151,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Se logró articular y optimizar recursos en terminos financieros,
             técnicos, humanos y de conocimiento frente a las iniciativas socials
@@ -153,6 +162,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - La empresa logró posicionarse y ser reconocida por las comunidades
             como un aliado estratégico en el desarrollo de acciones sociales.
@@ -162,6 +172,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - El acompañamiento social del proyecto ha favorecido que en los
             sectores de influencia, los actores faciliten el involucramiento de
@@ -172,6 +183,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - El establecimiento de alianzas con diferentes actores ha permitido
             el desarrollo de acciones comunitarias para el posicionamiento del
@@ -182,6 +194,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - La articulación del proceso de pérdidas en sesiones de formación
             comunitarias del proyecto, ha permitido incentivar comportamientos
@@ -192,6 +205,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Se ha generado una mayor sostenibilidad y reconocimiento de las
             acciones de los actores en cada sector, debido al acompañamiento
@@ -202,6 +216,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Se logró fortalecer el desarrollo de procesos comunitarios e
             interinstitucionales de tipo productivo.
@@ -211,6 +226,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Fue posible viabilizar acciones técnicas gracias al apoyo
             permanente de los actores involucrados en el proyecto.
@@ -231,6 +247,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - El Reconocimiento e inclusión de los intereses, inquietudes,
             expectativas y balance de estas con los grupos de interés para la
@@ -242,6 +259,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Relación con comunidades especiales: étnicamente diversas
             (afrodescendientes e indígenas) y mineros artesanales y a pequeña
@@ -252,6 +270,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Proceso satisfactorio con 17 grupos a su vez comunitarios,
             sociales, cívicos, institucionales y artisticos presentes y activos
@@ -264,6 +283,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - CHEC y más puntualmente el Proyecto Generación de Confianza en el
             municipio de Marmato, fue reconocido y valorado por los grupos de
@@ -277,16 +297,18 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
-            - Satisfactoriamente el proyecto Generación de Confianza, se extendió
-            hacia zonas que históricamente han sido desatendidas de muchas
-            maneras como la ruralidad dispersa del municipio de Marmato.
+            - Satisfactoriamente el proyecto Generación de Confianza, se
+            extendió hacia zonas que históricamente han sido desatendidas de
+            muchas maneras como la ruralidad dispersa del municipio de Marmato.
           </Typography>
           <Typography
             color="secondary"
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Se garantizó el acceso de los grupos de interés a una información
             abierta, precisa, correcta, oportuna y acorde a la necesidad o
@@ -297,6 +319,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - El proyecto impact de forma significativa, a varios actores
             sociales, incluidos órganos gubernamentales, instituciones
@@ -307,6 +330,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Articulación en programas y proyectos de desarrollo social de
             alcance en la comunidad local.
@@ -316,6 +340,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Apalancamiento a iniciativas comunitarias emprendidas y propuestas
             por los grupos de interés priorizados, con las cuales se abarcan
@@ -327,6 +352,7 @@ const EvolucionResultados = () => {
             fontSize={23}
             fontFamily="Open Sans"
             pt={5}
+            align="justify"
           >
             - Se establecieron alianzas y sinergias con actores de amplía
             influencia en el territorio, con instituciones y organizaciones
@@ -362,7 +388,13 @@ const EvolucionResultados = () => {
         >
           GENERACIÓN DE CONFIANZA
         </Typography>
-        <Image alt="tabla" src={"/imgs/Tablaeyr.png"} width={1072} height={880}></Image>
+        <Image
+          style={{ marginTop: -80 }}
+          alt="tabla"
+          src={"/imgs/Tablaeyr.png"}
+          width={1072}
+          height={880}
+        ></Image>
         <Typography
           color="secondary"
           fontSize={23}
