@@ -188,8 +188,8 @@ const Metodologia = () => {
                 </Grid>
               </Grid>
 
-              <Grid item container xs={5.5}>
-                <Grid item xs={12} sx={{ height: "fit-content" }} pb={9}>
+              <Grid item container xs={5.5} alignContent='flex-start'>
+                <Grid item xs={12}>
                   <Typography
                     fontSize={25}
                     lineHeight={"33.96px"}
@@ -224,7 +224,7 @@ const Metodologia = () => {
                   </Typography>
                 </Grid>
 
-                <Grid item xs={12}>
+                <Grid item xs={12} pt={10}>
                   <Typography
                     fontSize={25}
                     lineHeight={"33.96px"}
@@ -415,9 +415,11 @@ const Metodologia = () => {
                 textAlign='center'
                 sx={{
                   color: slide === 0 ? "primary.main" : "secondary.light",
-                  textDecoration: "none",
+                  cursor: 'pointer',
+                  textDecoration: slide === 0 ? "underline" : "none",
                   "&:hover": {
                     color: "primary.main",
+                    textDecoration: "underline"
                   },
                 }}
                 onClick={() => {
@@ -435,9 +437,11 @@ const Metodologia = () => {
                 textAlign='center'
                 sx={{
                   color: slide === 1 ? "primary.main" : "secondary.light",
-                  textDecoration: "none",
+                  cursor: 'pointer',
+                  textDecoration: slide === 1 ? "underline" : "none",
                   "&:hover": {
                     color: "primary.main",
+                    textDecoration: "underline"
                   },
                 }}
                 onClick={() => {
@@ -455,9 +459,11 @@ const Metodologia = () => {
                 textAlign='center'
                 sx={{
                   color: slide === 2 ? "primary.main" : "secondary.light",
-                  textDecoration: "none",
+                  cursor: 'pointer',
+                  textDecoration: slide === 2 ? "underline" : "none",
                   "&:hover": {
                     color: "primary.main",
+                    textDecoration: "underline"
                   },
                 }}
                 onClick={() => {
@@ -475,9 +481,11 @@ const Metodologia = () => {
                 textAlign='center'
                 sx={{
                   color: slide === 3 ? "primary.main" : "secondary.light",
-                  textDecoration: "none",
+                  cursor: 'pointer',
+                  textDecoration: slide === 3 ? "underline" : "none",
                   "&:hover": {
                     color: "primary.main",
+                    textDecoration: "underline"
                   },
                 }}
                 onClick={() => {
