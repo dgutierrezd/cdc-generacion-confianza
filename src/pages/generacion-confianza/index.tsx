@@ -657,7 +657,14 @@ const GeneracionResultados = () => {
                     width: "100%",
                     height: 400,
                   }}
-                />
+                >
+                  <Image
+                    alt="gc"
+                    src={"/imgs/Politicas1.png"}
+                    width={800}
+                    height={400}
+                  />
+                </Box>
               </Grid>
               <Grid item container xs={5.5}>
                 <Box
@@ -667,7 +674,14 @@ const GeneracionResultados = () => {
                     width: "100%",
                     height: 400,
                   }}
-                />
+                >
+                  <Image
+                    alt="gc"
+                    src={"/imgs/Politicas2.png"}
+                    width={800}
+                    height={400}
+                  />
+                </Box>
               </Grid>
             </Grid>
 
