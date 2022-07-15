@@ -174,6 +174,7 @@ const Home = () => {
                 fontFamily="VAGROUNDEDSTD"
                 lineHeight={"67.05px"}
                 fontWeight={800}
+                pr={4}
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -184,9 +185,11 @@ const Home = () => {
               >
                 {"Comenzar"}
               </Link>
-              <ArrowForwardRoundedIcon
-                sx={{ width: 150, height: 100 }}
-                color="primary"
+              <Image
+                alt="GC"
+                src={"/icons/Arrow_img-bg.png"}
+                width={57}
+                height={51}
               />
             </Stack>
           </Grid>
