@@ -91,7 +91,7 @@ const Navbar = () => {
         </Link>
 
         <Link
-          // href={'#modules'}
+          href={'/medios'}
           underline="hover"
           color="secondary"
           fontSize={21.19}
