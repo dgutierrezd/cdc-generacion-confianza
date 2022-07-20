@@ -21,13 +21,13 @@ const Transition = forwardRef(function Transition(
   },
   ref: React.Ref<unknown>
 ) {
-  return <Slide direction="left" ref={ref} {...props} />;
+  return <Slide direction="down" ref={ref} {...props} />;
 });
 
 const Medios = () => {
   const [imageShow, setImageShow] = useState(1);
-
   const [open, setOpen] = React.useState(false);
+  const [videoClicked, setVideoClicked] = useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -183,19 +183,25 @@ const Medios = () => {
             fontFamily="VAGROUNDEDSTD"
             fontWeight={800}
             pl={1}
-            onClick={() => handleClickOpen()}
           >
             Videos
           </Typography>
         </Stack>
         <Grid item container xs={10} justifyContent="space-between" pt={5}>
           <Grid item container xs={3}>
-            <Box
-              sx={{
-                borderRadius: 5,
-                backgroundColor: "secondary.light",
-                width: "100%",
-                height: 250,
+            <Image
+              alt="video"
+              src="https://i3.ytimg.com/vi/y2roVjqtxZM/maxresdefault.jpg"
+              width={413}
+              height={232}
+              style={{ borderRadius: 15, cursor: "pointer" }}
+              onClick={() => {
+                setVideoClicked(
+                  "https://www.youtube.com/watch?v=y2roVjqtxZM&ab_channel=Corporaci%C3%B3nparaelDesarrollodeCaldas"
+                );
+                setTimeout(() => {
+                  handleClickOpen();
+                }, 300);
               }}
             />
             <Stack
@@ -206,7 +212,7 @@ const Medios = () => {
             >
               <Image
                 alt={"rightIcon"}
-                src={"/icons/videoVerde.png"}
+                src={"/icons/videoWhite.png"}
                 width={56}
                 height={36}
               />
@@ -223,12 +229,19 @@ const Medios = () => {
             </Stack>
           </Grid>
           <Grid item container xs={3}>
-            <Box
-              sx={{
-                borderRadius: 5,
-                backgroundColor: "secondary.light",
-                width: "100%",
-                height: 250,
+            <Image
+              alt="video"
+              src="https://i3.ytimg.com/vi/VVbB6AMfI7o/maxresdefault.jpg"
+              width={413}
+              height={232}
+              style={{ borderRadius: 15, cursor: "pointer" }}
+              onClick={() => {
+                setVideoClicked(
+                  "https://www.youtube.com/watch?v=VVbB6AMfI7o&ab_channel=Corporaci%C3%B3nparaelDesarrollodeCaldas"
+                );
+                setTimeout(() => {
+                  handleClickOpen();
+                }, 300);
               }}
             />
             <Stack
@@ -239,7 +252,7 @@ const Medios = () => {
             >
               <Image
                 alt={"rightIcon"}
-                src={"/icons/videoVerde.png"}
+                src={"/icons/videoWhite.png"}
                 width={56}
                 height={36}
               />
@@ -256,12 +269,19 @@ const Medios = () => {
             </Stack>
           </Grid>
           <Grid item container xs={3}>
-            <Box
-              sx={{
-                borderRadius: 5,
-                backgroundColor: "secondary.light",
-                width: "100%",
-                height: 250,
+            <Image
+              alt="video"
+              src="http://i3.ytimg.com/vi/OMibDHTpBnw/hqdefault.jpg"
+              width={413}
+              height={232}
+              style={{ borderRadius: 15, cursor: "pointer" }}
+              onClick={() => {
+                setVideoClicked(
+                  "https://www.youtube.com/watch?v=OMibDHTpBnw&ab_channel=Corporaci%C3%B3nparaelDesarrollodeCaldas"
+                );
+                setTimeout(() => {
+                  handleClickOpen();
+                }, 300);
               }}
             />
             <Stack
@@ -272,7 +292,7 @@ const Medios = () => {
             >
               <Image
                 alt={"rightIcon"}
-                src={"/icons/videoVerde.png"}
+                src={"/icons/videoWhite.png"}
                 width={56}
                 height={36}
               />
@@ -291,12 +311,19 @@ const Medios = () => {
         </Grid>
         <Grid item container xs={10} justifyContent="space-between" pt={6}>
           <Grid item container xs={3}>
-            <Box
-              sx={{
-                borderRadius: 5,
-                backgroundColor: "secondary.light",
-                width: "100%",
-                height: 250,
+            <Image
+              alt="video"
+              src="http://i3.ytimg.com/vi/Tx8qSf0kC4E/hqdefault.jpg"
+              width={413}
+              height={232}
+              style={{ borderRadius: 15, cursor: "pointer" }}
+              onClick={() => {
+                setVideoClicked(
+                  "https://www.youtube.com/watch?v=Tx8qSf0kC4E&ab_channel=Corporaci%C3%B3nparaelDesarrollodeCaldas"
+                );
+                setTimeout(() => {
+                  handleClickOpen();
+                }, 300);
               }}
             />
             <Stack
@@ -307,7 +334,7 @@ const Medios = () => {
             >
               <Image
                 alt={"rightIcon"}
-                src={"/icons/videoVerde.png"}
+                src={"/icons/videoWhite.png"}
                 width={56}
                 height={36}
               />
@@ -1343,7 +1370,7 @@ const Medios = () => {
         // classes={{ paper: { minHeight: "80vh", maxHeight: "80vh" } }}
       >
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+          url={videoClicked}
           width="100%"
           height="100%"
           // playing={true}
