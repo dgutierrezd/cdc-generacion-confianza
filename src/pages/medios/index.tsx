@@ -21,8 +21,56 @@ const Transition = forwardRef(function Transition(
   },
   ref: React.Ref<unknown>
 ) {
-  return <Slide direction="down" ref={ref} {...props} />;
+  return <Slide direction='down' ref={ref} {...props} />;
 });
+
+interface IVideoThumbnailProps {
+  onClick: () => void;
+  srcThumbnail: string;
+  width: number;
+  height: number;
+}
+
+const VideoThumbnail = (props: IVideoThumbnailProps) => {
+  return (
+    <Box
+      sx={{
+        position: "relative",
+        zIndex: 1,
+        display: "flex",
+        width: props.width,
+        cursor: "pointer",
+        height: props.height,
+      }}
+      onClick={props.onClick}
+    >
+      <Image
+        alt='video'
+        src={props.srcThumbnail}
+        width={props.width}
+        height={props.height}
+        style={{
+          borderRadius: 15,
+        }}
+      />
+      <Box
+        sx={{
+          position: "absolute",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+          height: "100%",
+          zIndex: 2,
+        }}
+      >
+        <IconButton>
+          <Image src='/icons/playVideo.png' width={71} height={72} />
+        </IconButton>
+      </Box>
+    </Box>
+  );
+};
 
 const Medios = () => {
   const [imageShow, setImageShow] = useState(1);
@@ -60,52 +108,52 @@ const Medios = () => {
         container
         // width='100%'
         pt={10}
-        justifyContent="center"
-        alignItems="center"
+        justifyContent='center'
+        alignItems='center'
         paddingBottom={14.75}
-        display="flex"
+        display='flex'
         sx={{
           backgroundColor: (theme) => theme.palette.background.default,
           flexDirection: "column",
         }}
       >
         <Typography
-          color="primary"
+          color='primary'
           fontSize={82.04}
           lineHeight={"94.67px"}
-          fontFamily="VAGROUNDEDSTD"
+          fontFamily='VAGROUNDEDSTD'
           fontWeight={800}
         >
           Medios
         </Typography>
         <Grid width={"45%"}>
           <Typography
-            color="secondary"
+            color='secondary'
             fontSize={25}
             lineHeight={"33.96px"}
-            fontFamily="Open Sans"
+            fontFamily='Open Sans'
             pt={7}
-            align="center"
+            align='center'
           >
             {
               'El Proyecto Social para la "Generación de Confianza y promoción de la cultura de la legalidad", conocido actualmente a nivel comunitario y empresarial como "Generación de Confianza", se orienta a generar un cambio de postura en todos los actores implicados (empresa-comunidad y demás instituciones vinculadas al proyecto) frente a su papel activo y transformador en la viabilización de acciones sociales y técnicas.'
             }
           </Typography>
           <Typography
-            color="primary"
+            color='primary'
             fontSize={25}
             lineHeight={"33.96px"}
-            fontFamily="Open Sans"
-            align="center"
+            fontFamily='Open Sans'
+            align='center'
           >
             En este espacio encontrar medios que cuenten las experiencias
             vividas con nuestros grupos de interés.
           </Typography>
           <Typography
-            color="secondary"
+            color='secondary'
             fontSize={62.5}
             lineHeight={"94.67px"}
-            fontFamily="VAGROUNDEDSTD"
+            fontFamily='VAGROUNDEDSTD'
             fontWeight={800}
             textAlign={"center"}
             pt={12}
@@ -115,9 +163,9 @@ const Medios = () => {
           </Typography>
         </Grid>
         <Stack
-          direction="row"
-          justifyContent="space-around"
-          alignItems="center"
+          direction='row'
+          justifyContent='space-around'
+          alignItems='center'
           width={"80%"}
         >
           <IconButton
@@ -135,7 +183,7 @@ const Medios = () => {
             alt={"image"}
             src={`/imgs/galeria/DSCN${imageShow}.JPG`}
             width={987}
-            objectFit="contain"
+            objectFit='contain'
             height={554}
             style={{ borderRadius: 20 }}
           />
@@ -156,19 +204,19 @@ const Medios = () => {
         container
         // width='100%'
         pt={10}
-        justifyContent="center"
-        alignItems="center"
+        justifyContent='center'
+        alignItems='center'
         paddingBottom={14.75}
-        display="flex"
+        display='flex'
         sx={{
           backgroundColor: (theme) => theme.palette.primary.main,
           flexDirection: "column",
         }}
       >
         <Stack
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
+          direction='row'
+          justifyContent='center'
+          alignItems='center'
           width={"80%"}
         >
           <Image
@@ -178,24 +226,22 @@ const Medios = () => {
             height={58}
           />
           <Typography
-            color="secondary"
+            color='secondary'
             fontSize={62.5}
             lineHeight={"94.67px"}
-            fontFamily="VAGROUNDEDSTD"
+            fontFamily='VAGROUNDEDSTD'
             fontWeight={800}
             pl={1}
           >
             Videos
           </Typography>
         </Stack>
-        <Grid item container xs={10} justifyContent="space-between" pt={5}>
+        <Grid item container xs={10} justifyContent='space-between' pt={5}>
           <Grid item container xs={3}>
-            <Image
-              alt="video"
-              src="https://i3.ytimg.com/vi/y2roVjqtxZM/maxresdefault.jpg"
+            <VideoThumbnail
+              srcThumbnail='https://i3.ytimg.com/vi/y2roVjqtxZM/maxresdefault.jpg'
               width={413}
               height={232}
-              style={{ borderRadius: 15, cursor: "pointer" }}
               onClick={() => {
                 setVideoClicked(
                   "https://www.youtube.com/watch?v=y2roVjqtxZM&ab_channel=Corporaci%C3%B3nparaelDesarrollodeCaldas"
@@ -205,10 +251,11 @@ const Medios = () => {
                 }, 300);
               }}
             />
+
             <Stack
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
+              direction='row'
+              justifyContent='center'
+              alignItems='center'
               pt={4}
             >
               <Image
@@ -218,10 +265,10 @@ const Medios = () => {
                 height={36}
               />
               <Typography
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"25px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
               >
@@ -230,12 +277,10 @@ const Medios = () => {
             </Stack>
           </Grid>
           <Grid item container xs={3}>
-            <Image
-              alt="video"
-              src="https://i3.ytimg.com/vi/VVbB6AMfI7o/maxresdefault.jpg"
+            <VideoThumbnail
+              srcThumbnail='https://i3.ytimg.com/vi/VVbB6AMfI7o/maxresdefault.jpg'
               width={413}
               height={232}
-              style={{ borderRadius: 15, cursor: "pointer" }}
               onClick={() => {
                 setVideoClicked(
                   "https://www.youtube.com/watch?v=VVbB6AMfI7o&ab_channel=Corporaci%C3%B3nparaelDesarrollodeCaldas"
@@ -246,9 +291,9 @@ const Medios = () => {
               }}
             />
             <Stack
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
+              direction='row'
+              justifyContent='center'
+              alignItems='center'
               pt={4}
             >
               <Image
@@ -258,10 +303,10 @@ const Medios = () => {
                 height={36}
               />
               <Typography
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"25px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
               >
@@ -270,12 +315,10 @@ const Medios = () => {
             </Stack>
           </Grid>
           <Grid item container xs={3}>
-            <Image
-              alt="video"
-              src="http://i3.ytimg.com/vi/OMibDHTpBnw/hqdefault.jpg"
+            <VideoThumbnail
+              srcThumbnail='http://i3.ytimg.com/vi/OMibDHTpBnw/hqdefault.jpg'
               width={413}
               height={232}
-              style={{ borderRadius: 15, cursor: "pointer" }}
               onClick={() => {
                 setVideoClicked(
                   "https://www.youtube.com/watch?v=OMibDHTpBnw&ab_channel=Corporaci%C3%B3nparaelDesarrollodeCaldas"
@@ -286,9 +329,9 @@ const Medios = () => {
               }}
             />
             <Stack
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
+              direction='row'
+              justifyContent='center'
+              alignItems='center'
               pt={4}
             >
               <Image
@@ -298,10 +341,10 @@ const Medios = () => {
                 height={36}
               />
               <Typography
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"25px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
               >
@@ -310,14 +353,12 @@ const Medios = () => {
             </Stack>
           </Grid>
         </Grid>
-        <Grid item container xs={10} justifyContent="space-between" pt={6}>
+        <Grid item container xs={10} justifyContent='space-between' pt={6}>
           <Grid item container xs={3}>
-            <Image
-              alt="video"
-              src="http://i3.ytimg.com/vi/Tx8qSf0kC4E/hqdefault.jpg"
+            <VideoThumbnail
+              srcThumbnail='http://i3.ytimg.com/vi/Tx8qSf0kC4E/hqdefault.jpg'
               width={413}
               height={232}
-              style={{ borderRadius: 15, cursor: "pointer" }}
               onClick={() => {
                 setVideoClicked(
                   "https://www.youtube.com/watch?v=Tx8qSf0kC4E&ab_channel=Corporaci%C3%B3nparaelDesarrollodeCaldas"
@@ -328,9 +369,9 @@ const Medios = () => {
               }}
             />
             <Stack
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
+              direction='row'
+              justifyContent='center'
+              alignItems='center'
               pt={4}
             >
               <Image
@@ -340,10 +381,10 @@ const Medios = () => {
                 height={36}
               />
               <Typography
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"25px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
               >
@@ -357,10 +398,10 @@ const Medios = () => {
         container
         // width='100%'
         pt={10}
-        justifyContent="center"
-        alignItems="center"
+        justifyContent='center'
+        alignItems='center'
         paddingBottom={14.75}
-        display="flex"
+        display='flex'
         sx={{
           backgroundImage: `url(${"/imgs/Fondo2Medios.png"})`,
           backgroundSize: "cover",
@@ -369,9 +410,9 @@ const Medios = () => {
         }}
       >
         <Stack
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
+          direction='row'
+          justifyContent='center'
+          alignItems='center'
           width={"80%"}
           pb={10}
         >
@@ -382,10 +423,10 @@ const Medios = () => {
             height={83}
           />
           <Typography
-            color="secondary"
+            color='secondary'
             fontSize={62.5}
             lineHeight={"94.67px"}
-            fontFamily="VAGROUNDEDSTD"
+            fontFamily='VAGROUNDEDSTD'
             fontWeight={800}
             pl={3.5}
           >
@@ -393,18 +434,18 @@ const Medios = () => {
           </Typography>
         </Stack>
         <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="start"
+          direction='row'
+          justifyContent='space-between'
+          alignItems='start'
           pb={10}
           width={"80%"}
         >
           <Stack
             direction={"column"}
-            alignItems="start"
+            alignItems='start'
             justifyItems={"center"}
           >
-            <Stack direction={"row"} alignItems="center" pb={10}>
+            <Stack direction={"row"} alignItems='center' pb={10}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -412,14 +453,14 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 href={"/documentos/Socielogia de la accion.pdf"}
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -430,7 +471,7 @@ const Medios = () => {
                 Sociología de la acción
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center" pb={10}>
+            <Stack direction={"row"} alignItems='center' pb={10}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -438,16 +479,16 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={200}
-                align="left"
+                align='left'
                 href={"/documentos/Modulo Soy un Ciudadano Legal.pdf"}
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -458,7 +499,7 @@ const Medios = () => {
                 Modulo Soy un Ciudadano Legal
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center" pb={10}>
+            <Stack direction={"row"} alignItems='center' pb={10}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -466,18 +507,18 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={300}
-                align="left"
+                align='left'
                 href={
                   "/documentos/GUIA PARA FORMULACION DE PROYECTOS DE ONG.pdf"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -488,7 +529,7 @@ const Medios = () => {
                 Guía para la formulación de proyectos de ONG
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center">
+            <Stack direction={"row"} alignItems='center'>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -496,18 +537,18 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={300}
-                align="left"
+                align='left'
                 href={
                   "/documentos/Del cuerpo a la ciudad_ repensando nuestros territorios desde la investigación colectiva  con cartografía social.pdf"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -522,10 +563,10 @@ const Medios = () => {
           </Stack>
           <Stack
             direction={"column"}
-            alignItems="start"
+            alignItems='start'
             justifyItems={"center"}
           >
-            <Stack direction={"row"} alignItems="center" pb={10}>
+            <Stack direction={"row"} alignItems='center' pb={10}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -533,18 +574,18 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={430}
-                align="left"
+                align='left'
                 href={
                   "/documentos/SM_N68_Formulacion_prog_metodologia_ML - 2011.pdf"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -555,7 +596,7 @@ const Medios = () => {
                 SM_N68_Formulación programa metodología ML - 2011
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center" pb={10}>
+            <Stack direction={"row"} alignItems='center' pb={10}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -563,15 +604,15 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
-                align="left"
+                align='left'
                 href={"/documentos/Marmato La Tierra codiciada.pdf"}
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -582,7 +623,7 @@ const Medios = () => {
                 Marmato La Tierra codiciada
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center" pb={10}>
+            <Stack direction={"row"} alignItems='center' pb={10}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -590,18 +631,18 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={350}
-                align="left"
+                align='left'
                 href={
                   "/documentos/Grupos Focales de Investigación Generacion de Confianza.pdf"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -615,10 +656,10 @@ const Medios = () => {
           </Stack>
           <Stack
             direction={"column"}
-            alignItems="start"
+            alignItems='start'
             justifyItems={"center"}
           >
-            <Stack direction={"row"} alignItems="center" pb={8}>
+            <Stack direction={"row"} alignItems='center' pb={8}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -626,16 +667,16 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={430}
-                align="left"
+                align='left'
                 href={"/documentos/modulo-soy-un-ciudadano-legal-final.pdf"}
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -646,7 +687,7 @@ const Medios = () => {
                 Modulo soy un ciudadano legal final
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center" pb={8}>
+            <Stack direction={"row"} alignItems='center' pb={8}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -654,18 +695,18 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={300}
-                align="left"
+                align='left'
                 href={
                   "/documentos/Guia para la formulacion participativa de proyectos en organizaciones de base comunitaria.PPD.pdf"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -677,7 +718,7 @@ const Medios = () => {
                 organizaciones de base comunitaria.PPD
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center">
+            <Stack direction={"row"} alignItems='center'>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -685,16 +726,16 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={300}
-                align="left"
+                align='left'
                 href={"/documentos/cartografia-social.pdf"}
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -712,19 +753,19 @@ const Medios = () => {
         container
         // width='100%'
         pt={10}
-        justifyContent="center"
-        alignItems="center"
+        justifyContent='center'
+        alignItems='center'
         paddingBottom={14.75}
-        display="flex"
+        display='flex'
         sx={{
           backgroundColor: (theme) => theme.palette.background.default,
           flexDirection: "column",
         }}
       >
         <Stack
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
+          direction='row'
+          justifyContent='center'
+          alignItems='center'
           width={"80%"}
           pb={10}
         >
@@ -735,10 +776,10 @@ const Medios = () => {
             height={83}
           />
           <Typography
-            color="primary"
+            color='primary'
             fontSize={62.5}
             lineHeight={"94.67px"}
-            fontFamily="VAGROUNDEDSTD"
+            fontFamily='VAGROUNDEDSTD'
             fontWeight={800}
             pl={3.5}
           >
@@ -746,14 +787,14 @@ const Medios = () => {
           </Typography>
         </Stack>
         <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="start"
+          direction='row'
+          justifyContent='space-between'
+          alignItems='start'
           pb={10}
           width={"80%"}
         >
-          <Stack direction={"column"} alignItems="start">
-            <Stack direction={"row"} alignItems="center" pb={10}>
+          <Stack direction={"column"} alignItems='start'>
+            <Stack direction={"row"} alignItems='center' pb={10}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -761,14 +802,14 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 href={"/instrumentos/Formulario Caracterizacion Afro.pdf"}
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -779,7 +820,7 @@ const Medios = () => {
                 Formulario Caracterización Afro
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center">
+            <Stack direction={"row"} alignItems='center'>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -787,16 +828,16 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={355}
-                align="left"
+                align='left'
                 href={"/instrumentos/Instrumento evaluación de entrada PDF.pdf"}
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -808,8 +849,8 @@ const Medios = () => {
               </Link>
             </Stack>
           </Stack>
-          <Stack direction={"column"} alignItems="start">
-            <Stack direction={"row"} alignItems="center" pb={9}>
+          <Stack direction={"column"} alignItems='start'>
+            <Stack direction={"row"} alignItems='center' pb={9}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -817,18 +858,18 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={430}
-                align="left"
+                align='left'
                 href={
                   "/instrumentos/INSTRUMENTO CARACTERIZACION DE ACTORES ESTRATEGICO GENERACION DE CONFIZAN-  COMUNITARIO.docx"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -840,7 +881,7 @@ const Medios = () => {
                 de confianza
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center">
+            <Stack direction={"row"} alignItems='center'>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -848,18 +889,18 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={300}
-                align="left"
+                align='left'
                 href={
                   "/instrumentos/INSTRUMENTO TALLER DE DESARROLLO HUMANO GENERACION DE CONFIANZA.docx"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -871,7 +912,7 @@ const Medios = () => {
               </Link>
             </Stack>
           </Stack>
-          <Stack direction={"row"} alignItems="center">
+          <Stack direction={"row"} alignItems='center'>
             <Image
               alt={"rightIcon"}
               src={"/icons/pdfBlanco.png"}
@@ -879,18 +920,18 @@ const Medios = () => {
               height={63}
             />
             <Link
-              color="secondary"
+              color='secondary'
               fontSize={25}
               lineHeight={"23.5px"}
-              fontFamily="VAGROUNDEDSTD"
+              fontFamily='VAGROUNDEDSTD'
               fontWeight={800}
               pl={1}
               maxWidth={430}
-              align="left"
+              align='left'
               href={
                 "/instrumentos/instrumento de caracterizacion organizacion generacion de confianza.doc"
               }
-              target="_blank"
+              target='_blank'
               sx={{
                 textDecoration: "none",
                 "&:hover": {
@@ -904,9 +945,9 @@ const Medios = () => {
           </Stack>
         </Stack>
         <Stack
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
+          direction='row'
+          justifyContent='center'
+          alignItems='center'
           width={"80%"}
           pb={10}
           pt={3}
@@ -918,10 +959,10 @@ const Medios = () => {
             height={83}
           />
           <Typography
-            color="primary"
+            color='primary'
             fontSize={62.5}
             lineHeight={"94.67px"}
-            fontFamily="VAGROUNDEDSTD"
+            fontFamily='VAGROUNDEDSTD'
             fontWeight={800}
             pl={3.5}
           >
@@ -929,14 +970,14 @@ const Medios = () => {
           </Typography>
         </Stack>
         <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
+          direction='row'
+          justifyContent='space-between'
+          alignItems='center'
           pb={10}
           width={"80%"}
         >
-          <Stack direction={"column"} alignItems="start" marginRight={-40}>
-            <Stack direction={"row"} alignItems="center" pb={10}>
+          <Stack direction={"column"} alignItems='start' marginRight={-40}>
+            <Stack direction={"row"} alignItems='center' pb={10}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -944,16 +985,16 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 href={
                   "/presentaciones/GENERACIÓN DE CONFIANZA 2017 linea del tiempo.pptx"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -964,7 +1005,7 @@ const Medios = () => {
                 Generación de confianza 2017
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center" pb={10}>
+            <Stack direction={"row"} alignItems='center' pb={10}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -972,15 +1013,15 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
-                align="left"
+                align='left'
                 href={"/presentaciones/Presentacion CDC.ppt"}
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -991,7 +1032,7 @@ const Medios = () => {
                 Presentación CDC
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center" pr={18.5}>
+            <Stack direction={"row"} alignItems='center' pr={18.5}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -999,18 +1040,18 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={355}
-                align="left"
+                align='left'
                 href={
                   "/presentaciones/PROPUESTA GENERACION DE CONFIANZA  MARMATO PRESENTACION  FINAL.pptx"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -1022,8 +1063,8 @@ const Medios = () => {
               </Link>
             </Stack>
           </Stack>
-          <Stack direction={"column"} alignItems="start">
-            <Stack direction={"row"} alignItems="center" pb={10}>
+          <Stack direction={"column"} alignItems='start'>
+            <Stack direction={"row"} alignItems='center' pb={10}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -1031,16 +1072,16 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={430}
-                align="left"
+                align='left'
                 href={"/presentaciones/Generacion de confianza 2018.pptx"}
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -1051,7 +1092,7 @@ const Medios = () => {
                 Generación de confianza 2018
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center" pb={10}>
+            <Stack direction={"row"} alignItems='center' pb={10}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -1059,18 +1100,18 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={300}
-                align="left"
+                align='left'
                 href={
                   "/presentaciones/Presentacion lo hacemos con ustedes.pptx"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -1081,7 +1122,7 @@ const Medios = () => {
                 Presentación lo hacemos con usted
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center">
+            <Stack direction={"row"} alignItems='center'>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -1089,18 +1130,18 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={300}
-                align="left"
+                align='left'
                 href={
                   "/presentaciones/Proyecto generación de Confianza  Completo  Dorada.pptx"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -1112,8 +1153,8 @@ const Medios = () => {
               </Link>
             </Stack>
           </Stack>
-          <Stack direction={"column"} alignItems="start">
-            <Stack direction={"row"} alignItems="center" pb={10}>
+          <Stack direction={"column"} alignItems='start'>
+            <Stack direction={"row"} alignItems='center' pb={10}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -1121,16 +1162,16 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={430}
-                align="left"
+                align='left'
                 href={"/presentaciones/Modulo de Formacion Perdidas.pptx"}
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -1141,7 +1182,7 @@ const Medios = () => {
                 Módulo de Formación Pérdidas
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center" pb={10}>
+            <Stack direction={"row"} alignItems='center' pb={10}>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -1149,18 +1190,18 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={300}
-                align="left"
+                align='left'
                 href={
                   "/presentaciones/PRESENTACION MARMATO PARA ORGANZACIONES.pptx"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -1171,7 +1212,7 @@ const Medios = () => {
                 Presentación Marmato para organizaciones
               </Link>
             </Stack>
-            <Stack direction={"row"} alignItems="center">
+            <Stack direction={"row"} alignItems='center'>
               <Image
                 alt={"rightIcon"}
                 src={"/icons/pdfBlanco.png"}
@@ -1179,18 +1220,18 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 maxWidth={300}
-                align="left"
+                align='left'
                 href={
                   "/presentaciones/Proyecto Social en Cultura de la Legalidad CHEC.pptx"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -1208,10 +1249,10 @@ const Medios = () => {
         container
         // width='100%'
         pt={10}
-        justifyContent="center"
-        alignItems="center"
+        justifyContent='center'
+        alignItems='center'
         paddingBottom={14.75}
-        display="flex"
+        display='flex'
         sx={{
           backgroundImage: `url(${"/imgs/Fondo1Medios.png"})`,
           backgroundSize: "cover",
@@ -1220,17 +1261,17 @@ const Medios = () => {
         }}
       >
         <Stack
-          direction="row"
-          justifyContent="space-around"
-          alignItems="center"
+          direction='row'
+          justifyContent='space-around'
+          alignItems='center'
           width={"70%"}
           pb={10}
         >
-          <Stack direction="column" justifyContent="center" alignItems="start">
+          <Stack direction='column' justifyContent='center' alignItems='start'>
             <Stack
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
+              direction='row'
+              justifyContent='center'
+              alignItems='center'
               pb={11}
             >
               <Image
@@ -1240,10 +1281,10 @@ const Medios = () => {
                 height={83}
               />
               <Typography
-                color="primary"
+                color='primary'
                 fontSize={43.7}
                 lineHeight={"42.76px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={3.5}
                 width={500}
@@ -1252,9 +1293,9 @@ const Medios = () => {
               </Typography>
             </Stack>
             <Stack
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
+              direction='row'
+              justifyContent='center'
+              alignItems='center'
               pb={9.5}
               pl={8}
             >
@@ -1265,16 +1306,16 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 href={
                   "/informes-evaluativos/INFORME EVALUACION DE ENTRADA GENERACION DE CONFIANZA MARMATO.pdf"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -1287,9 +1328,9 @@ const Medios = () => {
               </Link>
             </Stack>
             <Stack
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
+              direction='row'
+              justifyContent='center'
+              alignItems='center'
               pl={8}
             >
               <Image
@@ -1299,16 +1340,16 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 href={
                   "/informes-evaluativos/INFORME FINAL DORADA Y MANIZALES.pdf"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -1321,11 +1362,11 @@ const Medios = () => {
               </Link>
             </Stack>
           </Stack>
-          <Stack direction="column" justifyContent="center" alignItems="center">
+          <Stack direction='column' justifyContent='center' alignItems='center'>
             <Stack
-              direction="row"
-              justifyContent="center"
-              alignItems="flex-start"
+              direction='row'
+              justifyContent='center'
+              alignItems='flex-start'
               pb={11}
             >
               <Image
@@ -1335,10 +1376,10 @@ const Medios = () => {
                 height={83}
               />
               <Typography
-                color="primary"
+                color='primary'
                 fontSize={43.7}
                 lineHeight={"42.76px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={3.5}
                 width={300}
@@ -1347,9 +1388,9 @@ const Medios = () => {
               </Typography>
             </Stack>
             <Stack
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
+              direction='row'
+              justifyContent='center'
+              alignItems='center'
               pb={9.5}
               pl={20}
             >
@@ -1360,16 +1401,16 @@ const Medios = () => {
                 height={63}
               />
               <Link
-                color="secondary"
+                color='secondary'
                 fontSize={25}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
+                fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
                 href={
                   "/informe-sistematizacion/SISTEMATIZACIÓN PROYECTO  SOCIAL PARA LAGENERACION DE CONFIANZA Y PROMOCIÓN DE LA CULTURA DE LA LEGALIDAD.pdf"
                 }
-                target="_blank"
+                target='_blank'
                 sx={{
                   textDecoration: "none",
                   "&:hover": {
@@ -1392,14 +1433,14 @@ const Medios = () => {
         // keepMounted
         onClose={handleClose}
         fullWidth
-        maxWidth="xl"
+        maxWidth='xl'
         PaperProps={{ sx: { width: "70%", height: "70%" } }}
         // classes={{ paper: { minHeight: "80vh", maxHeight: "80vh" } }}
       >
         <ReactPlayer
           url={videoClicked}
-          width="100%"
-          height="100%"
+          width='100%'
+          height='100%'
           // playing={true}
         />
       </Dialog>
