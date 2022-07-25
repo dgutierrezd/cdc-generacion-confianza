@@ -58,7 +58,7 @@ const Navbar = () => {
           underline="hover"
           fontWeight={800}
           color="secondary"
-          fontSize={21.19}
+          fontSize={'1rem'}
           fontFamily="Open Sans"
           lineHeight={"23.5px"}
           alignItems="center"
@@ -69,7 +69,7 @@ const Navbar = () => {
           href={"/metodologia"}
           underline="hover"
           color="secondary"
-          fontSize={21.19}
+          fontSize={'1rem'}
           fontWeight={800}
           lineHeight={"23.5px"}
           fontFamily="Open Sans"
@@ -81,7 +81,7 @@ const Navbar = () => {
           href={"/evolucion-resultados"}
           underline="hover"
           color="secondary"
-          fontSize={21.19}
+          fontSize={'1rem'}
           fontWeight={800}
           lineHeight={"23.5px"}
           fontFamily="Open Sans"
@@ -94,7 +94,7 @@ const Navbar = () => {
           href={'/medios'}
           underline="hover"
           color="secondary"
-          fontSize={21.19}
+          fontSize={'1rem'}
           fontWeight={800}
           lineHeight={"23.5px"}
           fontFamily="Open Sans"
