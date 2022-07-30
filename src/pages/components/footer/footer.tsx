@@ -164,7 +164,7 @@ const Footer = () => {
                 },
               }}
             >
-              info@generaciondeconfianza.com.co
+              {/* info@generaciondeconfianza.com.co */}
             </Link>
           </Stack>
           <Typography
