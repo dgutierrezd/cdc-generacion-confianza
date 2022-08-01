@@ -48,7 +48,7 @@ const Navbar = (props: INavbarProps) => {
         textAlign: "center",
         backgroundColor: (theme) => theme.palette.background.default,
         justifyContent: "center",
-        height: '100%'
+        height: "100%",
       }}
     >
       <Stack direction='row' alignItems='center' justifyContent='center' p={2}>
@@ -97,59 +97,65 @@ const Navbar = (props: INavbarProps) => {
         </Stack>
       </Stack>
       <Divider />
-      <Stack
-        spacing={2}
-        py={2}
-        alignItems='center'
-      >
-        <Link
-          href={"/generacion-confianza"}
-          underline='hover'
-          fontWeight={800}
-          color='secondary'
-          fontSize={"1rem"}
-          fontFamily='Open Sans'
-          lineHeight={"23.5px"}
-          alignItems='center'
-        >
-          {"Generación de confianza"}
-        </Link>
-        <Link
-          href={"/metodologia"}
-          underline='hover'
-          color='secondary'
-          fontSize={"1rem"}
-          fontWeight={800}
-          lineHeight={"23.5px"}
-          fontFamily='Open Sans'
-          alignItems='center'
-        >
-          {"Metodología"}
-        </Link>
-        <Link
-          href={"/evolucion-resultados"}
-          underline='hover'
-          color='secondary'
-          fontSize={"1rem"}
-          fontWeight={800}
-          lineHeight={"23.5px"}
-          fontFamily='Open Sans'
-          alignItems='center'
-        >
-          {"Evolución y Resultados"}
-        </Link>
+      <Stack display='flex' justifyContent='space-between' height='85%'>
+        <Stack spacing={2} py={2} alignItems='center'>
+          <Link
+            href={"/generacion-confianza"}
+            underline='hover'
+            fontWeight={800}
+            color='secondary'
+            fontSize={"1rem"}
+            fontFamily='Open Sans'
+            lineHeight={"23.5px"}
+            alignItems='center'
+          >
+            {"Generación de confianza"}
+          </Link>
+          <Link
+            href={"/metodologia"}
+            underline='hover'
+            color='secondary'
+            fontSize={"1rem"}
+            fontWeight={800}
+            lineHeight={"23.5px"}
+            fontFamily='Open Sans'
+            alignItems='center'
+          >
+            {"Metodología"}
+          </Link>
+          <Link
+            href={"/evolucion-resultados"}
+            underline='hover'
+            color='secondary'
+            fontSize={"1rem"}
+            fontWeight={800}
+            lineHeight={"23.5px"}
+            fontFamily='Open Sans'
+            alignItems='center'
+          >
+            {"Evolución y Resultados"}
+          </Link>
 
-        <Link
-          href={"/medios"}
-          underline='hover'
-          color='secondary'
-          fontSize={"1rem"}
-          fontWeight={800}
-          lineHeight={"23.5px"}
-          fontFamily='Open Sans'
-          alignItems='center'
-        >
-          {"Medios"}
+          <Link
+            href={"/medios"}
+            underline='hover'
+            color='secondary'
+            fontSize={"1rem"}
+            fontWeight={800}
+            lineHeight={"23.5px"}
+            fontFamily='Open Sans'
+            alignItems='center'
+          >
+            {"Medios"}
+          </Link>
+        </Stack>
+        <Link href='https://www.chec.com.co/' target='_blank'>
+          <Image
+            alt='Chec logo'
+            src={"/imgs/chec-logo.png"}
+            width={88}
+            height={83}
+          />
         </Link>
       </Stack>
     </Box>
