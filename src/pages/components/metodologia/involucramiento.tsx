@@ -6,8 +6,8 @@ const Involucramiento = () => {
     <Grid item container justifyContent='center' xs={12}>
       <Grid item xs={12}>
         <Typography
-          fontSize={56.2}
-          lineHeight={"52.01px"}
+          fontSize={{ xs: 30, sm: 56.2 }}
+          lineHeight={{ xs: 1.2, sm: "52.01px" }}
           fontWeight={800}
           color='secondary.light'
           textAlign='center'
@@ -16,10 +16,10 @@ const Involucramiento = () => {
         </Typography>
       </Grid>
       <Grid item container xs={11} justifyContent='space-between'>
-        <Grid item xs={6.5} justifyContent='center'>
+        <Grid item xs={12} sm={6.5} justifyContent='center'>
           <Typography
-            fontSize={25}
-            lineHeight={"33.96px"}
+            fontSize={{ xs: 16, sm: 25 }}
+            lineHeight={{ xs: 1.5, sm: "32.17px" }}
             fontFamily='Open Sans'
             color='secondary.light'
             pt={5}
@@ -47,8 +47,8 @@ const Involucramiento = () => {
             }}
           >
             <Typography
-              fontSize={25}
-              lineHeight={"33.96px"}
+              fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "32.17px" }}
               fontFamily='Open Sans'
               color='secondary.light'
               p={5}
@@ -68,10 +68,10 @@ const Involucramiento = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={5} justifyContent='center'>
+        <Grid item xs={12} sm={5} justifyContent='center'>
           <Typography
-            fontSize={25}
-            lineHeight={"33.96px"}
+            fontSize={{ xs: 16, sm: 25 }}
+            lineHeight={{ xs: 1.5, sm: "32.17px" }}
             fontFamily='Open Sans'
             color='secondary.light'
             pt={5}
@@ -82,13 +82,13 @@ const Involucramiento = () => {
 
           <Stack direction='row' spacing={2}>
             <ArrowForwardRoundedIcon
-              sx={{ fontSize: 40, pt: 0.5 }}
+              sx={{ fontSize: { xs: 30, sm: 40 }, pt: { xs: 0, sm: 0.5 } }}
               color='secondary'
             />
             <Typography
               color='primary.main'
-              fontSize={25}
-              lineHeight={"50px"}
+              fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "50px" }}
               fontFamily='Open Sans'
               textAlign='justify'
             >
@@ -97,13 +97,13 @@ const Involucramiento = () => {
           </Stack>
           <Stack direction='row' spacing={2}>
             <ArrowForwardRoundedIcon
-              sx={{ fontSize: 40, pt: 0.5 }}
+              sx={{ fontSize: { xs: 30, sm: 40 }, pt: { xs: 0, sm: 0.5 } }}
               color='secondary'
             />
             <Typography
               color='primary.main'
-              fontSize={25}
-              lineHeight={"50px"}
+              fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "50px" }}
               fontFamily='Open Sans'
               textAlign='justify'
             >
@@ -112,13 +112,13 @@ const Involucramiento = () => {
           </Stack>
           <Stack direction='row' spacing={2}>
             <ArrowForwardRoundedIcon
-              sx={{ fontSize: 40, pt: 0.5 }}
+              sx={{ fontSize: { xs: 30, sm: 40 }, pt: { xs: 0, sm: 0.5 } }}
               color='secondary'
             />
             <Typography
               color='primary.main'
-              fontSize={25}
-              lineHeight={"50px"}
+              fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "50px" }}
               fontFamily='Open Sans'
               textAlign='justify'
             >
@@ -129,8 +129,8 @@ const Involucramiento = () => {
           </Stack>
 
           <Typography
-            fontSize={25}
-            lineHeight={"33.96px"}
+            fontSize={{ xs: 16, sm: 25 }}
+            lineHeight={{ xs: 1.5, sm: "32.17px" }}
             fontFamily='Open Sans'
             color='secondary.light'
             pt={5}
@@ -141,13 +141,13 @@ const Involucramiento = () => {
 
           <Stack direction='row' spacing={2}>
             <ArrowForwardRoundedIcon
-              sx={{ fontSize: 40, pt: 0.5 }}
+              sx={{ fontSize: { xs: 30, sm: 40 }, pt: { xs: 0, sm: 0.5 } }}
               color='secondary'
             />
             <Typography
               color='primary.main'
-              fontSize={25}
-              lineHeight={"50px"}
+              fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "50px" }}
               fontFamily='Open Sans'
               textAlign='justify'
             >
@@ -157,37 +157,39 @@ const Involucramiento = () => {
           </Stack>
           <Stack direction='row' spacing={2}>
             <ArrowForwardRoundedIcon
-              sx={{ fontSize: 40, pt: 0.5 }}
+              sx={{ fontSize: { xs: 30, sm: 40 }, pt: { xs: 0, sm: 0.5 } }}
               color='secondary'
             />
             <Typography
               color='primary.main'
-              fontSize={25}
-              lineHeight={"50px"}
+              fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "50px" }}
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Diseñar plan de comunicaciones para el desarrollo de la fase de involucramiento.
+              Diseñar plan de comunicaciones para el desarrollo de la fase de
+              involucramiento.
             </Typography>
           </Stack>
           <Stack direction='row' spacing={2}>
             <ArrowForwardRoundedIcon
-              sx={{ fontSize: 40, pt: 0.5 }}
+              sx={{ fontSize: { xs: 30, sm: 40 }, pt: { xs: 0, sm: 0.5 } }}
               color='secondary'
             />
             <Typography
               color='primary.main'
-              fontSize={25}
-              lineHeight={"50px"}
+              fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "50px" }}
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Validar y aprobar plan de comunicación para el desarrollo del proyecto
+              Validar y aprobar plan de comunicación para el desarrollo del
+              proyecto
             </Typography>
           </Stack>
           <Typography
-            fontSize={25}
-            lineHeight={"33.96px"}
+            fontSize={{ xs: 16, sm: 25 }}
+            lineHeight={{ xs: 1.5, sm: "32.17px" }}
             fontFamily='Open Sans'
             color='secondary.light'
             pt={5}
@@ -198,28 +200,28 @@ const Involucramiento = () => {
 
           <Stack direction='row' spacing={2}>
             <ArrowForwardRoundedIcon
-              sx={{ fontSize: 40, pt: 0.5 }}
+              sx={{ fontSize: { xs: 30, sm: 40 }, pt: { xs: 0, sm: 0.5 } }}
               color='secondary'
             />
             <Typography
               color='primary.main'
-              fontSize={25}
-              lineHeight={"50px"}
+              fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "50px" }}
               fontFamily='Open Sans'
               textAlign='justify'
             >
-              Socializar con actores claves los alcances del apoyo. 
+              Socializar con actores claves los alcances del apoyo.
             </Typography>
           </Stack>
           <Stack direction='row' spacing={2}>
             <ArrowForwardRoundedIcon
-              sx={{ fontSize: 40, pt: 0.5 }}
+              sx={{ fontSize: { xs: 30, sm: 40 }, pt: { xs: 0, sm: 0.5 } }}
               color='secondary'
             />
             <Typography
               color='primary.main'
-              fontSize={25}
-              lineHeight={"50px"}
+              fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "50px" }}
               fontFamily='Open Sans'
               textAlign='justify'
             >

@@ -16,8 +16,10 @@ import Evaluacion from "../components/metodologia/evaluacion";
 import Intervencion from "../components/metodologia/intervencion";
 import Involucramiento from "../components/metodologia/involucramiento";
 import { useState } from "react";
+import useIsXs from "../../utils/useIsXs";
 
 const Metodologia = () => {
+  const isXs = useIsXs();
   const [slide, setSlide] = useState<number>(0);
 
   const onNextSlide = () => {
@@ -35,22 +37,22 @@ const Metodologia = () => {
       }}
     >
       <Navbar />
-      <Grid container justifyContent="center">
+      <Grid container justifyContent='center'>
         <Grid
           item
           container
-          justifyContent="space-between"
+          justifyContent='space-between'
           //   alignItems='center'
           py={10}
           xs={10.5}
         >
-          <Grid item xs={6.5}>
+          <Grid item xs={12} sm={6.5}>
             <Typography
-              color="secondary.main"
-              fontSize={25}
-              lineHeight={"33.96px"}
-              fontFamily="Open Sans"
-              textAlign="justify"
+              color='secondary.main'
+              fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "33.96px" }}
+              fontFamily='Open Sans'
+              textAlign='justify'
             >
               Para el desarrollo del proyecto se planteó una estrategia de
               intervención a partir de los factores que permiten promover el
@@ -62,13 +64,13 @@ const Metodologia = () => {
               relacionamiento comunitario.
             </Typography>
           </Grid>
-          <Grid item xs={4.7}>
+          <Grid item xs={12} sm={4.7} pt={{ xs: 2, sm: 0 }}>
             <Typography
-              color="primary.main"
-              fontSize={25}
-              lineHeight={"32.17px"}
+              color='primary.main'
+              fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "32.17px" }}
               fontWeight={800}
-              textAlign="justify"
+              textAlign='justify'
             >
               Lo anterior, condujo a la elaboración de una propuesta, a partir
               de la cual se logró conjugar diversas metodologías presentes en
@@ -87,24 +89,24 @@ const Metodologia = () => {
             justifyContent: "center",
           }}
         >
-          <Grid item container justifyContent="center">
-            <Grid item xs={8} pt={10}>
+          <Grid item container justifyContent='center'>
+            <Grid item xs={10} sm={8} pt={10}>
               <Typography
-                fontSize={56.47}
-                lineHeight={"57.3px"}
+                fontSize={{ xs: 30, sm: 56.47 }}
+                lineHeight={{ xs: 1.2, sm: "57.3px" }}
                 fontWeight={800}
-                color="secondary.light"
-                textAlign="center"
+                color='secondary.light'
+                textAlign='center'
               >
                 ENFOQUE <br /> SOCIOCULTURAL
               </Typography>
               <Typography
-                fontSize={25}
-                lineHeight={"33.96px"}
-                fontFamily="Open Sans"
-                color="black"
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                fontFamily='Open Sans'
+                color='black'
                 pt={5}
-                align="justify"
+                align='justify'
               >
                 Este enfoque se apalanca metodológicamente en los aspectos
                 propuestos por: la animación sociocultural, alianzas
@@ -113,24 +115,24 @@ const Metodologia = () => {
               </Typography>
             </Grid>
 
-            <Grid item container xs={10} justifyContent="space-between" py={10}>
-              <Grid item container xs={5.5}>
+            <Grid item container xs={10} justifyContent='space-between' py={10}>
+              <Grid item container xs={12} sm={5.5}>
                 <Grid item xs={12}>
                   <Typography
-                    fontSize={25}
-                    lineHeight={"33.96px"}
+                    fontSize={{ xs: 16, sm: 25 }}
+                    lineHeight={{ xs: 1.5, sm: "33.96px" }}
                     fontWeight={800}
-                    color="primary.dark"
-                    textAlign="left"
+                    color='primary.dark'
+                    textAlign='left'
                   >
                     Animación Sociocultural
                   </Typography>
                   <Typography
-                    fontSize={25}
-                    lineHeight={"33.96px"}
-                    fontFamily="Open Sans"
-                    color="black"
-                    textAlign="justify"
+                    fontSize={{ xs: 16, sm: 25 }}
+                    lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                    fontFamily='Open Sans'
+                    color='black'
+                    textAlign='justify'
                   >
                     Es una estrategia de trabajo comunitario, que busca animar,
                     motivar y empoderar a los integrantes de una comunidad para
@@ -152,20 +154,20 @@ const Metodologia = () => {
 
                 <Grid item xs={12} pt={5}>
                   <Typography
-                    fontSize={25}
-                    lineHeight={"33.96px"}
+                    fontSize={{ xs: 16, sm: 25 }}
+                    lineHeight={{ xs: 1.5, sm: "33.96px" }}
                     fontWeight={800}
-                    color="primary.dark"
-                    textAlign="left"
+                    color='primary.dark'
+                    textAlign='left'
                   >
                     Acción sin daño
                   </Typography>
                   <Typography
-                    fontSize={25}
-                    lineHeight={"33.96px"}
-                    fontFamily="Open Sans"
-                    color="black"
-                    textAlign="justify"
+                    fontSize={{ xs: 16, sm: 25 }}
+                    lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                    fontFamily='Open Sans'
+                    color='black'
+                    textAlign='justify'
                   >
                     Este enfoque parte de la premisa de que ninguna intervención
                     externa realizada por diferentes actores ya sean
@@ -189,23 +191,30 @@ const Metodologia = () => {
                 </Grid>
               </Grid>
 
-              <Grid item container xs={5.5} alignContent='flex-start'>
+              <Grid
+                item
+                container
+                xs={12}
+                sm={5.5}
+                alignContent='flex-start'
+                pt={{ xs: 5, sm: 0 }}
+              >
                 <Grid item xs={12}>
                   <Typography
-                    fontSize={25}
-                    lineHeight={"33.96px"}
+                    fontSize={{ xs: 16, sm: 25 }}
+                    lineHeight={{ xs: 1.5, sm: "33.96px" }}
                     fontWeight={800}
-                    color="primary.dark"
-                    textAlign="left"
+                    color='primary.dark'
+                    textAlign='left'
                   >
                     Alianzas Público- Privadas
                   </Typography>
                   <Typography
-                    fontSize={25}
-                    lineHeight={"33.96px"}
-                    fontFamily="Open Sans"
-                    color="black"
-                    textAlign="justify"
+                    fontSize={{ xs: 16, sm: 25 }}
+                    lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                    fontFamily='Open Sans'
+                    color='black'
+                    textAlign='justify'
                   >
                     Contar con alianzas público- privadas permite dejar
                     capacidades instaladas en las comunidades y por este medio
@@ -225,22 +234,22 @@ const Metodologia = () => {
                   </Typography>
                 </Grid>
 
-                <Grid item xs={12} pt={10}>
+                <Grid item xs={12} pt={{ xs: 5, sm: 10 }}>
                   <Typography
-                    fontSize={25}
-                    lineHeight={"33.96px"}
+                    fontSize={{ xs: 16, sm: 25 }}
+                    lineHeight={{ xs: 1.5, sm: "33.96px" }}
                     fontWeight={800}
-                    color="primary.dark"
-                    textAlign="left"
+                    color='primary.dark'
+                    textAlign='left'
                   >
                     Investigación acción participación (IAP)
                   </Typography>
                   <Typography
-                    fontSize={25}
-                    lineHeight={"33.96px"}
-                    fontFamily="Open Sans"
-                    color="black"
-                    textAlign="justify"
+                    fontSize={{ xs: 16, sm: 25 }}
+                    lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                    fontFamily='Open Sans'
+                    color='black'
+                    textAlign='justify'
                   >
                     “La investigación acción participativa es una metodología
                     que apunta a la producción de un conocimiento propositivo y
@@ -269,35 +278,35 @@ const Metodologia = () => {
             justifyContent: "center",
           }}
         >
-          <Grid item container justifyContent="center" py={10} xs={10}>
-            <Grid item xs={10} justifyContent="center">
+          <Grid item container justifyContent='center' py={10} xs={10}>
+            <Grid item xs={12} sm={10} justifyContent='center'>
               <Typography
-                fontSize={56.47}
-                lineHeight={"57.3px"}
+                fontSize={{ xs: 30, sm: 56.47 }}
+                lineHeight={{ xs: 1.2, sm: "57.3px" }}
                 fontWeight={800}
-                color="primary.dark"
-                textAlign="center"
+                color='primary.dark'
+                textAlign='center'
               >
                 ENFOQUE <br /> PEDAGÓGICO
               </Typography>
               <Typography
-                fontSize={25}
-                lineHeight={"33.96px"}
-                fontFamily="Open Sans"
-                color="black"
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                fontFamily='Open Sans'
+                color='black'
                 pt={5}
-                textAlign="justify"
+                textAlign='justify'
               >
                 {
                   "Con el fin de movilizar cambios de comportamientos en relación con la cultura ciudadana y de la legalidad, se tomó como base el enfoque de desarrollo de competencias para las acciones que involucran a los diferentes actores del proyecto (Empresa, comunidad, clientes y contratistas), y que parten desde la sensibilización interpersonal, la información y educación; involucrando el quehacer en el desarrollo de acciones e iniciativas empresa – comunidad, promoviendo la implementación de estrategias comunicativas."
                 }
               </Typography>
               <Typography
-                fontSize={25}
-                lineHeight={"33.96px"}
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "32.17px" }}
                 fontWeight={800}
-                color="primary.dark"
-                textAlign="center"
+                color='primary.dark'
+                textAlign='center'
                 pt={10}
               >
                 ¿Cómo se lleva a la práctica un proyecto como el de Generación
@@ -306,7 +315,7 @@ const Metodologia = () => {
             </Grid>
             <Grid item container xs={10} pt={5}>
               <Image
-                alt="metodologia"
+                alt='metodologia'
                 src={"/imgs/metodologia2.png"}
                 width={1324}
                 height={495}
@@ -322,24 +331,24 @@ const Metodologia = () => {
             justifyContent: "center",
           }}
         >
-          <Grid item container justifyContent="center">
-            <Grid item xs={8.5} py={10}>
+          <Grid item container justifyContent='center'>
+            <Grid item xs={10} sm={8.5} py={10}>
               <Typography
-                fontSize={56.47}
-                lineHeight={"57.3px"}
+                fontSize={{ xs: 30, sm: 56.47 }}
+                lineHeight={{ xs: 1.2, sm: "57.3px" }}
                 fontWeight={800}
-                color="primary.dark"
-                textAlign="center"
+                color='primary.dark'
+                textAlign='center'
               >
                 SEGUIMIENTO Y <br /> EVALUACIÓN
               </Typography>
               <Typography
-                fontSize={25}
-                lineHeight={"33.96px"}
-                fontFamily="Open Sans"
-                color="black"
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                fontFamily='Open Sans'
+                color='black'
                 pt={5}
-                textAlign="justify"
+                textAlign='justify'
               >
                 El proyecto “Generación de Confianza” a nivel metodológico
                 articula diferentes aspectos técnicos y operativos en lo que se
@@ -347,12 +356,12 @@ const Metodologia = () => {
                 grupos de interés.
               </Typography>
               <Typography
-                fontSize={25}
-                lineHeight={"33.96px"}
-                fontFamily="Open Sans"
-                color="black"
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                fontFamily='Open Sans'
+                color='black'
                 pt={5}
-                textAlign="justify"
+                textAlign='justify'
               >
                 Está diseñado a partir de cuatro fases: Acercamiento e
                 Identificación, Involucramiento, Intervención, Evaluación-
@@ -361,12 +370,12 @@ const Metodologia = () => {
                 para el desarrollo.
               </Typography>
               <Typography
-                fontSize={25}
-                lineHeight={"33.96px"}
-                fontFamily="Open Sans"
-                color="black"
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                fontFamily='Open Sans'
+                color='black'
                 pt={5}
-                textAlign="justify"
+                textAlign='justify'
               >
                 Es importante señalar que si bien dichas fases, ofrecen
                 claridades en cuanto al diseño metodológico a tener en cuenta
@@ -389,20 +398,23 @@ const Metodologia = () => {
             pb: 10,
           }}
         >
-          <Grid item container justifyContent="center">
+          <Grid item container justifyContent='center'>
             <Grid
               item
               container
               xs={10}
               pt={10}
-              alignItems="center"
-              justifyContent="space-around"
+              alignItems='center'
+              justifyContent='space-around'
+              textAlign='center'
             >
               <Typography
-                fontSize={82.04}
-                lineHeight={"75.92px"}
+                // fontSize={82.04}
+                // lineHeight={"75.92px"}
+                fontSize={{ xs: 60, sm: 82.04 }}
+                lineHeight={{ xs: 1, sm: "75.92px" }}
                 fontWeight={800}
-                color="primary.main"
+                color='primary.main'
               >
                 Fases del <br /> proyecto
               </Typography>
@@ -411,20 +423,21 @@ const Metodologia = () => {
                 // color='secondary'
                 fontSize={21.19}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
-                textAlign="center"
+                fontFamily='VAGROUNDEDSTD'
+                textAlign='center'
                 sx={{
                   color: slide === 0 ? "primary.main" : "secondary.light",
-                  cursor: 'pointer',
+                  cursor: "pointer",
                   textDecoration: slide === 0 ? "underline" : "none",
                   "&:hover": {
                     color: "primary.main",
-                    textDecoration: "underline"
+                    textDecoration: "underline",
                   },
                 }}
                 onClick={() => {
                   setSlide(0);
                 }}
+                pt={{xs: 5, sm: 0}}
               >
                 Acercamiento e <br /> identificación
               </Typography>
@@ -433,20 +446,21 @@ const Metodologia = () => {
                 fontWeight={800}
                 fontSize={21.19}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
-                textAlign="center"
+                fontFamily='VAGROUNDEDSTD'
+                textAlign='center'
                 sx={{
                   color: slide === 1 ? "primary.main" : "secondary.light",
-                  cursor: 'pointer',
+                  cursor: "pointer",
                   textDecoration: slide === 1 ? "underline" : "none",
                   "&:hover": {
                     color: "primary.main",
-                    textDecoration: "underline"
+                    textDecoration: "underline",
                   },
                 }}
                 onClick={() => {
                   setSlide(1);
                 }}
+                pt={{xs: 5, sm: 0}}
               >
                 Involucramiento
               </Typography>
@@ -455,20 +469,21 @@ const Metodologia = () => {
                 fontWeight={800}
                 fontSize={21.19}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
-                textAlign="center"
+                fontFamily='VAGROUNDEDSTD'
+                textAlign='center'
                 sx={{
                   color: slide === 2 ? "primary.main" : "secondary.light",
-                  cursor: 'pointer',
+                  cursor: "pointer",
                   textDecoration: slide === 2 ? "underline" : "none",
                   "&:hover": {
                     color: "primary.main",
-                    textDecoration: "underline"
+                    textDecoration: "underline",
                   },
                 }}
                 onClick={() => {
                   setSlide(2);
                 }}
+                pt={{xs: 2, sm: 0}}
               >
                 Intervención
               </Typography>
@@ -477,47 +492,50 @@ const Metodologia = () => {
                 fontWeight={800}
                 fontSize={21.19}
                 lineHeight={"23.5px"}
-                fontFamily="VAGROUNDEDSTD"
-                textAlign="center"
+                fontFamily='VAGROUNDEDSTD'
+                textAlign='center'
                 sx={{
                   color: slide === 3 ? "primary.main" : "secondary.light",
-                  cursor: 'pointer',
+                  cursor: "pointer",
                   textDecoration: slide === 3 ? "underline" : "none",
                   "&:hover": {
                     color: "primary.main",
-                    textDecoration: "underline"
+                    textDecoration: "underline",
                   },
                 }}
                 onClick={() => {
                   setSlide(3);
                 }}
+                pt={{xs: 2, sm: 0}}
               >
                 Evaluación, cierre <br /> y sistematización
               </Typography>
             </Grid>
             <Box
-              width="90%"
+              width='90%'
               height={5}
               sx={{ backgroundColor: "secondary.light" }}
               my={5}
             />
             <Stack
-              direction="row"
-              justifyContent="space-around"
-              alignItems="center"
-              width={"95%"}
+              direction='row'
+              justifyContent='space-around'
+              alignItems='center'
+              width={isXs ? "90%" : "95%"}
             >
-              <IconButton
-                sx={{ p: 2, backgroundColor: "primary.main" }}
-                onClick={onPrevSlide}
-              >
-                <Image
-                  alt={"leftIcon"}
-                  src={"/icons/LeftIcon.png"}
-                  width={31}
-                  height={27}
-                />
-              </IconButton>
+              {!isXs && (
+                <IconButton
+                  sx={{ p: 2, backgroundColor: "primary.main" }}
+                  onClick={onPrevSlide}
+                >
+                  <Image
+                    alt={"leftIcon"}
+                    src={"/icons/LeftIcon.png"}
+                    width={31}
+                    height={27}
+                  />
+                </IconButton>
+              )}
 
               {slide === 0 ? (
                 <Acercamiento />
@@ -529,73 +547,75 @@ const Metodologia = () => {
                 <Evaluacion />
               ) : null}
 
-              <IconButton
-                sx={{ p: 2, backgroundColor: "primary.main" }}
-                onClick={onNextSlide}
-              >
-                <Image
-                  alt={"rightIcon"}
-                  src={"/icons/RightIcon.png"}
-                  width={31}
-                  height={27}
-                />
-              </IconButton>
+              {!isXs && (
+                <IconButton
+                  sx={{ p: 2, backgroundColor: "primary.main" }}
+                  onClick={onNextSlide}
+                >
+                  <Image
+                    alt={"rightIcon"}
+                    src={"/icons/RightIcon.png"}
+                    width={31}
+                    height={27}
+                  />
+                </IconButton>
+              )}
             </Stack>
           </Grid>
         </Box>
-        <Grid item container xs={10} justifyContent="space-between" pt={10}>
-          <Grid item container xs={5}>
+        <Grid item container xs={10} justifyContent='space-between' pt={10}>
+          <Grid item container xs={12} sm={5}>
             <Grid item xs={12}>
               <Typography
-                fontSize={33.33}
-                lineHeight={"57.3px"}
+                fontSize={{ xs: 25, sm: 33.33 }}
+                lineHeight={{ xs: 1.2, sm: "57.3px" }}
                 fontWeight={800}
-                color="primary.light"
-                textAlign="left"
+                color='primary.light'
+                textAlign='left'
               >
                 Temas Transversales al Proceso
               </Typography>
-              <Stack direction="row" spacing={2}>
+              <Stack direction='row' spacing={2} pt={{ xs: 4, sm: 0 }}>
                 <ArrowForwardRoundedIcon
-                  sx={{ fontSize: 40 }}
-                  color="secondary"
+                  sx={{ fontSize: { xs: 30, sm: 40 } }}
+                  color='secondary'
                 />
                 <Typography
-                  color="secondary.light"
-                  fontSize={25}
-                  lineHeight={"33.96px"}
-                  fontFamily="Open Sans"
-                  textAlign="justify"
+                  color='secondary.light'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
                 >
                   Formulación y gestión de proyectos
                 </Typography>
               </Stack>
-              <Stack direction="row" spacing={2}>
+              <Stack direction='row' spacing={2}>
                 <ArrowForwardRoundedIcon
-                  sx={{ fontSize: 40 }}
-                  color="secondary"
+                  sx={{ fontSize: { xs: 30, sm: 40 } }}
+                  color='secondary'
                 />
                 <Typography
-                  color="secondary.light"
-                  fontSize={25}
-                  lineHeight={"33.96px"}
-                  fontFamily="Open Sans"
-                  textAlign="justify"
+                  color='secondary.light'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
                 >
                   Cultura Ciudadana y Cultura de la Legalidad
                 </Typography>
               </Stack>
 
-              <Stack direction="row" spacing={2}>
+              <Stack direction='row' spacing={2}>
                 <ArrowForwardRoundedIcon
-                  sx={{ fontSize: 40 }}
-                  color="secondary"
+                  sx={{ fontSize: { xs: 30, sm: 40 } }}
+                  color='secondary'
                 />
                 <Typography
-                  color="secondary.light"
-                  fontSize={25}
-                  lineHeight={"33.96px"}
-                  fontFamily="Open Sans"
+                  color='secondary.light'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                  fontFamily='Open Sans'
                   // textAlign='justify'
                 >
                   Temas empresariales - CHEC (riesgos eléctricos, líneas de
@@ -604,49 +624,49 @@ const Metodologia = () => {
                 </Typography>
               </Stack>
 
-              <Stack direction="row" spacing={2}>
+              <Stack direction='row' spacing={2}>
                 <ArrowForwardRoundedIcon
-                  sx={{ fontSize: 40 }}
-                  color="secondary"
+                  sx={{ fontSize: { xs: 30, sm: 40 } }}
+                  color='secondary'
                 />
                 <Typography
-                  color="secondary.light"
-                  fontSize={25}
-                  lineHeight={"33.96px"}
-                  fontFamily="Open Sans"
-                  textAlign="justify"
+                  color='secondary.light'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
                 >
                   Procesos de Réplica
                 </Typography>
               </Stack>
 
-              <Stack direction="row" spacing={2}>
+              <Stack direction='row' spacing={2}>
                 <ArrowForwardRoundedIcon
-                  sx={{ fontSize: 40 }}
-                  color="secondary"
+                  sx={{ fontSize: { xs: 30, sm: 40 } }}
+                  color='secondary'
                 />
                 <Typography
-                  color="secondary.light"
-                  fontSize={25}
-                  lineHeight={"33.96px"}
-                  fontFamily="Open Sans"
-                  textAlign="justify"
+                  color='secondary.light'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
                 >
                   Relacionamiento basado en conocimiento mutuo
                 </Typography>
               </Stack>
 
-              <Stack direction="row" spacing={2}>
+              <Stack direction='row' spacing={2}>
                 <ArrowForwardRoundedIcon
-                  sx={{ fontSize: 40 }}
-                  color="secondary"
+                  sx={{ fontSize: { xs: 30, sm: 40 } }}
+                  color='secondary'
                 />
                 <Typography
-                  color="secondary.light"
-                  fontSize={25}
-                  lineHeight={"33.96px"}
-                  fontFamily="Open Sans"
-                  textAlign="justify"
+                  color='secondary.light'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
                 >
                   Desarrollo Humano
                 </Typography>
@@ -654,27 +674,27 @@ const Metodologia = () => {
             </Grid>
 
             <Grid item xs={12} pt={5}>
-              <Image alt="gc" src="/imgs/GC-3.png" width={668} height={441} />
+              <Image alt='gc' src='/imgs/GC-3.png' width={668} height={441} />
             </Grid>
           </Grid>
 
-          <Grid item container xs={6}>
+          <Grid item container xs={12} sm={6} pt={{ xs: 4, sm: 0 }}>
             <Grid item xs={12} sx={{ height: "fit-content" }} pb={9}>
               <Typography
-                fontSize={33.33}
-                lineHeight={"57.3px"}
+                fontSize={{ xs: 25, sm: 33.33 }}
+                lineHeight={{ xs: 1.2, sm: "57.3px" }}
                 fontWeight={800}
-                color="primary.light"
-                textAlign="left"
+                color='primary.light'
+                textAlign='left'
               >
                 Aspectos a considerar
               </Typography>
               <Typography
-                fontSize={25}
-                lineHeight={"33.96px"}
-                fontFamily="Open Sans"
-                color="secondary.light"
-                textAlign="justify"
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                fontFamily='Open Sans'
+                color='secondary.light'
+                textAlign='justify'
               >
                 En términos generales y teniendo en cuenta las posibles
                 variaciones en cuanto a seguimiento, evaluación y
@@ -686,84 +706,84 @@ const Metodologia = () => {
                 réplica:
               </Typography>
 
-              <Stack direction="row" spacing={2} pt={10}>
+              <Stack direction='row' spacing={2} pt={{ xs: 5, sm: 10 }}>
                 <ArrowForwardRoundedIcon
-                  sx={{ fontSize: 40 }}
-                  color="secondary"
+                  sx={{ fontSize: { xs: 30, sm: 40 } }}
+                  color='secondary'
                 />
                 <Typography
-                  color="secondary.light"
-                  fontSize={25}
-                  lineHeight={"33.96px"}
-                  fontFamily="Open Sans"
-                  textAlign="justify"
+                  color='secondary.light'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
                 >
                   Diseños metodológicos de seguimiento, intervención y
                   evaluación.
                 </Typography>
               </Stack>
 
-              <Stack direction="row" spacing={2}>
+              <Stack direction='row' spacing={2}>
                 <ArrowForwardRoundedIcon
-                  sx={{ fontSize: 40 }}
-                  color="secondary"
+                  sx={{ fontSize: { xs: 30, sm: 40 } }}
+                  color='secondary'
                 />
                 <Typography
-                  color="secondary.light"
-                  fontSize={25}
-                  lineHeight={"33.96px"}
-                  fontFamily="Open Sans"
-                  textAlign="justify"
+                  color='secondary.light'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
                 >
                   Levantamiento de línea base
                 </Typography>
               </Stack>
 
-              <Stack direction="row" spacing={2}>
+              <Stack direction='row' spacing={2}>
                 <ArrowForwardRoundedIcon
-                  sx={{ fontSize: 40 }}
-                  color="secondary"
+                  sx={{ fontSize: { xs: 30, sm: 40 } }}
+                  color='secondary'
                 />
                 <Typography
-                  color="secondary.light"
-                  fontSize={25}
-                  lineHeight={"33.96px"}
-                  fontFamily="Open Sans"
-                  textAlign="justify"
+                  color='secondary.light'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
                 >
                   Indicadores sociales y técnicos e instrumentos para utilizar
                   en el proyecto.
                 </Typography>
               </Stack>
 
-              <Stack direction="row" spacing={2}>
+              <Stack direction='row' spacing={2}>
                 <ArrowForwardRoundedIcon
-                  sx={{ fontSize: 40 }}
-                  color="secondary"
+                  sx={{ fontSize: { xs: 30, sm: 40 } }}
+                  color='secondary'
                 />
                 <Typography
-                  color="secondary.light"
-                  fontSize={25}
-                  lineHeight={"33.96px"}
-                  fontFamily="Open Sans"
-                  textAlign="justify"
+                  color='secondary.light'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
                 >
                   Sistematización del proyecto una vez se realice cierre en los
                   territorios en donde sea ejecutado.
                 </Typography>
               </Stack>
 
-              <Stack direction="row" spacing={2}>
+              <Stack direction='row' spacing={2}>
                 <ArrowForwardRoundedIcon
-                  sx={{ fontSize: 40 }}
-                  color="secondary"
+                  sx={{ fontSize: { xs: 30, sm: 40 } }}
+                  color='secondary'
                 />
                 <Typography
-                  color="secondary.light"
-                  fontSize={25}
-                  lineHeight={"33.96px"}
-                  fontFamily="Open Sans"
-                  textAlign="justify"
+                  color='secondary.light'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
                 >
                   Análisis de impacto que describa de manera cualitativa y
                   cuantitativa, los impactos en el mediano y largo plazo de las
@@ -773,17 +793,17 @@ const Metodologia = () => {
                 </Typography>
               </Stack>
 
-              <Stack direction="row" spacing={2}>
+              <Stack direction='row' spacing={2}>
                 <ArrowForwardRoundedIcon
-                  sx={{ fontSize: 40 }}
-                  color="secondary"
+                  sx={{ fontSize: { xs: 30, sm: 40 } }}
+                  color='secondary'
                 />
                 <Typography
-                  color="secondary.light"
-                  fontSize={25}
-                  lineHeight={"33.96px"}
-                  fontFamily="Open Sans"
-                  textAlign="justify"
+                  color='secondary.light'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "32.17px" }}
+                  fontFamily='Open Sans'
+                  textAlign='justify'
                 >
                   Proceso de sistematización, tanto a nivel empresarial como
                   comunitario.
@@ -794,13 +814,14 @@ const Metodologia = () => {
         </Grid>
         <Grid
           item
-          xs={2.1}
-          justifyContent="center"
-          alignItems="center"
+          xs={8}
+          sm={2.1}
+          justifyContent='center'
+          alignItems='center'
           pt={5}
           pb={10}
         >
-          <Image alt="gc" src="/imgs/gc.png" width={284} height={165} />
+          <Image alt='gc' src='/imgs/gc.png' width={284} height={165} />
         </Grid>
       </Grid>
       <Footer />
