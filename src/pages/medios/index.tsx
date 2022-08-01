@@ -12,6 +12,7 @@ import { TransitionProps } from "@mui/material/transitions";
 import Image from "next/image";
 import React, { forwardRef, useEffect, useState } from "react";
 import ReactPlayer from "react-player/youtube";
+import useIsXs from "../../utils/useIsXs";
 import Footer from "../components/footer/footer";
 import Navbar from "../components/navbar/navbar";
 
@@ -76,6 +77,7 @@ const Medios = () => {
   const [imageShow, setImageShow] = useState(1);
   const [open, setOpen] = React.useState(false);
   const [videoClicked, setVideoClicked] = useState("");
+  const isXs = useIsXs();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -119,20 +121,20 @@ const Medios = () => {
       >
         <Typography
           color='primary'
-          fontSize={82.04}
-          lineHeight={"94.67px"}
+          fontSize={{ xs: 60, sm: 82.04 }}
+          lineHeight={{ xs: 1, sm: "94.67px" }}
           fontFamily='VAGROUNDEDSTD'
           fontWeight={800}
         >
           Medios
         </Typography>
-        <Grid width={"45%"}>
+        <Grid xs={10} sm={5.5}>
           <Typography
             color='secondary'
-            fontSize={25}
-            lineHeight={"33.96px"}
+            fontSize={{ xs: 16, sm: 25 }}
+            lineHeight={{ xs: 1.5, sm: "33.96px" }}
             fontFamily='Open Sans'
-            pt={7}
+            pt={{xs: 4, sm: 7}}
             align='center'
           >
             {
@@ -141,8 +143,8 @@ const Medios = () => {
           </Typography>
           <Typography
             color='primary'
-            fontSize={25}
-            lineHeight={"33.96px"}
+            fontSize={{ xs: 16, sm: 25 }}
+            lineHeight={{ xs: 1.5, sm: "33.96px" }}
             fontFamily='Open Sans'
             align='center'
           >
@@ -151,8 +153,8 @@ const Medios = () => {
           </Typography>
           <Typography
             color='secondary'
-            fontSize={62.5}
-            lineHeight={"94.67px"}
+            fontSize={{ xs: 40, sm: 62.5 }}
+            lineHeight={{ xs: 1.2, sm: "94.67px" }}
             fontFamily='VAGROUNDEDSTD'
             fontWeight={800}
             textAlign={"center"}
@@ -166,7 +168,7 @@ const Medios = () => {
           direction='row'
           justifyContent='space-around'
           alignItems='center'
-          width={"80%"}
+          width={{xs: '95%', sm: "80%"}}
         >
           <IconButton
             sx={{ p: 2, backgroundColor: "primary.main" }}
@@ -175,8 +177,8 @@ const Medios = () => {
             <Image
               alt={"leftIcon"}
               src={"/icons/LeftIcon.png"}
-              width={31}
-              height={27}
+              width={ isXs ? 20 : 31}
+              height={ isXs ? 16 :27}
             />
           </IconButton>
           <Image
@@ -194,8 +196,8 @@ const Medios = () => {
             <Image
               alt={"rightIcon"}
               src={"/icons/RightIcon.png"}
-              width={31}
-              height={27}
+              width={ isXs ? 20 : 31}
+              height={ isXs ? 16 :27}
             />
           </IconButton>
         </Stack>
@@ -227,8 +229,8 @@ const Medios = () => {
           />
           <Typography
             color='secondary'
-            fontSize={62.5}
-            lineHeight={"94.67px"}
+            fontSize={{ xs: 40, sm: 62.5 }}
+            lineHeight={{ xs: 1.2, sm: "94.67px" }}
             fontFamily='VAGROUNDEDSTD'
             fontWeight={800}
             pl={1}
@@ -237,7 +239,7 @@ const Medios = () => {
           </Typography>
         </Stack>
         <Grid item container xs={10} justifyContent='space-between' pt={5}>
-          <Grid item container xs={3}>
+          <Grid item container xs={12} sm={3}>
             <VideoThumbnail
               srcThumbnail='https://i3.ytimg.com/vi/y2roVjqtxZM/maxresdefault.jpg'
               width={413}
@@ -276,7 +278,7 @@ const Medios = () => {
               </Typography>
             </Stack>
           </Grid>
-          <Grid item container xs={3}>
+          <Grid item container xs={12} sm={3} pt={{ xs: 6, sm: 0 }}>
             <VideoThumbnail
               srcThumbnail='https://i3.ytimg.com/vi/VVbB6AMfI7o/maxresdefault.jpg'
               width={413}
@@ -314,7 +316,7 @@ const Medios = () => {
               </Typography>
             </Stack>
           </Grid>
-          <Grid item container xs={3}>
+          <Grid item container xs={12} sm={3} pt={{ xs: 6, sm: 0 }}>
             <VideoThumbnail
               srcThumbnail='http://i3.ytimg.com/vi/OMibDHTpBnw/hqdefault.jpg'
               width={413}
@@ -354,7 +356,7 @@ const Medios = () => {
           </Grid>
         </Grid>
         <Grid item container xs={10} justifyContent='space-between' pt={6}>
-          <Grid item container xs={3}>
+          <Grid item container xs={12} sm={3}>
             <VideoThumbnail
               srcThumbnail='http://i3.ytimg.com/vi/Tx8qSf0kC4E/hqdefault.jpg'
               width={413}
@@ -424,8 +426,8 @@ const Medios = () => {
           />
           <Typography
             color='secondary'
-            fontSize={62.5}
-            lineHeight={"94.67px"}
+            fontSize={{ xs: 40, sm: 62.5 }}
+            lineHeight={{ xs: 1.2, sm: "94.67px" }}
             fontFamily='VAGROUNDEDSTD'
             fontWeight={800}
             pl={3.5}
@@ -433,321 +435,351 @@ const Medios = () => {
             Documentos
           </Typography>
         </Stack>
-        <Stack
-          direction='row'
-          justifyContent='space-between'
+        <Grid
+          item
+          container
+          // direction='row'
+          justifyContent='center'
           alignItems='start'
           pb={10}
-          width={"80%"}
+          // width={"80%"}
+          xs={12}
         >
-          <Stack
+          <Grid
+            item
+            container
+            xs={10}
+            // direction={"column"}
+            alignItems='start'
+            justifyContent='space-between'
+          >
+            <Grid item xs={12} sm={4} pb={{ xs: 5, sm: 10 }}>
+              <Stack direction={"row"} alignItems='center'>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  href={"/documentos/Socielogia de la accion.pdf"}
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Sociología de la acción
+                </Link>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={4} pb={{ xs: 5, sm: 10 }}>
+              <Stack direction={"row"} alignItems='center'>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  maxWidth={430}
+                  align='left'
+                  href={
+                    "/documentos/SM_N68_Formulacion_prog_metodologia_ML - 2011.pdf"
+                  }
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  SM_N68_Formulación programa <br /> metodología ML - 2011
+                </Link>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={4} pb={{ xs: 5, sm: 0 }}>
+              <Stack direction={"row"} alignItems='center'>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  align='left'
+                  href={"/documentos/Modulo Soy un Ciudadano Legal.pdf"}
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Modulo Soy un Ciudadano Legal
+                </Link>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={12} sm={4} pb={{ xs: 5, sm: 10 }}>
+              <Stack direction={"row"} alignItems='center'>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  align='left'
+                  href={"/documentos/modulo-soy-un-ciudadano-legal-final.pdf"}
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Modulo soy un <br /> ciudadano legal final
+                </Link>
+              </Stack>
+            </Grid>
+
+            <Grid item xs={12} sm={4} pb={{ xs: 5, sm: 10 }}>
+              <Stack direction={"row"} alignItems='center'>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  align='left'
+                  href={"/documentos/Marmato La Tierra codiciada.pdf"}
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Marmato La Tierra codiciada
+                </Link>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={4} pb={{ xs: 5, sm: 10 }}>
+              <Stack direction={"row"} alignItems='center'>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  // maxWidth={300}
+                  align='left'
+                  href={
+                    "/documentos/Guia para la formulacion participativa de proyectos en organizaciones de base comunitaria.PPD.pdf"
+                  }
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Guía para la furmulación
+                  <br /> participativa de proyectos
+                  <br /> en organizaciones de base
+                  <br /> comunitaria.PPD
+                </Link>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={4} pb={{ xs: 5, sm: 10 }}>
+              <Stack direction={"row"} alignItems='center'>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  align='left'
+                  href={
+                    "/documentos/GUIA PARA FORMULACION DE PROYECTOS DE ONG.pdf"
+                  }
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Guía para la formulación
+                  <br /> de proyectos de ONG
+                </Link>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={4} pb={{ xs: 5, sm: 10 }}>
+              <Stack direction={"row"} alignItems='center'>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  maxWidth={350}
+                  align='left'
+                  href={
+                    "/documentos/Grupos Focales de Investigación Generacion de Confianza.pdf"
+                  }
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Grupos Focales de <br />
+                  Investigación Generación de <br />
+                  Confianza
+                </Link>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={4} pb={{ xs: 5, sm: 10 }}>
+              <Stack direction={"row"} alignItems='center'>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  // maxWidth={300}
+                  align='left'
+                  href={"/documentos/cartografia-social.pdf"}
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Cartografía social
+                </Link>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={4} pb={{ xs: 5, sm: 10 }}>
+              <Stack direction={"row"} alignItems='center'>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={{ xs: 16, sm: 25 }}
+                  lineHeight={{ xs: 1.5, sm: "33.96px" }}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  align='left'
+                  href={
+                    "/documentos/Del cuerpo a la ciudad_ repensando nuestros territorios desde la investigación colectiva  con cartografía social.pdf"
+                  }
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Del cuerpo a la ciudad: <br />
+                  repensando nuestros
+                  <br /> territorios desde la <br />
+                  investigación colectivo con <br />
+                  cartografía social
+                </Link>
+              </Stack>
+            </Grid>
+          </Grid>
+          {/* <Stack
             direction={"column"}
             alignItems='start'
             justifyItems={"center"}
-          >
-            <Stack direction={"row"} alignItems='center' pb={10}>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                href={"/documentos/Socielogia de la accion.pdf"}
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                Sociología de la acción
-              </Link>
-            </Stack>
-            <Stack direction={"row"} alignItems='center' pb={10}>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                maxWidth={200}
-                align='left'
-                href={"/documentos/Modulo Soy un Ciudadano Legal.pdf"}
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                Modulo Soy un Ciudadano Legal
-              </Link>
-            </Stack>
-            <Stack direction={"row"} alignItems='center' pb={10}>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                maxWidth={300}
-                align='left'
-                href={
-                  "/documentos/GUIA PARA FORMULACION DE PROYECTOS DE ONG.pdf"
-                }
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                Guía para la formulación de proyectos de ONG
-              </Link>
-            </Stack>
-            <Stack direction={"row"} alignItems='center'>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                maxWidth={300}
-                align='left'
-                href={
-                  "/documentos/Del cuerpo a la ciudad_ repensando nuestros territorios desde la investigación colectiva  con cartografía social.pdf"
-                }
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                Del cuerpo a la ciudad: repensando nuestros territorios desde la
-                investigación colectivo con cartografía social
-              </Link>
-            </Stack>
-          </Stack>
-          <Stack
+          ></Stack> */}
+          {/* <Stack
             direction={"column"}
             alignItems='start'
             justifyItems={"center"}
-          >
-            <Stack direction={"row"} alignItems='center' pb={10}>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                maxWidth={430}
-                align='left'
-                href={
-                  "/documentos/SM_N68_Formulacion_prog_metodologia_ML - 2011.pdf"
-                }
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                SM_N68_Formulación programa metodología ML - 2011
-              </Link>
-            </Stack>
-            <Stack direction={"row"} alignItems='center' pb={10}>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                align='left'
-                href={"/documentos/Marmato La Tierra codiciada.pdf"}
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                Marmato La Tierra codiciada
-              </Link>
-            </Stack>
-            <Stack direction={"row"} alignItems='center' pb={10}>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                maxWidth={350}
-                align='left'
-                href={
-                  "/documentos/Grupos Focales de Investigación Generacion de Confianza.pdf"
-                }
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                Grupos Focales de Investigación Generación de Confianza
-              </Link>
-            </Stack>
-          </Stack>
-          <Stack
-            direction={"column"}
-            alignItems='start'
-            justifyItems={"center"}
-          >
-            <Stack direction={"row"} alignItems='center' pb={8}>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                maxWidth={430}
-                align='left'
-                href={"/documentos/modulo-soy-un-ciudadano-legal-final.pdf"}
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                Modulo soy un ciudadano legal final
-              </Link>
-            </Stack>
-            <Stack direction={"row"} alignItems='center' pb={8}>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                maxWidth={300}
-                align='left'
-                href={
-                  "/documentos/Guia para la formulacion participativa de proyectos en organizaciones de base comunitaria.PPD.pdf"
-                }
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                Guía para la furmulación participativa de proyectos en
-                organizaciones de base comunitaria.PPD
-              </Link>
-            </Stack>
-            <Stack direction={"row"} alignItems='center'>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                maxWidth={300}
-                align='left'
-                href={"/documentos/cartografia-social.pdf"}
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                Cartografía social
-              </Link>
-            </Stack>
-          </Stack>
-        </Stack>
+          ></Stack> */}
+        </Grid>
       </Grid>
       <Grid
         container
@@ -777,8 +809,8 @@ const Medios = () => {
           />
           <Typography
             color='primary'
-            fontSize={62.5}
-            lineHeight={"94.67px"}
+            fontSize={{ xs: 40, sm: 62.5 }}
+            lineHeight={{ xs: 1.2, sm: "94.67px" }}
             fontFamily='VAGROUNDEDSTD'
             fontWeight={800}
             pl={3.5}
@@ -786,164 +818,175 @@ const Medios = () => {
             Instrumentos
           </Typography>
         </Stack>
-        <Stack
-          direction='row'
+        <Grid
+          // direction='row'
+          item
+          container
           justifyContent='space-between'
           alignItems='start'
           pb={10}
-          width={"80%"}
+          // width={"80%"}
+          xs={10}
         >
-          <Stack direction={"column"} alignItems='start'>
-            <Stack direction={"row"} alignItems='center' pb={10}>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                href={"/instrumentos/Formulario Caracterizacion Afro.pdf"}
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                Formulario Caracterización Afro
-              </Link>
-            </Stack>
-            <Stack direction={"row"} alignItems='center'>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                maxWidth={355}
-                align='left'
-                href={"/instrumentos/Instrumento evaluación de entrada PDF.pdf"}
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                Instrumento evaluación de entrada PDF
-              </Link>
-            </Stack>
-          </Stack>
-          <Stack direction={"column"} alignItems='start'>
-            <Stack direction={"row"} alignItems='center' pb={9}>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                maxWidth={430}
-                align='left'
-                href={
-                  "/instrumentos/INSTRUMENTO CARACTERIZACION DE ACTORES ESTRATEGICO GENERACION DE CONFIZAN-  COMUNITARIO.docx"
-                }
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                Instrumento caracterización de actores estratégicos generación
-                de confianza
-              </Link>
-            </Stack>
-            <Stack direction={"row"} alignItems='center'>
-              <Image
-                alt={"rightIcon"}
-                src={"/icons/pdfBlanco.png"}
-                width={54}
-                height={63}
-              />
-              <Link
-                color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
-                fontFamily='VAGROUNDEDSTD'
-                fontWeight={800}
-                pl={1}
-                maxWidth={300}
-                align='left'
-                href={
-                  "/instrumentos/INSTRUMENTO TALLER DE DESARROLLO HUMANO GENERACION DE CONFIANZA.docx"
-                }
-                target='_blank'
-                sx={{
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "primary.main",
-                  },
-                }}
-              >
-                Instrumento taller de desarollo humano
-              </Link>
-            </Stack>
-          </Stack>
-          <Stack direction={"row"} alignItems='center'>
-            <Image
-              alt={"rightIcon"}
-              src={"/icons/pdfBlanco.png"}
-              width={54}
-              height={63}
-            />
-            <Link
-              color='secondary'
-              fontSize={25}
-              lineHeight={"23.5px"}
-              fontFamily='VAGROUNDEDSTD'
-              fontWeight={800}
-              pl={1}
-              maxWidth={430}
-              align='left'
-              href={
-                "/instrumentos/instrumento de caracterizacion organizacion generacion de confianza.doc"
-              }
-              target='_blank'
-              sx={{
-                textDecoration: "none",
-                "&:hover": {
-                  color: "primary.main",
-                },
-              }}
-            >
-              Instrumento de caracterización organización generación de
-              confianza
-            </Link>
-          </Stack>
-        </Stack>
+          <Grid item container alignItems='start'>
+            <Grid item xs={12} sm={4}>
+              <Stack direction={"row"} alignItems='center' pb={10}>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={25}
+                  lineHeight={"23.5px"}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  href={"/instrumentos/Formulario Caracterizacion Afro.pdf"}
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Formulario Caracterización Afro
+                </Link>
+              </Stack>
+              <Stack direction={"row"} alignItems='center'>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={25}
+                  lineHeight={"23.5px"}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  maxWidth={355}
+                  align='left'
+                  href={
+                    "/instrumentos/Instrumento evaluación de entrada PDF.pdf"
+                  }
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Instrumento evaluación de entrada PDF
+                </Link>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <Stack direction={"row"} alignItems='center' pb={9}>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={25}
+                  lineHeight={"23.5px"}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  maxWidth={430}
+                  align='left'
+                  href={
+                    "/instrumentos/INSTRUMENTO CARACTERIZACION DE ACTORES ESTRATEGICO GENERACION DE CONFIZAN-  COMUNITARIO.docx"
+                  }
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Instrumento caracterización de actores estratégicos generación
+                  de confianza
+                </Link>
+              </Stack>
+              <Stack direction={"row"} alignItems='center'>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={25}
+                  lineHeight={"23.5px"}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  // maxWidth={300}
+                  align='left'
+                  href={
+                    "/instrumentos/INSTRUMENTO TALLER DE DESARROLLO HUMANO GENERACION DE CONFIANZA.docx"
+                  }
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Instrumento taller de desarollo humano
+                </Link>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <Stack direction={"row"} alignItems='center'>
+                <Image
+                  alt={"rightIcon"}
+                  src={"/icons/pdfBlanco.png"}
+                  width={54}
+                  height={63}
+                />
+                <Link
+                  color='secondary'
+                  fontSize={25}
+                  lineHeight={"23.5px"}
+                  fontFamily='VAGROUNDEDSTD'
+                  fontWeight={800}
+                  pl={1}
+                  maxWidth={430}
+                  align='left'
+                  href={
+                    "/instrumentos/instrumento de caracterizacion organizacion generacion de confianza.doc"
+                  }
+                  target='_blank'
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Instrumento de caracterización organización generación de
+                  confianza
+                </Link>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        {/* Presentaciones. */}
         <Stack
           direction='row'
           justifyContent='center'
@@ -960,8 +1003,8 @@ const Medios = () => {
           />
           <Typography
             color='primary'
-            fontSize={62.5}
-            lineHeight={"94.67px"}
+            fontSize={{ xs: 40, sm: 62.5 }}
+            lineHeight={{ xs: 1.2, sm: "94.67px" }}
             fontFamily='VAGROUNDEDSTD'
             fontWeight={800}
             pl={3.5}
@@ -986,8 +1029,8 @@ const Medios = () => {
               />
               <Link
                 color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "33.96px" }}
                 fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
@@ -1014,8 +1057,8 @@ const Medios = () => {
               />
               <Link
                 color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "33.96px" }}
                 fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
@@ -1041,8 +1084,8 @@ const Medios = () => {
               />
               <Link
                 color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "33.96px" }}
                 fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
@@ -1073,8 +1116,8 @@ const Medios = () => {
               />
               <Link
                 color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "33.96px" }}
                 fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
@@ -1101,12 +1144,12 @@ const Medios = () => {
               />
               <Link
                 color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "33.96px" }}
                 fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
-                maxWidth={300}
+                // maxWidth={300}
                 align='left'
                 href={
                   "/presentaciones/Presentacion lo hacemos con ustedes.pptx"
@@ -1131,12 +1174,12 @@ const Medios = () => {
               />
               <Link
                 color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "33.96px" }}
                 fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
-                maxWidth={300}
+                // maxWidth={300}
                 align='left'
                 href={
                   "/presentaciones/Proyecto generación de Confianza  Completo  Dorada.pptx"
@@ -1163,8 +1206,8 @@ const Medios = () => {
               />
               <Link
                 color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "33.96px" }}
                 fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
@@ -1191,12 +1234,12 @@ const Medios = () => {
               />
               <Link
                 color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "33.96px" }}
                 fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
-                maxWidth={300}
+                // maxWidth={300}
                 align='left'
                 href={
                   "/presentaciones/PRESENTACION MARMATO PARA ORGANZACIONES.pptx"
@@ -1221,12 +1264,12 @@ const Medios = () => {
               />
               <Link
                 color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 25 }}
+                lineHeight={{ xs: 1.5, sm: "33.96px" }}
                 fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
-                maxWidth={300}
+                // maxWidth={300}
                 align='left'
                 href={
                   "/presentaciones/Proyecto Social en Cultura de la Legalidad CHEC.pptx"
@@ -1245,7 +1288,7 @@ const Medios = () => {
           </Stack>
         </Stack>
       </Grid>
-      <Grid
+      {/* <Grid
         container
         // width='100%'
         pt={10}
@@ -1307,8 +1350,8 @@ const Medios = () => {
               />
               <Link
                 color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "33.96px" }}
                 fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
@@ -1341,8 +1384,8 @@ const Medios = () => {
               />
               <Link
                 color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "33.96px" }}
                 fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
@@ -1402,8 +1445,8 @@ const Medios = () => {
               />
               <Link
                 color='secondary'
-                fontSize={25}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 25 }}
+              lineHeight={{ xs: 1.5, sm: "33.96px" }}
                 fontFamily='VAGROUNDEDSTD'
                 fontWeight={800}
                 pl={1}
@@ -1425,7 +1468,7 @@ const Medios = () => {
             </Stack>
           </Stack>
         </Stack>
-      </Grid>
+      </Grid> */}
       <Footer />
       <Dialog
         open={open}
@@ -1434,13 +1477,19 @@ const Medios = () => {
         onClose={handleClose}
         fullWidth
         maxWidth='xl'
-        PaperProps={{ sx: { width: "70%", height: "70%" } }}
+        PaperProps={{
+          sx: {
+            width: { xs: "100%", sm: "70%" },
+            height: { xs: "30%", sm: "70%" },
+          },
+        }}
         // classes={{ paper: { minHeight: "80vh", maxHeight: "80vh" } }}
       >
         <ReactPlayer
           url={videoClicked}
           width='100%'
           height='100%'
+
           // playing={true}
         />
       </Dialog>

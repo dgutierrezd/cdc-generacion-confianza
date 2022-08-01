@@ -421,8 +421,8 @@ const Metodologia = () => {
               <Typography
                 fontWeight={800}
                 // color='secondary'
-                fontSize={21.19}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 21.19 }}
+                lineHeight={{ xs: 1.5, sm: "23.5px" }}
                 fontFamily='VAGROUNDEDSTD'
                 textAlign='center'
                 sx={{
@@ -444,8 +444,8 @@ const Metodologia = () => {
 
               <Typography
                 fontWeight={800}
-                fontSize={21.19}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 21.19 }}
+                lineHeight={{ xs: 1.5, sm: "23.5px" }}
                 fontFamily='VAGROUNDEDSTD'
                 textAlign='center'
                 sx={{
@@ -467,8 +467,8 @@ const Metodologia = () => {
 
               <Typography
                 fontWeight={800}
-                fontSize={21.19}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 21.19 }}
+                lineHeight={{ xs: 1.5, sm: "23.5px" }}
                 fontFamily='VAGROUNDEDSTD'
                 textAlign='center'
                 sx={{
@@ -479,6 +479,7 @@ const Metodologia = () => {
                     color: "primary.main",
                     textDecoration: "underline",
                   },
+                  pl: {xs: 2, sm: 0}
                 }}
                 onClick={() => {
                   setSlide(2);
@@ -490,8 +491,8 @@ const Metodologia = () => {
 
               <Typography
                 fontWeight={800}
-                fontSize={21.19}
-                lineHeight={"23.5px"}
+                fontSize={{ xs: 16, sm: 21.19 }}
+                lineHeight={{ xs: 1.5, sm: "23.5px" }}
                 fontFamily='VAGROUNDEDSTD'
                 textAlign='center'
                 sx={{

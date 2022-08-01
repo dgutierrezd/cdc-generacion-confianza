@@ -90,8 +90,8 @@ const Navbar = (props: INavbarProps) => {
             <Image
               alt='logo'
               src={"/imgs/navbar-logo.png"}
-              width={isXs ? 76 : 96}
-              height={isXs ? 44 : 64}
+              width={isXs ? 69 : 96}
+              height={isXs ? 51.75 : 64}
             />
           </Link>
         </Stack>
@@ -216,9 +216,10 @@ const Navbar = (props: INavbarProps) => {
             <Link href='https://www.chec.com.co/' target='_blank'>
               <Image
                 alt='logo'
+                // layout=""
                 src={"/imgs/navbar-logo.png"}
-                width={isXs ? 76 : 96}
-                height={isXs ? 44 : 64}
+                width={isXs ? 69 : 96}
+                height={isXs ? 51.75 : 64}
               />
             </Link>
           </Stack>
@@ -290,11 +291,11 @@ const Navbar = (props: INavbarProps) => {
             // sx={{ mr: 2 }}
           >
             <Image
-            alt='Chec logo'
-            src={"/icons/menu.png"}
-            width={29}
-            height={22}
-          />
+              alt='Chec logo'
+              src={"/icons/menu.png"}
+              width={29}
+              height={22}
+            />
           </IconButton>
         )}
         {/* <Button color="secondary">  */}
