@@ -452,9 +452,11 @@ const Metodologia = () => {
                   color: slide === 1 ? "primary.main" : "secondary.light",
                   cursor: "pointer",
                   textDecoration: slide === 1 ? "underline" : "none",
+                  pl: {xs: 3, sm: 0},
                   "&:hover": {
                     color: "primary.main",
                     textDecoration: "underline",
+                    
                   },
                 }}
                 onClick={() => {
