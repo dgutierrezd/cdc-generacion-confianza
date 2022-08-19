@@ -36,7 +36,7 @@ const Metodologia = () => {
         backgroundColor: (theme) => theme.palette.background.default,
       }}
     >
-      <Navbar />
+      <Navbar admin={false} />
       <Grid container justifyContent='center'>
         <Grid
           item

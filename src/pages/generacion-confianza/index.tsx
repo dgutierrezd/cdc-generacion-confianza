@@ -3,13 +3,32 @@ import Image from "next/image";
 import Footer from "../components/footer/footer";
 import Navbar from "../components/navbar/navbar";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useIsXs from "../../utils/useIsXs";
+import { app, database } from "../../../firebaseConfig";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+
+const dbInstance = collection(database, "generacion-confianza");
 
 const GeneracionResultados = () => {
   const [slide, setSlide] = useState<number>(0);
+  const [content, setContent] = useState<any>([]);
 
   const isXs = useIsXs();
+
+  useEffect(() => {
+    getGeneracionConfianza();
+  }, []);
+
+  const getGeneracionConfianza = () => {
+    getDocs(dbInstance).then((data) => {
+      setContent(
+        data.docs.map((item) => {
+          return { ...item.data(), id: item.id };
+        })
+      );
+    });
+  };
 
   const onNextSlide = () => {
     setSlide((prev) => (prev === 1 ? 0 : 1));
@@ -25,13 +44,13 @@ const GeneracionResultados = () => {
         backgroundColor: (theme) => theme.palette.background.default,
       }}
     >
-      <Navbar />
-      <Grid container justifyContent='center'>
+      <Navbar admin={false} />
+      <Grid container justifyContent="center">
         <Grid
           item
           container
           justifyContent={isXs ? "center" : "space-between"}
-          alignItems='center'
+          alignItems="center"
           py={{ xs: 5, sm: 10 }}
           xs={12}
           sm={10.5}
@@ -44,28 +63,19 @@ const GeneracionResultados = () => {
               fontWeight={800}
               textAlign={isXs ? "center" : "right"}
             >
-              Proyecto social para la generación de confianza y promoción de la
-              cultura de la legalidad Chec
+              {content[0]?.titulo1}
             </Typography>
           </Grid>
           <Grid item xs={10} sm={6}>
             <Typography
               pt={{ xs: 5, sm: 0 }}
-              color='secondary'
+              color="secondary"
               fontSize={{ xs: 16, sm: 25 }}
               lineHeight={{ xs: 1.5, sm: "33.96px" }}
-              fontFamily='Open Sans'
-              textAlign='justify'
+              fontFamily="Open Sans"
+              textAlign="justify"
             >
-              El Proyecto Social para la &quot;Generación de Confianza y
-              promoción de la cultura de la legalidad&quot;, conocido
-              actualmente a nivel comunitario y empresarial como
-              &quot;Generación de Confianza&quot;, se orienta a generar un
-              cambio de postura en todos los actors implicados
-              (empresa-comunidad y demás instituciones vinculadas al proyecto)
-              frente a su papel activo y transformador en la viabilización de
-              acciones sociales y técnicas, cuyo fundamento se soporta en la
-              promoción de la Cultura de la Legalidad.
+              {content[0]?.texto1}
             </Typography>
           </Grid>
         </Grid>
@@ -77,22 +87,22 @@ const GeneracionResultados = () => {
             justifyContent: "center",
           }}
         >
-          <Grid item container justifyContent='space-between' py={10} xs={10}>
+          <Grid item container justifyContent="space-between" py={10} xs={10}>
             <Grid item xs={12} sm={4.3}>
               <Typography
                 fontSize={{ xs: 30, sm: 56.47 }}
                 lineHeight={{ xs: 1.2, sm: "57.3px" }}
                 fontWeight={800}
-                color='secondary.light'
+                color="secondary.light"
               >
                 Elementos que guían y soportan el proyecto:
               </Typography>
               <Typography
-                color='black'
+                color="black"
                 fontSize={{ xs: 16, sm: 25 }}
                 lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                fontFamily='Open Sans'
-                textAlign='justify'
+                fontFamily="Open Sans"
+                textAlign="justify"
                 pt={isXs ? 2 : 5}
               >
                 Dado el alcance del objetivo propuesto, el proyecto en sí mismo
@@ -110,34 +120,31 @@ const GeneracionResultados = () => {
                 fontSize={{ xs: 30, sm: 56.47 }}
                 lineHeight={{ xs: 1.2, sm: "57.3px" }}
                 fontWeight={800}
-                color='primary.dark'
-                textAlign='center'
+                color="primary.dark"
+                textAlign="center"
                 pb={5}
               >
                 Fundamentos corporativos
               </Typography>
               <Image
-                alt='mapa'
+                alt="mapa"
                 src={"/imgs/GC_Mapa.png"}
                 width={971}
                 height={509}
               />
             </Grid>
 
-            <Grid item container xs={12} justifyContent='center' pt={5}>
+            <Grid item container xs={12} justifyContent="center" pt={5}>
               <Grid item xs={12} sm={8}>
                 <Typography
                   fontSize={{ xs: 20, sm: 29.17 }}
                   lineHeight={{ xs: 1.2, sm: "33.96px" }}
                   fontWeight={800}
-                  color='secondary.light'
-                  textAlign='center'
+                  color="secondary.light"
+                  textAlign="center"
                   pb={5}
                 >
-                  El proyecto está respaldado por diferentes componentes
-                  organizacionales, conceptuales y metodológicos. Desde la
-                  concepción y foco de intervención establecida para el
-                  proyecto. Este se relaciona con:
+                  {content[0]?.fundamentosHelper}
                 </Typography>
               </Grid>
             </Grid>
@@ -147,7 +154,7 @@ const GeneracionResultados = () => {
               container
               xs={12}
               sm={5.5}
-              justifyContent='center'
+              justifyContent="center"
               pt={isXs ? 0 : 5}
             >
               <Grid item>
@@ -155,23 +162,18 @@ const GeneracionResultados = () => {
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.2, sm: "33.96px" }}
                   fontWeight={800}
-                  color='primary.dark'
+                  color="primary.dark"
                 >
-                  Enfoque de sostenibilidad CHEC:
+                  {content[0]?.tituloOrg1}
                 </Typography>
                 <Typography
-                  color='black'
+                  color="black"
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
-                  El concepto de sostenibilidad entendido como el conjunto de
-                  condiciones económicas, sociales y ambientales que hacen
-                  posible la existencia a largo plazo para alcanzarlo, la
-                  organización trabaja en el establecimiento de una relación de
-                  mutuo beneficio: Empresa-sociedad-ambiente que permitirá
-                  obtener resultados en pro del desarrollo humano sostenible.
+                  {content[0]?.textoOrg1}
                 </Typography>
               </Grid>
             </Grid>
@@ -180,7 +182,7 @@ const GeneracionResultados = () => {
               container
               xs={12}
               sm={5.5}
-              justifyContent='center'
+              justifyContent="center"
               pt={5}
             >
               <Grid item>
@@ -188,22 +190,18 @@ const GeneracionResultados = () => {
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.2, sm: "33.96px" }}
                   fontWeight={800}
-                  color='primary.dark'
+                  color="primary.dark"
                 >
-                  Enfoque de Responsabilidad Social Empresarial - RSE:
+                  {content[0]?.tituloOrg2}
                 </Typography>
                 <Typography
-                  color='black'
+                  color="black"
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
-                  En CHEC y el Grupo EPM, se entiende la Responsabilidad Social
-                  Empresarial (RSE), como: Los compromisos de origen obligatorio
-                  y voluntario que como empresa y grupo empresarial, son
-                  asumidos en la relación con los grupos de interés, conservando
-                  como objetivo central la sostenibilidad.
+                  {content[0]?.textoOrg2}
                 </Typography>
               </Grid>
             </Grid>
@@ -217,15 +215,15 @@ const GeneracionResultados = () => {
             justifyContent: "center",
           }}
         >
-          <Grid item container justifyContent='space-between' py={10} xs={10}>
-            <Grid item xs={12} sm={6} justifyContent='center'>
+          <Grid item container justifyContent="space-between" py={10} xs={10}>
+            <Grid item xs={12} sm={6} justifyContent="center">
               <Typography
                 fontSize={{ xs: 30, sm: 56.47 }}
                 lineHeight={{ xs: 1.2, sm: "57.3px" }}
                 fontWeight={800}
-                fontFamily='Open Sans'
-                color='primary.main'
-                textAlign='center'
+                fontFamily="Open Sans"
+                color="primary.main"
+                textAlign="center"
               >
                 Principios éticos que guían
               </Typography>
@@ -233,14 +231,14 @@ const GeneracionResultados = () => {
                 fontSize={{ xs: 30, sm: 56.47 }}
                 lineHeight={{ xs: 1.2, sm: "57.3px" }}
                 fontWeight={800}
-                color='background.default'
-                textAlign='center'
+                color="background.default"
+                textAlign="center"
                 pb={5}
               >
                 nuestro actuar
               </Typography>
               <Image
-                alt='principios'
+                alt="principios"
                 src={"/imgs/principios-1.png"}
                 width={650}
                 height={577}
@@ -256,7 +254,7 @@ const GeneracionResultados = () => {
               >
                 <Grid item xs={3.5} sm={2}>
                   <Image
-                    alt='transparencia'
+                    alt="transparencia"
                     src={"/imgs/p2-transparencia.png"}
                     width={127}
                     height={128}
@@ -264,32 +262,22 @@ const GeneracionResultados = () => {
                 </Grid>
                 <Grid item xs={12} sm={9.5} pt={isXs ? 3 : 0}>
                   <Typography
-                    color='black'
+                    color="black"
                     fontSize={{ xs: 16, sm: 20 }}
                     lineHeight={{ xs: 1.5, sm: "29.17px" }}
-                    fontFamily='Open Sans'
-                    textAlign='justify'
+                    fontFamily="Open Sans"
+                    textAlign="justify"
                   >
                     <Typography
-                      component='span'
-                      color='primary'
+                      component="span"
+                      color="primary"
                       fontSize={{ xs: 20, sm: 25 }}
                       lineHeight={{ xs: 1.5, sm: "33.96px" }}
                       fontWeight={800}
                     >
-                      TRANSPARENCIA:
+                      {content[0]?.tituloPrincipio1}
                     </Typography>{" "}
-                    El sujeto ético sabe que sus actos no valen solo por el
-                    efecto o resultado que produce, sino por la legitimidad que
-                    la sociedad les imparte sobre la base de juzgar su
-                    finalidad, el proceso de su ejecución en términos del
-                    acatamiento de las reglas a las que ha de someterse, y la
-                    completa información que permite juzgar acerca de ello. Cada
-                    acción está en marcada por los fines de la sociedad las
-                    reglas de distintos niveles creadas por esta y las
-                    expectativas que el grupo EPM genera para los demás miembros
-                    de la sociedad, mediante comunicación oportuna, veraz y
-                    completa.
+                    {content[0]?.textoPrincipio1}
                   </Typography>
                 </Grid>
               </Grid>
@@ -304,7 +292,7 @@ const GeneracionResultados = () => {
               >
                 <Grid item xs={3.5} sm={2}>
                   <Image
-                    alt='transparencia'
+                    alt="transparencia"
                     src={"/imgs/p2-transparencia.png"}
                     width={127}
                     height={128}
@@ -312,28 +300,22 @@ const GeneracionResultados = () => {
                 </Grid>
                 <Grid item xs={12} sm={9.5} pt={isXs ? 3 : 0}>
                   <Typography
-                    color='black'
+                    color="black"
                     fontSize={{ xs: 16, sm: 20 }}
                     lineHeight={{ xs: 1.5, sm: "29.17px" }}
-                    fontFamily='Open Sans'
-                    textAlign='justify'
+                    fontFamily="Open Sans"
+                    textAlign="justify"
                   >
                     <Typography
-                      component='span'
-                      color='primary'
+                      component="span"
+                      color="primary"
                       fontSize={{ xs: 20, sm: 25 }}
                       lineHeight={{ xs: 1.5, sm: "33.96px" }}
                       fontWeight={800}
                     >
-                      RESPONSABILIDAD:
+                      {content[0]?.tituloPrincipio2}
                     </Typography>{" "}
-                    Conocemos el papel que nos competen términos económicos,
-                    sociales y ambientales, sabemos que ello implica el manejo
-                    de recursos que pertenecen a los miembros actuales de la
-                    sociedad, pero también a las generaciones futuras en
-                    consecuencia, medimos el alcance de cada acto y asumimos las
-                    consecuencias que ellos suponen para garantizar que nuestra
-                    participación en la sociedad sea valiosa y reconocida.
+                    {content[0]?.textoPrincipio2}
                   </Typography>
                 </Grid>
               </Grid>
@@ -348,7 +330,7 @@ const GeneracionResultados = () => {
               >
                 <Grid item xs={3.5} sm={2}>
                   <Image
-                    alt='transparencia'
+                    alt="transparencia"
                     src={"/imgs/p2-calidez.png"}
                     width={127}
                     height={128}
@@ -356,39 +338,34 @@ const GeneracionResultados = () => {
                 </Grid>
                 <Grid item xs={12} sm={9.5} pt={isXs ? 3 : 0}>
                   <Typography
-                    color='black'
+                    color="black"
                     fontSize={{ xs: 16, sm: 20 }}
                     lineHeight={{ xs: 1.5, sm: "29.17px" }}
-                    fontFamily='Open Sans'
-                    textAlign='justify'
+                    fontFamily="Open Sans"
+                    textAlign="justify"
                   >
                     <Typography
-                      component='span'
-                      color='primary'
+                      component="span"
+                      color="primary"
                       fontSize={{ xs: 20, sm: 25 }}
                       lineHeight={{ xs: 1.5, sm: "33.96px" }}
                       fontWeight={800}
                     >
-                      CALIDEZ:
+                      {content[0]?.tituloPrincipio3}
                     </Typography>{" "}
-                    La atención de las necesidades de cada uno en términos de
-                    empatía, respeto y amabilidad es la base del servicio que
-                    ofrecemos y el compromiso que asumimos en frente de cada
-                    miembro de la sociedad. No discriminamos ni prejuzga mos
-                    acerca de nadie por sus condiciones particulares ni en
-                    función de la relación que mantenemos con ellos.
+                    {content[0]?.textoPrincipio3}
                   </Typography>
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item container xs={12} justifyContent='center' pt={5}>
+            <Grid item container xs={12} justifyContent="center" pt={5}>
               <Grid item xs={12} sm={8.3}>
                 <Typography
                   fontSize={{ xs: 30, sm: 56.47 }}
                   lineHeight={{ xs: 1.2, sm: "57.3px" }}
                   fontWeight={800}
-                  color='primary.A100'
-                  textAlign='justify'
+                  color="primary.A100"
+                  textAlign="justify"
                   pt={5}
                 >
                   Propósito
@@ -397,31 +374,24 @@ const GeneracionResultados = () => {
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
                   fontWeight={800}
-                  color='primary.dark'
-                  textAlign='justify'
+                  color="primary.dark"
+                  textAlign="justify"
                 >
-                  En CHEC, como filial del Grupo EPM, buscamos permanecer en el
-                  tiempo mediante la contribución al desarrollo de territorios
-                  sostenibles y competitivos, generando bienestar y desarrollo
-                  con equidad en los entornos donde participamos, a través del
-                  desarrollo de proyectos de infraestructura y de la oferta a
-                  nuestros clientes y usuarios de soluciones en energía,
-                  mediante una actuación empresarial que armonice los resultados
-                  financieros, sociales y ambientales.
+                  {content[0]?.propositoPrincipios}
                 </Typography>
               </Grid>
             </Grid>
           </Grid>
         </Box>
-        <Grid item container xs={12} justifyContent='center' pt={10}>
+        <Grid item container xs={12} justifyContent="center" pt={10}>
           <Grid item xs={12} sm={10}>
             <Typography
               fontSize={{ xs: 30, sm: 56.47 }}
               lineHeight={{ xs: 1.2, sm: "57.3px" }}
               fontWeight={800}
-              fontFamily='Open Sans'
-              color='secondary.light'
-              textAlign='center'
+              fontFamily="Open Sans"
+              color="secondary.light"
+              textAlign="center"
             >
               Direccionamiento Estratégico de
             </Typography>
@@ -429,27 +399,27 @@ const GeneracionResultados = () => {
               fontSize={{ xs: 30, sm: 56.47 }}
               lineHeight={{ xs: 1.2, sm: "57.3px" }}
               fontWeight={800}
-              color='primary.main'
-              textAlign='center'
+              color="primary.main"
+              textAlign="center"
               pb={5}
             >
               CHEC y grupo EPM
             </Typography>
           </Grid>
         </Grid>
-        <Grid item container justifyContent='center'>
-          <Grid item container xs={10} justifyContent='space-between'>
+        <Grid item container justifyContent="center">
+          <Grid item container xs={10} justifyContent="space-between">
             <Grid item xs={12} sm={5.8}>
               {slide === 0 ? (
                 <Image
-                  alt='slider'
+                  alt="slider"
                   src={"/imgs/Slider1.png"}
                   width={835}
                   height={478}
                 />
               ) : (
                 <Image
-                  alt='slider'
+                  alt="slider"
                   src={"/imgs/Slider3.png"}
                   width={835}
                   height={478}
@@ -459,14 +429,14 @@ const GeneracionResultados = () => {
             <Grid item xs={12} sm={5.8} pt={isXs ? 5 : 0}>
               {slide === 0 ? (
                 <Image
-                  alt='slider'
+                  alt="slider"
                   src={"/imgs/Slider2.png"}
                   width={835}
                   height={478}
                 />
               ) : (
                 <Image
-                  alt='slider'
+                  alt="slider"
                   src={"/imgs/Slider4.png"}
                   width={835}
                   height={478}
@@ -476,13 +446,13 @@ const GeneracionResultados = () => {
           </Grid>
 
           <Grid item xs={3} py={5}>
-            <Stack direction='row' justifyContent='center' spacing={3}>
+            <Stack direction="row" justifyContent="center" spacing={3}>
               <IconButton
                 sx={{ p: 2, backgroundColor: "primary.main" }}
                 onClick={onPrevSlide}
               >
                 <Image
-                  alt='icon'
+                  alt="icon"
                   src={"/icons/LeftIcon.png"}
                   width={31}
                   height={27}
@@ -493,7 +463,7 @@ const GeneracionResultados = () => {
                 onClick={onNextSlide}
               >
                 <Image
-                  alt='icon'
+                  alt="icon"
                   src={"/icons/RightIcon.png"}
                   width={31}
                   height={27}
@@ -511,23 +481,23 @@ const GeneracionResultados = () => {
             justifyContent: "center",
           }}
         >
-          <Grid item container justifyContent='center'>
+          <Grid item container justifyContent="center">
             <Grid item xs={10} pt={10}>
               <Typography
                 fontSize={{ xs: 40, sm: 64.58 }}
                 lineHeight={{ xs: 1.5, sm: "94.67px" }}
                 fontWeight={800}
-                color='secondary.light'
-                textAlign='center'
+                color="secondary.light"
+                textAlign="center"
               >
                 Temas Discutidos
               </Typography>
               <Typography
                 fontSize={{ xs: 16, sm: 25 }}
                 lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                fontFamily='Open Sans'
-                color='black'
-                textAlign='center'
+                fontFamily="Open Sans"
+                color="black"
+                textAlign="center"
                 pt={5}
               >
                 En CHEC propiciamos el desarrollo con equidad de territorios
@@ -536,24 +506,24 @@ const GeneracionResultados = () => {
               </Typography>
             </Grid>
 
-            <Grid item container xs={10} justifyContent='space-between' pt={5}>
+            <Grid item container xs={10} justifyContent="space-between" pt={5}>
               <Grid item container xs={12} sm={5.5}>
                 <Grid item xs={12}>
                   <Typography
                     fontSize={{ xs: 16, sm: 25 }}
                     lineHeight={{ xs: 1.5, sm: "33.96px" }}
                     fontWeight={800}
-                    color='primary.dark'
-                    textAlign='left'
+                    color="primary.dark"
+                    textAlign="left"
                   >
                     Competitividad del territorio:
                   </Typography>
                   <Typography
                     fontSize={{ xs: 16, sm: 25 }}
                     lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                    fontFamily='Open Sans'
-                    color='black'
-                    textAlign='justify'
+                    fontFamily="Open Sans"
+                    color="black"
+                    textAlign="justify"
                   >
                     Propiciar el desarrollo de la competitividad económica,
                     ambiental, social y global de los territorios donde
@@ -566,17 +536,17 @@ const GeneracionResultados = () => {
                     fontSize={{ xs: 16, sm: 25 }}
                     lineHeight={{ xs: 1.5, sm: "33.96px" }}
                     fontWeight={800}
-                    color='primary.dark'
-                    textAlign='left'
+                    color="primary.dark"
+                    textAlign="left"
                   >
                     Servicios públicos integrados y eficientes:
                   </Typography>
                   <Typography
                     fontSize={{ xs: 16, sm: 25 }}
                     lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                    fontFamily='Open Sans'
-                    color='black'
-                    textAlign='justify'
+                    fontFamily="Open Sans"
+                    color="black"
+                    textAlign="justify"
                   >
                     {
                       "Visión integral de los clientes y mercados en la provisión de soluciones eficientes y competitivas en electricidad, gas, agua, aseo y tecnología de la información y las comunicaciones – TIC."
@@ -591,17 +561,17 @@ const GeneracionResultados = () => {
                     fontSize={{ xs: 16, sm: 25 }}
                     lineHeight={{ xs: 1.5, sm: "33.96px" }}
                     fontWeight={800}
-                    color='primary.dark'
-                    textAlign='left'
+                    color="primary.dark"
+                    textAlign="left"
                   >
                     Comprabilidad por tarifas y cobertura:
                   </Typography>
                   <Typography
                     fontSize={{ xs: 16, sm: 25 }}
                     lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                    fontFamily='Open Sans'
-                    color='black'
-                    textAlign='justify'
+                    fontFamily="Open Sans"
+                    color="black"
+                    textAlign="justify"
                   >
                     Propiciar la universalización del servicio y el desarrollo
                     de tarifas competitivas que faciliten la comprabilidad.
@@ -615,17 +585,17 @@ const GeneracionResultados = () => {
                     fontSize={{ xs: 16, sm: 25 }}
                     lineHeight={{ xs: 1.5, sm: "33.96px" }}
                     fontWeight={800}
-                    color='primary.dark'
-                    textAlign='left'
+                    color="primary.dark"
+                    textAlign="left"
                   >
                     Mejoramiento de calidad de vida de las personas:
                   </Typography>
                   <Typography
                     fontSize={{ xs: 16, sm: 25 }}
                     lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                    fontFamily='Open Sans'
-                    color='black'
-                    textAlign='justify'
+                    fontFamily="Open Sans"
+                    color="black"
+                    textAlign="justify"
                   >
                     Propiciar el mejoramiento de la calidad de vida de las
                     personas y el índice de desarrollo humano.
@@ -639,8 +609,8 @@ const GeneracionResultados = () => {
                 fontSize={{ xs: 40, sm: 64.58 }}
                 lineHeight={{ xs: 1.5, sm: "94.67px" }}
                 fontWeight={800}
-                color='secondary.light'
-                textAlign='center'
+                color="secondary.light"
+                textAlign="center"
               >
                 Fundamentos Teóricos
               </Typography>
@@ -649,17 +619,17 @@ const GeneracionResultados = () => {
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
                   fontWeight={800}
-                  color='primary.dark'
-                  textAlign='left'
+                  color="primary.dark"
+                  textAlign="left"
                 >
                   Teoría del Cambio Social:
                 </Typography>
                 <Typography
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                  fontFamily='Open Sans'
-                  color='black'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  color="black"
+                  textAlign="justify"
                 >
                   Desde los planteamientos de Kurt Lewin un elemento social es
                   mantenido en equilibrio por la interacción de dos grupos que
@@ -675,7 +645,7 @@ const GeneracionResultados = () => {
               </Grid>
             </Grid>
 
-            <Grid item container xs={10} justifyContent='space-between' pt={5}>
+            <Grid item container xs={10} justifyContent="space-between" pt={5}>
               <Grid item container xs={12} sm={5.5}>
                 {/* <Box
                   sx={{
@@ -686,7 +656,7 @@ const GeneracionResultados = () => {
                   }}
                 > */}
                 <Image
-                  alt='gc'
+                  alt="gc"
                   src={"/imgs/Politicas1.png"}
                   width={800}
                   height={400}
@@ -703,7 +673,7 @@ const GeneracionResultados = () => {
                   }}
                 > */}
                 <Image
-                  alt='gc'
+                  alt="gc"
                   src={"/imgs/Politicas2.png"}
                   width={800}
                   height={400}
@@ -716,9 +686,9 @@ const GeneracionResultados = () => {
               <Typography
                 fontSize={{ xs: 16, sm: 25 }}
                 lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                fontFamily='Open Sans'
-                color='black'
-                textAlign='justify'
+                fontFamily="Open Sans"
+                color="black"
+                textAlign="justify"
               >
                 En esta lógica, CHEC grupo EPM emprende una apuesta empresarial
                 desde la cual se hace prioritario, desarrollar cambios que
@@ -738,14 +708,14 @@ const GeneracionResultados = () => {
           </Grid>
         </Box>
 
-        <Grid item container justifyContent='center' xs={10}>
+        <Grid item container justifyContent="center" xs={10}>
           <Grid item xs={12} sm={6} pt={10}>
             <Typography
               fontSize={{ xs: 40, sm: 64.58 }}
               lineHeight={{ xs: 1.2, sm: "63.42px" }}
               fontWeight={800}
-              color='primary.main'
-              textAlign='center'
+              color="primary.main"
+              textAlign="center"
             >
               Cómo surge el proyecto generación de confianza
             </Typography>
@@ -756,16 +726,16 @@ const GeneracionResultados = () => {
             container
             xs={12}
             pt={5}
-            justifyContent='space-between'
+            justifyContent="space-between"
             pb={10}
           >
             <Grid item xs={12} sm={5.7}>
               <Typography
-                color='secondary.main'
+                color="secondary.main"
                 fontSize={{ xs: 16, sm: 25 }}
                 lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                fontFamily='Open Sans'
-                textAlign='justify'
+                fontFamily="Open Sans"
+                textAlign="justify"
               >
                 Desde el año 2003, CHEC grupo EPM ha desarrollado acciones en el
                 marco de diferentes proyectos, con el objetivo de disminuir los
@@ -776,11 +746,11 @@ const GeneracionResultados = () => {
                 procesos empresariales.
               </Typography>
               <Typography
-                color='secondary.main'
+                color="secondary.main"
                 fontSize={{ xs: 16, sm: 25 }}
                 lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                fontFamily='Open Sans'
-                textAlign='justify'
+                fontFamily="Open Sans"
+                textAlign="justify"
                 pt={6}
               >
                 Pese a lo anterior, una vez finalizadas dichas acciones, se
@@ -801,11 +771,11 @@ const GeneracionResultados = () => {
               </Typography>
 
               <Typography
-                color='secondary.main'
+                color="secondary.main"
                 fontSize={{ xs: 16, sm: 25 }}
                 lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                fontFamily='Open Sans'
-                textAlign='justify'
+                fontFamily="Open Sans"
+                textAlign="justify"
                 pt={6}
               >
                 Como respuesta a estas estrategias, clientes y comunidad bajo la
@@ -816,11 +786,11 @@ const GeneracionResultados = () => {
               </Typography>
 
               <Typography
-                color='secondary.main'
+                color="secondary.main"
                 fontSize={{ xs: 16, sm: 25 }}
                 lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                fontFamily='Open Sans'
-                textAlign='justify'
+                fontFamily="Open Sans"
+                textAlign="justify"
                 pt={6}
               >
                 Ante esta necesidad de empresa, se vislumbra la posibilidad, de
@@ -831,11 +801,11 @@ const GeneracionResultados = () => {
             </Grid>
             <Grid item xs={12} sm={5.7}>
               <Typography
-                color='secondary.main'
+                color="secondary.main"
                 fontSize={{ xs: 16, sm: 25 }}
                 lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                fontFamily='Open Sans'
-                textAlign='justify'
+                fontFamily="Open Sans"
+                textAlign="justify"
                 pb={5}
               >
                 podrían hacer la diferencia, con respecto a la cantidad de
@@ -859,7 +829,7 @@ const GeneracionResultados = () => {
                 problemática social.
               </Typography>
 
-              <Image alt='gc' src={"/imgs/GC-1.png"} width={769} height={576} />
+              <Image alt="gc" src={"/imgs/GC-1.png"} width={769} height={576} />
             </Grid>
           </Grid>
         </Grid>
@@ -872,36 +842,36 @@ const GeneracionResultados = () => {
             backgroundImage: `url(${"/imgs/GC-bg.png"})`,
           }}
         >
-          <Grid item container xs={10} py={10} justifyContent='space-between'>
+          <Grid item container xs={10} py={10} justifyContent="space-between">
             <Grid item xs={12} sm={7}>
               <Typography
                 fontSize={{ xs: 40, sm: 64.58 }}
                 lineHeight={{ xs: 1.2, sm: "63.42px" }}
                 fontWeight={800}
-                color='primary.main'
+                color="primary.main"
               >
                 Objetivos
               </Typography>
               <Typography
-                fontSize={{xs: 30, sm: 39.15}}
-                lineHeight={{xs: 1.2, sm: "38.44px"}}
+                fontSize={{ xs: 30, sm: 39.15 }}
+                lineHeight={{ xs: 1.2, sm: "38.44px" }}
                 fontWeight={800}
-                color='secondary.light'
+                color="secondary.light"
                 py={5}
               >
                 General
               </Typography>
-              <Stack direction='row' spacing={2}>
+              <Stack direction="row" spacing={2}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='primary'
+                  color="primary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Apalancar la recuperación y/o mitigación de los niveles de
                   pérdidas de energía no técnicas, a partir de procesos de
@@ -914,76 +884,76 @@ const GeneracionResultados = () => {
               </Stack>
 
               <Typography
-                fontSize={{xs: 30, sm: 39.15}}
-                lineHeight={{xs: 1.2, sm: "38.44px"}}
+                fontSize={{ xs: 30, sm: 39.15 }}
+                lineHeight={{ xs: 1.2, sm: "38.44px" }}
                 fontWeight={800}
-                color='secondary.light'
+                color="secondary.light"
                 py={5}
               >
                 Específicos
               </Typography>
-              <Stack direction='row' spacing={2}>
+              <Stack direction="row" spacing={2}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='primary'
+                  color="primary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Identificar y seleccionar comunidades objetivo a partir del
                   diagnóstico de pérdidas de energía.
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2} pt={4}>
+              <Stack direction="row" spacing={2} pt={4}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='primary'
+                  color="primary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Establecer acercamientos con actores sociales representativos
                   que pueden servir de vehículo para el desarrollo del proyecto.
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2} pt={4}>
+              <Stack direction="row" spacing={2} pt={4}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='primary'
+                  color="primary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Identificar las necesidades de la comunidad a través de los
                   actores sociales.
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2} pt={4}>
+              <Stack direction="row" spacing={2} pt={4}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='primary'
+                  color="primary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Concertar intereses y acciones que serán abordadas dentro del
                   proyecto de acuerdo con criterios de integralidad y los
@@ -991,17 +961,17 @@ const GeneracionResultados = () => {
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2} pt={4}>
+              <Stack direction="row" spacing={2} pt={4}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='primary'
+                  color="primary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Implementar alianzas, estrategias y acciones integrales,
                   enfocadas a mitigar los problemas seleccionados que afectan
@@ -1010,17 +980,17 @@ const GeneracionResultados = () => {
                 </Typography>
               </Stack>
 
-              <Stack direction='row' spacing={2} pt={4}>
+              <Stack direction="row" spacing={2} pt={4}>
                 <ArrowForwardRoundedIcon
                   sx={{ fontSize: 40 }}
-                  color='primary'
+                  color="primary"
                 />
                 <Typography
-                  color='secondary.light'
+                  color="secondary.light"
                   fontSize={{ xs: 16, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                  fontFamily='Open Sans'
-                  textAlign='justify'
+                  fontFamily="Open Sans"
+                  textAlign="justify"
                 >
                   Analizar el impacto de las acciones realizadas sobre las
                   pérdidas no técnicas, generando ajustes en el proyecto y
@@ -1028,27 +998,27 @@ const GeneracionResultados = () => {
                 </Typography>
               </Stack>
             </Grid>
-            <Grid item xs={12} sm={4} alignSelf='flex-end'>
+            <Grid item xs={12} sm={4} alignSelf="flex-end">
               <Typography
-                fontSize={{xs: 30, sm: 39.15}}
-                lineHeight={{xs: 1.2, sm: "38.44px"}}
+                fontSize={{ xs: 30, sm: 39.15 }}
+                lineHeight={{ xs: 1.2, sm: "38.44px" }}
                 fontWeight={800}
-                color='primary.main'
+                color="primary.main"
                 py={5}
               >
                 Población Impactada
               </Typography>
               <Typography
-                color='secondary.light'
+                color="secondary.light"
                 fontSize={{ xs: 16, sm: 25 }}
                 lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                fontFamily='Open Sans'
-                pt={{xs: 0, sm:5}}
-                textAlign={{xs: 'justify', sm: 'initial'}}
+                fontFamily="Open Sans"
+                pt={{ xs: 0, sm: 5 }}
+                textAlign={{ xs: "justify", sm: "initial" }}
               >
                 <Typography
-                  component='span'
-                  color='primary.main'
+                  component="span"
+                  color="primary.main"
                   fontSize={{ xs: 20, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
                   fontWeight={800}
@@ -1060,16 +1030,16 @@ const GeneracionResultados = () => {
               </Typography>
 
               <Typography
-                color='secondary.light'
+                color="secondary.light"
                 fontSize={{ xs: 16, sm: 25 }}
                 lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                fontFamily='Open Sans'
+                fontFamily="Open Sans"
                 pt={5}
-                textAlign={{xs: 'justify', sm: 'initial'}}
+                textAlign={{ xs: "justify", sm: "initial" }}
               >
                 <Typography
-                  component='span'
-                  color='primary.main'
+                  component="span"
+                  color="primary.main"
                   fontSize={{ xs: 20, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
                   fontWeight={800}
@@ -1081,16 +1051,16 @@ const GeneracionResultados = () => {
               </Typography>
 
               <Typography
-                color='secondary.light'
+                color="secondary.light"
                 fontSize={{ xs: 16, sm: 25 }}
                 lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                fontFamily='Open Sans'
+                fontFamily="Open Sans"
                 pt={5}
-                textAlign={{xs: 'justify', sm: 'initial'}}
+                textAlign={{ xs: "justify", sm: "initial" }}
               >
                 <Typography
-                  component='span'
-                  color='primary.main'
+                  component="span"
+                  color="primary.main"
                   fontSize={{ xs: 20, sm: 25 }}
                   lineHeight={{ xs: 1.5, sm: "33.96px" }}
                   fontWeight={800}
@@ -1112,15 +1082,21 @@ const GeneracionResultados = () => {
             justifyContent: "center",
           }}
         >
-          <Grid item container justifyContent='center' py={{xs: 5, sm: 10}} xs={10}>
+          <Grid
+            item
+            container
+            justifyContent="center"
+            py={{ xs: 5, sm: 10 }}
+            xs={10}
+          >
             <Grid item xs={10}>
               <Typography
                 fontSize={{ xs: 40, sm: 64.58 }}
                 lineHeight={{ xs: 1.2, sm: "63.42px" }}
                 fontWeight={800}
-                color='secondary.light'
-                textAlign='center'
-                pb={{xs: 3, sm: 2}}
+                color="secondary.light"
+                textAlign="center"
+                pb={{ xs: 3, sm: 2 }}
               >
                 Población Impactada
               </Typography>
@@ -1128,11 +1104,11 @@ const GeneracionResultados = () => {
 
             <Grid item xs={12}>
               <Typography
-                color='black'
+                color="black"
                 fontSize={{ xs: 16, sm: 25 }}
                 lineHeight={{ xs: 1.5, sm: "33.96px" }}
-                fontFamily='Open Sans'
-                textAlign='justify'
+                fontFamily="Open Sans"
+                textAlign="justify"
               >
                 Las estrategias emprendidas dentro de este proyecto se llevaron
                 a cabo en los barrios o sectores de 3 municipios del
@@ -1152,8 +1128,8 @@ const GeneracionResultados = () => {
               item
               container
               xs={12}
-              justifyContent='space-between'
-              alignItems='center'
+              justifyContent="space-between"
+              alignItems="center"
               pt={8}
             >
               <Grid
@@ -1161,8 +1137,8 @@ const GeneracionResultados = () => {
                 container
                 xs={12}
                 sm={4}
-                justifyContent={{xs: 'center', sm: 'space-between'}}
-                alignItems='center'
+                justifyContent={{ xs: "center", sm: "space-between" }}
+                alignItems="center"
               >
                 {/* <Stack direction='row' spacing={3}>
                   <Box pt={5}>
@@ -1180,27 +1156,27 @@ const GeneracionResultados = () => {
 
                 <Grid item xs={3} sm={1.5}>
                   <Image
-                    alt='dorada'
+                    alt="dorada"
                     src={"/imgs/dorada.png"}
                     width={85}
                     height={218}
                   />
                 </Grid>
-                <Grid item xs={12} sm={10} pt={{xs: 2, sm: 0}}>
+                <Grid item xs={12} sm={10} pt={{ xs: 2, sm: 0 }}>
                   <Typography
-                    fontSize={{xs: 30, sm: 39.15}}
-                    lineHeight={{xs: 1.2, sm: "38.44px"}}
+                    fontSize={{ xs: 30, sm: 39.15 }}
+                    lineHeight={{ xs: 1.2, sm: "38.44px" }}
                     fontWeight={800}
-                    color='background.default'
+                    color="background.default"
                   >
                     La Dorada
                   </Typography>
                   <Typography
-                    fontSize={{xs: 16, sm: 22.96}}
-                    lineHeight={{xs: 1.2, sm: "38.44px"}}
-                    color='black'
-                    fontFamily='Open Sans'
-                    textAlign='justify'
+                    fontSize={{ xs: 16, sm: 22.96 }}
+                    lineHeight={{ xs: 1.2, sm: "38.44px" }}
+                    color="black"
+                    fontFamily="Open Sans"
+                    textAlign="justify"
                   >
                     Asociación de Jóvenes Emprendedores, Asociación Cimarrona
                     Afrodoradense, Molinos de Vida, Juntas de Acción Comunal,
@@ -1214,33 +1190,33 @@ const GeneracionResultados = () => {
                 container
                 xs={12}
                 sm={7}
-                justifyContent={{xs: 'center', sm: 'space-between'}}
-                alignItems='center'
-                pt={{xs: 10, sm: 0}}
+                justifyContent={{ xs: "center", sm: "space-between" }}
+                alignItems="center"
+                pt={{ xs: 10, sm: 0 }}
               >
                 <Grid item xs={6} sm={2.3}>
                   <Image
-                    alt='manizales'
+                    alt="manizales"
                     src={"/imgs/manizales.png"}
                     width={197}
                     height={106}
                   />
                 </Grid>
-                <Grid item xs={12} sm={9.3} pt={{xs: 2, sm: 0}}>
+                <Grid item xs={12} sm={9.3} pt={{ xs: 2, sm: 0 }}>
                   <Typography
-                    fontSize={{xs: 30, sm: 39.15}}
-                    lineHeight={{xs: 1.2, sm: "38.44px"}}
+                    fontSize={{ xs: 30, sm: 39.15 }}
+                    lineHeight={{ xs: 1.2, sm: "38.44px" }}
                     fontWeight={800}
-                    color='background.default'
+                    color="background.default"
                   >
                     Manizales
                   </Typography>
                   <Typography
-                    fontSize={{xs: 16, sm: 22.96}}
-                    lineHeight={{xs: 1.2, sm: "38.44px"}}
-                    color='black'
-                    fontFamily='Open Sans'
-                    textAlign='justify'
+                    fontSize={{ xs: 16, sm: 22.96 }}
+                    lineHeight={{ xs: 1.2, sm: "38.44px" }}
+                    color="black"
+                    fontFamily="Open Sans"
+                    textAlign="justify"
                   >
                     Fundación Huellas de Vida, Comité Interbarrial de
                     Ciudadanía, Alianza público privada contra la defraudación
@@ -1260,13 +1236,13 @@ const GeneracionResultados = () => {
                 item
                 container
                 xs={12}
-                justifyContent={{xs: 'center', sm: 'space-between'}}
-                alignItems='center'
-                pt={{xs: 10, sm: 0}}
+                justifyContent={{ xs: "center", sm: "space-between" }}
+                alignItems="center"
+                pt={{ xs: 10, sm: 0 }}
               >
                 <Grid item xs={3} sm={0.6}>
                   <Image
-                    alt='marmato'
+                    alt="marmato"
                     src={"/imgs/marmato.png"}
                     width={76}
                     height={116}
@@ -1274,19 +1250,19 @@ const GeneracionResultados = () => {
                 </Grid>
                 <Grid item xs={12} sm={11.2}>
                   <Typography
-                    fontSize={{xs: 30, sm: 39.15}}
-                    lineHeight={{xs: 1.2, sm: "38.44px"}}
+                    fontSize={{ xs: 30, sm: 39.15 }}
+                    lineHeight={{ xs: 1.2, sm: "38.44px" }}
                     fontWeight={800}
-                    color='background.default'
+                    color="background.default"
                   >
                     Marmáto
                   </Typography>
                   <Typography
-                    fontSize={{xs: 16, sm: 22.96}}
-                    lineHeight={{xs: 1.2, sm: "38.44px"}}
-                    color='black'
-                    fontFamily='Open Sans'
-                    textAlign='justify'
+                    fontSize={{ xs: 16, sm: 22.96 }}
+                    lineHeight={{ xs: 1.2, sm: "38.44px" }}
+                    color="black"
+                    fontFamily="Open Sans"
+                    textAlign="justify"
                   >
                     Inicia en el año 2018 con las siguientes
                     organizaciones:Comité para el Desarrollo Turístico de
@@ -1307,9 +1283,9 @@ const GeneracionResultados = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item pt={{xs:5, sm: 10}}>
+            <Grid item pt={{ xs: 5, sm: 10 }}>
               <Image
-                alt='line time'
+                alt="line time"
                 src={"/imgs/GC-line-time.png"}
                 width={1343}
                 height={789}

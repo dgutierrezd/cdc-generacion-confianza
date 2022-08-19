@@ -26,6 +26,7 @@ interface INavbarProps {
    * You won't need it on your project.
    */
   window?: () => Window;
+  admin: boolean;
 }
 
 const drawerWidth = 240;
@@ -51,27 +52,31 @@ const Navbar = (props: INavbarProps) => {
         height: "100%",
       }}
     >
-      <Stack direction='row' alignItems='center' justifyContent='center' p={2}>
+      <Stack direction="row" alignItems="center" justifyContent="center" p={2}>
         <Stack
-          direction='column'
-          alignItems='flex-end'
+          direction="column"
+          alignItems="flex-end"
           paddingRight={{ xs: 2, sm: 3.5 }}
         >
-          <Link href='/' underline='none' textAlign='end'>
+          <Link
+            href={props.admin ? "/admin/home" : "/"}
+            underline="none"
+            textAlign="end"
+          >
             <Typography
-              color='secondary'
+              color="secondary"
               fontSize={{ xs: 16, sm: 32.73 }}
               lineHeight={{ xs: 1, sm: "36.3px" }}
-              fontFamily='VAGROUNDEDSTD'
+              fontFamily="VAGROUNDEDSTD"
               fontWeight={800}
             >
               Generación
             </Typography>
             <Typography
-              color='primary'
+              color="primary"
               fontSize={{ xs: 16, sm: 32.73 }}
               lineHeight={{ xs: 1, sm: "36.3px" }}
-              fontFamily='VAGROUNDEDSTD'
+              fontFamily="VAGROUNDEDSTD"
               fontWeight={800}
             >
               de Confianza
@@ -86,9 +91,9 @@ const Navbar = (props: INavbarProps) => {
           }}
         />
         <Stack paddingLeft={{ xs: 2, sm: 3.5 }}>
-          <Link href='https://www.chec.com.co/' target='_blank'>
+          <Link href="https://www.chec.com.co/" target="_blank">
             <Image
-              alt='logo'
+              alt="logo"
               src={"/imgs/navbar-logo.png"}
               width={isXs ? 69 : 96}
               height={isXs ? 51.75 : 64}
@@ -97,61 +102,69 @@ const Navbar = (props: INavbarProps) => {
         </Stack>
       </Stack>
       <Divider />
-      <Stack display='flex' justifyContent='space-between' height='85%'>
-        <Stack spacing={2} py={2} alignItems='center'>
+      <Stack display="flex" justifyContent="space-between" height="85%">
+        <Stack spacing={2} py={2} alignItems="center">
           <Link
-            href={"/generacion-confianza"}
-            underline='hover'
+            href={
+              props.admin
+                ? "/admin/generacion-confianza"
+                : "/generacion-confianza"
+            }
+            underline="hover"
             fontWeight={800}
-            color='secondary'
+            color="secondary"
             fontSize={"1rem"}
-            fontFamily='Open Sans'
+            fontFamily="Open Sans"
             lineHeight={"23.5px"}
-            alignItems='center'
+            alignItems="center"
           >
             {"Generación de confianza"}
           </Link>
           <Link
-            href={"/metodologia"}
-            underline='hover'
-            color='secondary'
+            href={props.admin ? "/admin/metodologia" : "/metodologia"}
+            underline="hover"
+            color="secondary"
             fontSize={"1rem"}
             fontWeight={800}
             lineHeight={"23.5px"}
-            fontFamily='Open Sans'
-            alignItems='center'
+            fontFamily="Open Sans"
+            alignItems="center"
           >
             {"Metodología"}
           </Link>
           <Link
-            href={"/evolucion-resultados"}
-            underline='hover'
-            color='secondary'
+            href={
+              props.admin
+                ? "/admin/evolucion-resultados"
+                : "/evolucion-resultados"
+            }
+            underline="hover"
+            color="secondary"
             fontSize={"1rem"}
             fontWeight={800}
             lineHeight={"23.5px"}
-            fontFamily='Open Sans'
-            alignItems='center'
+            fontFamily="Open Sans"
+            alignItems="center"
           >
             {"Evolución y Resultados"}
           </Link>
 
           <Link
-            href={"/medios"}
-            underline='hover'
-            color='secondary'
+            href={props.admin ? "/admin/medios" : "/medios"}
+            underline="hover"
+            color="secondary"
             fontSize={"1rem"}
             fontWeight={800}
             lineHeight={"23.5px"}
-            fontFamily='Open Sans'
-            alignItems='center'
+            fontFamily="Open Sans"
+            alignItems="center"
           >
             {"Medios"}
           </Link>
         </Stack>
-        <Link href='https://www.chec.com.co/' target='_blank'>
+        <Link href="https://www.chec.com.co/" target="_blank">
           <Image
-            alt='Chec logo'
+            alt="Chec logo"
             src={"/imgs/chec-logo.png"}
             width={88}
             height={83}
@@ -178,27 +191,31 @@ const Navbar = (props: INavbarProps) => {
           zIndex: 999,
         }}
       >
-        <Stack direction='row' alignItems='center'>
+        <Stack direction="row" alignItems="center">
           <Stack
-            direction='column'
-            alignItems='flex-end'
+            direction="column"
+            alignItems="flex-end"
             paddingRight={{ xs: 2, sm: 3.5 }}
           >
-            <Link href='/' underline='none' textAlign='end'>
+            <Link
+              href={props.admin ? "/admin/home" : "/"}
+              underline="none"
+              textAlign="end"
+            >
               <Typography
-                color='secondary'
+                color="secondary"
                 fontSize={{ xs: 16, sm: 32.73 }}
                 lineHeight={{ xs: 1, sm: "36.3px" }}
-                fontFamily='VAGROUNDEDSTD'
+                fontFamily="VAGROUNDEDSTD"
                 fontWeight={800}
               >
                 Generación
               </Typography>
               <Typography
-                color='primary'
+                color="primary"
                 fontSize={{ xs: 16, sm: 32.73 }}
                 lineHeight={{ xs: 1, sm: "36.3px" }}
-                fontFamily='VAGROUNDEDSTD'
+                fontFamily="VAGROUNDEDSTD"
                 fontWeight={800}
               >
                 de Confianza
@@ -213,9 +230,9 @@ const Navbar = (props: INavbarProps) => {
             }}
           />
           <Stack paddingLeft={{ xs: 2, sm: 3.5 }}>
-            <Link href='https://www.chec.com.co/' target='_blank'>
+            <Link href="https://www.chec.com.co/" target="_blank">
               <Image
-                alt='logo'
+                alt="logo"
                 // layout=""
                 src={"/imgs/navbar-logo.png"}
                 width={isXs ? 69 : 96}
@@ -226,57 +243,65 @@ const Navbar = (props: INavbarProps) => {
         </Stack>
         {!isXs && (
           <Stack
-            direction='row'
+            direction="row"
             spacing={10}
-            alignItems='center'
+            alignItems="center"
             // sx={{ display: { xl: "inherit" } }}
           >
             <Link
-              href={"/generacion-confianza"}
-              underline='hover'
+              href={
+                props.admin
+                  ? "/admin/generacion-confianza"
+                  : "/generacion-confianza"
+              }
+              underline="hover"
               fontWeight={800}
-              color='secondary'
+              color="secondary"
               fontSize={"1rem"}
-              fontFamily='Open Sans'
+              fontFamily="Open Sans"
               lineHeight={"23.5px"}
-              alignItems='center'
+              alignItems="center"
             >
               {"Generación de confianza"}
             </Link>
             <Link
-              href={"/metodologia"}
-              underline='hover'
-              color='secondary'
+              href={props.admin ? "/admin/metodologia" : "/metodologia"}
+              underline="hover"
+              color="secondary"
               fontSize={"1rem"}
               fontWeight={800}
               lineHeight={"23.5px"}
-              fontFamily='Open Sans'
-              alignItems='center'
+              fontFamily="Open Sans"
+              alignItems="center"
             >
               {"Metodología"}
             </Link>
             <Link
-              href={"/evolucion-resultados"}
-              underline='hover'
-              color='secondary'
+              href={
+                props.admin
+                  ? "/admin/evolucion-resultados"
+                  : "/evolucion-resultados"
+              }
+              underline="hover"
+              color="secondary"
               fontSize={"1rem"}
               fontWeight={800}
               lineHeight={"23.5px"}
-              fontFamily='Open Sans'
-              alignItems='center'
+              fontFamily="Open Sans"
+              alignItems="center"
             >
               {"Evolución y Resultados"}
             </Link>
 
             <Link
-              href={"/medios"}
-              underline='hover'
-              color='secondary'
+              href={props.admin ? "/admin/medios" : "/medios"}
+              underline="hover"
+              color="secondary"
               fontSize={"1rem"}
               fontWeight={800}
               lineHeight={"23.5px"}
-              fontFamily='Open Sans'
-              alignItems='center'
+              fontFamily="Open Sans"
+              alignItems="center"
             >
               {"Medios"}
             </Link>
@@ -284,14 +309,14 @@ const Navbar = (props: INavbarProps) => {
         )}
         {isXs && (
           <IconButton
-            color='inherit'
-            aria-label='open drawer'
-            edge='start'
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
             onClick={handleDrawerToggle}
             // sx={{ mr: 2 }}
           >
             <Image
-              alt='Chec logo'
+              alt="Chec logo"
               src={"/icons/menu.png"}
               width={29}
               height={22}
@@ -303,7 +328,7 @@ const Navbar = (props: INavbarProps) => {
           <Typography
             fontSize={21.19}
             lineHeight={"23.5px"}
-            fontFamily='Open Sans'
+            fontFamily="Open Sans"
           ></Typography>
         )}
 
@@ -312,7 +337,7 @@ const Navbar = (props: INavbarProps) => {
       <Box>
         <Drawer
           container={container}
-          variant='temporary'
+          variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
