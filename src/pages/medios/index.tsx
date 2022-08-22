@@ -15,6 +15,10 @@ import ReactPlayer from "react-player/youtube";
 import useIsXs from "../../utils/useIsXs";
 import Footer from "../components/footer/footer";
 import Navbar from "../components/navbar/navbar";
+import { app, database } from "../../../firebaseConfig";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+
+const dbInstance = collection(database, "medios");
 
 const Transition = forwardRef(function Transition(
   props: TransitionProps & {
@@ -77,6 +81,7 @@ const Medios = () => {
   const [imageShow, setImageShow] = useState(1);
   const [open, setOpen] = React.useState(false);
   const [videoClicked, setVideoClicked] = useState("");
+  const [content, setContent] = useState<any>([]);
   const isXs = useIsXs();
 
   const handleClickOpen = () => {
@@ -101,6 +106,20 @@ const Medios = () => {
     } else {
       setImageShow(imageShow + 1);
     }
+  };
+
+  useEffect(() => {
+    getMedios();
+  }, []);
+
+  const getMedios = () => {
+    getDocs(dbInstance).then((data) => {
+      setContent(
+        data.docs.map((item) => {
+          return { ...item.data(), id: item.id };
+        })
+      );
+    });
   };
 
   return (
@@ -137,9 +156,7 @@ const Medios = () => {
             pt={{ xs: 4, sm: 7 }}
             align="center"
           >
-            {
-              'El Proyecto Social para la "Generación de Confianza y promoción de la cultura de la legalidad", conocido actualmente a nivel comunitario y empresarial como "Generación de Confianza", se orienta a generar un cambio de postura en todos los actores implicados (empresa-comunidad y demás instituciones vinculadas al proyecto) frente a su papel activo y transformador en la viabilización de acciones sociales y técnicas.'
-            }
+            {content[0]?.textoPrincipal}
           </Typography>
           <Typography
             color="primary"
